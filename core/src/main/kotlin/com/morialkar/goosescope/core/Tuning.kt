@@ -18,8 +18,11 @@ object Tuning {
     /** Avance minimale, en distance OKLab, qu'une autre base doit prendre pour remplacer l'actuelle (§3.5). */
     const val HYSTERESIS_MARGIN = 0.015
 
-    /** Durée minimale pendant laquelle une nouvelle base doit gagner avant d'être affichée (§3.5). */
-    const val HYSTERESIS_DWELL_MS = 250L
+    /**
+     * Durée minimale pendant laquelle une nouvelle base doit gagner avant d'être affichée (§3.5).
+     * 250 ms prévus en Phase 1 donnaient 396 ms de latence au test (NF1: ≤ 300 ms); ramené à 150 ms.
+     */
+    const val HYSTERESIS_DWELL_MS = 150L
 
     // Comparaison (§3.6).
     const val COMPARE_VERY_CLOSE = 0.02

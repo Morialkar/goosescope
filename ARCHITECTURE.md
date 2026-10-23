@@ -179,7 +179,8 @@ un objet noir bien éclairé.
   `ASSUMPTION`.
 - Hystérésis sur le nom: on change de base seulement si la distance à la meilleure
   ancre de la nouvelle base est plus petite d'au moins `δ = 0,015` que celle de la
-  base actuelle, **et** que cette nouvelle base gagne depuis au moins 250 ms.
+  base actuelle, **et** que cette nouvelle base gagne depuis au moins 150 ms
+  (250 ms prévus au départ donnaient 396 ms de latence au test de T06, au-delà de NF1).
   Le seuil de distance empêche le clignotement à une frontière; le délai court
   garde la latence sous 300 ms pour un vrai changement.
 
