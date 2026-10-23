@@ -26,11 +26,16 @@ la tablette se change à cet endroit, et le changement est noté dans le message
 commit avec la mesure qui le justifie.
 
 ### 1.4 Ton des fiches
-Les textes de nuance décrivent sans supposer que le lecteur voit la couleur: ils
-passent par des comparaisons concrètes (objets, nature, sensations: chaud, doux,
-terreux), pas par d'autres noms de couleur seuls. Phrase courte, vocabulaire courant.
-FR et EN disent la même chose, mais chaque langue est rédigée naturellement, pas
-traduite mot à mot.
+Les fiches s'adressent à quelqu'un qui n'a peut-être jamais perçu cette teinte. Elles
+transmettent ce que la couleur **fait ressentir**, pas seulement à quoi elle ressemble
+(révision demandée par Naomi le 2026-10-23, les premières versions étant trop
+génériques):
+- une émotion ou une ambiance (calme, joyeuse, sérieuse, nostalgique…);
+- au moins une sensation d'un autre sens: température, toucher, goût, odeur, son;
+- une situation concrète où on la ressent (un matin d'hiver, une cuisine un dimanche).
+Deux ou trois phrases courtes, vocabulaire courant, sans s'appuyer seulement sur
+d'autres noms de couleur. FR et EN disent la même chose, mais chaque langue est
+rédigée naturellement, pas traduite mot à mot.
 
 ---
 
