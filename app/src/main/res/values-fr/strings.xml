@@ -20,4 +20,6 @@
     <string name="detail_nature">Aussi dans la nature</string>
     <string name="detail_tap_hint">Touche n\'importe où sur l\'image pour vérifier un autre endroit.</string>
     <string name="other_language">English</string>
+    <string name="detail_hide">Masquer</string>
+    <string name="detail_show">Détails</string>
 </resources>

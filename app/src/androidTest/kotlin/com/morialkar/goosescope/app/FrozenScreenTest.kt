@@ -10,6 +10,7 @@ import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performTouchInput
+import androidx.test.espresso.Espresso
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.morialkar.goosescope.app.ui.ScopeApp
 import com.morialkar.goosescope.core.catalog.BaseColor
@@ -95,6 +96,31 @@ class FrozenScreenTest {
         rule.runOnUiThread { vm.onTap(10f, 10f, 1000, 2000) }
         val ms = (System.nanoTime() - start) / 1_000_000
         assertTrue("fiche mise à jour en $ms ms", ms < 300)
+    }
+
+    @Test
+    fun hiding_the_sheet_reveals_the_image_for_picking_another_spot() {
+        // AC18: le bas de l'image, couvert par la fiche dépliée, est rouge; le haut est bleu.
+        freezeOn { _, y -> if (y >= 120) Srgb8(220, 30, 30) else Srgb8(30, 90, 220) }
+        rule.onNodeWithTag("detailDescription").assertIsDisplayed()
+        rule.onNodeWithTag("detailToggle").performClick()
+        rule.waitForIdle()
+        rule.onNodeWithTag("detailDescription").assertDoesNotExist()
+        rule.onNodeWithTag("compactBase").assertTextEquals(TestSupport.name(BaseColor.BLUE).uppercase())
+        rule.onNodeWithTag("frozenImage").performTouchInput { click(Offset(width / 2f, height * 0.75f)) }
+        rule.waitForIdle()
+        rule.onNodeWithTag("compactBase").assertTextEquals(TestSupport.name(BaseColor.RED).uppercase())
+        rule.onNodeWithTag("detailToggle").performClick()
+        rule.waitForIdle()
+        rule.onNodeWithTag("detailDescription").assertIsDisplayed()
+    }
+
+    @Test
+    fun android_back_returns_to_the_camera() {
+        freezeOn { _, _ -> Srgb8.fromHex("#1E90FF") }
+        Espresso.pressBack()
+        rule.waitUntil { source.isPreviewing }
+        rule.onNodeWithTag("freeze").assertIsDisplayed()
     }
 
     @Test

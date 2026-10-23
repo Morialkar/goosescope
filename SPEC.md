@@ -244,3 +244,15 @@ Cette section est en vigueur; elle prime sur NG4 et sur la ligne « Distribution
   affiché est « <base> — <nuance> » dans la langue de l'app (test instrumenté).
 - Précision de présentation de F14 (Naomi, 2026-10-23): les éléments de la nature s'affichent en
   étiquettes; la fiche est animée (STANDARDS §4, « Mouvement »).
+
+## 13. Amendement — révision 5 (demandé par Naomi le 2026-10-23)
+
+- F25. Sur l'image figée, la fiche peut être réduite à une barre compacte (aplat mesuré, base et
+  nuance, bouton « Détails ») pour voir presque toute l'image et viser un autre point; toucher
+  l'image met la barre à jour; « Détails » rouvre la fiche. La fiche s'ouvre dépliée à chaque
+  nouvelle image figée.
+- F26. Le bouton retour d'Android, sur l'image figée, ramène à la caméra comme « Retour à la
+  caméra ».
+- AC18. Fiche réduite → la description n'est plus affichée, la barre montre base et nuance; un
+  toucher dans la zone qu'occupait la fiche met la barre à jour; « Détails » rouvre la fiche;
+  retour Android → mode direct (tests instrumentés).

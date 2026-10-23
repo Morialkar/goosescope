@@ -20,4 +20,6 @@
     <string name="detail_nature">Also found in nature</string>
     <string name="detail_tap_hint">Tap anywhere on the image to check another spot.</string>
     <string name="other_language">Français</string>
+    <string name="detail_hide">Hide</string>
+    <string name="detail_show">Details</string>
 </resources>

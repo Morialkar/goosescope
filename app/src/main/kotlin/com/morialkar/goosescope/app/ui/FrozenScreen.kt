@@ -1,7 +1,9 @@
 package com.morialkar.goosescope.app.ui
 
 import androidx.compose.animation.AnimatedContent
+import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.MutableTransitionState
@@ -45,7 +47,10 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -102,6 +107,12 @@ fun FrozenScreen(state: ScopeState.Frozen, lang: Lang, viewModel: ScopeViewModel
         )
         Reticle(Modifier.offset { reticleOffset }.testTag("reticle"))
 
+        // Retour Android = « Retour à la caméra » (SPEC F26).
+        BackHandler(onBack = viewModel::resume)
+        // Fiche dépliée à chaque nouvelle image figée; réduite, elle laisse voir l'image pour viser (F25).
+        var expanded by rememberSaveable(state.image) { mutableStateOf(true) }
+        val toggle = { expanded = !expanded }
+
         // La fiche entre en glissant, et ne couvre jamais le point visé (STANDARDS §4).
         val entered = remember { MutableTransitionState(false).apply { targetState = true } }
         if (landscape) {
@@ -109,12 +120,21 @@ fun FrozenScreen(state: ScopeState.Frozen, lang: Lang, viewModel: ScopeViewModel
             val onRight = tx < viewW * 0.55f
             AnimatedVisibility(
                 entered,
-                Modifier.align(if (onRight) Alignment.CenterEnd else Alignment.CenterStart),
+                Modifier.align(
+                    when {
+                        expanded && onRight -> Alignment.CenterEnd
+                        expanded -> Alignment.CenterStart
+                        onRight -> Alignment.BottomEnd
+                        else -> Alignment.BottomStart
+                    },
+                ),
                 enter = fadeIn(tween(220)) + slideInVertically(tween(320)) { it / 6 },
             ) {
                 DetailSheet(
-                    state.detail, lang, viewModel, Modifier.fillMaxHeight().width(400.dp),
-                    WindowInsetsSides.Vertical + if (onRight) WindowInsetsSides.End else WindowInsetsSides.Start,
+                    state.detail, lang, viewModel, expanded, toggle,
+                    (if (expanded) Modifier.fillMaxHeight() else Modifier).width(400.dp),
+                    (if (expanded) WindowInsetsSides.Vertical else WindowInsetsSides.Bottom) +
+                        if (onRight) WindowInsetsSides.End else WindowInsetsSides.Start,
                 )
             }
         } else {
@@ -126,7 +146,8 @@ fun FrozenScreen(state: ScopeState.Frozen, lang: Lang, viewModel: ScopeViewModel
                 enter = fadeIn(tween(220)) + slideInVertically(tween(320)) { if (atBottom) it / 3 else -it / 3 },
             ) {
                 DetailSheet(
-                    state.detail, lang, viewModel, Modifier.fillMaxWidth().heightIn(max = maxHeight * 0.62f),
+                    state.detail, lang, viewModel, expanded, toggle,
+                    Modifier.fillMaxWidth().heightIn(max = maxHeight * 0.62f),
                     WindowInsetsSides.Horizontal + if (atBottom) WindowInsetsSides.Bottom else WindowInsetsSides.Top,
                 )
             }
@@ -135,10 +156,24 @@ fun FrozenScreen(state: ScopeState.Frozen, lang: Lang, viewModel: ScopeViewModel
 }
 
 @Composable
-private fun DetailSheet(detail: Detail, lang: Lang, viewModel: ScopeViewModel, modifier: Modifier, edges: WindowInsetsSides) {
+private fun DetailSheet(
+    detail: Detail,
+    lang: Lang,
+    viewModel: ScopeViewModel,
+    expanded: Boolean,
+    onToggle: () -> Unit,
+    modifier: Modifier,
+    edges: WindowInsetsSides,
+) {
     // Marges système seulement du côté où la fiche touche le bord de l'écran.
+    val container = modifier.background(Tokens.surface).windowInsetsPadding(WindowInsets.safeDrawing.only(edges))
+        .animateContentSize(tween(260)).padding(16.dp)
+    if (!expanded) {
+        CompactBar(detail, lang, viewModel, onToggle, container.testTag("detailCompact"))
+        return
+    }
     Column(
-        modifier.background(Tokens.surface).windowInsetsPadding(WindowInsets.safeDrawing.only(edges)).padding(16.dp).testTag("detail"),
+        container.testTag("detail"),
         verticalArrangement = Arrangement.spacedBy(14.dp),
     ) {
         when (detail) {
@@ -168,7 +203,33 @@ private fun DetailSheet(detail: Detail, lang: Lang, viewModel: ScopeViewModel, m
                 }
             }
         }
-        FlatButton(stringResource(R.string.resume), viewModel::resume, Modifier.fillMaxWidth().testTag("resume"))
+        Row(horizontalArrangement = Arrangement.spacedBy(12.dp), modifier = Modifier.fillMaxWidth()) {
+            FlatButton(stringResource(R.string.resume), viewModel::resume, Modifier.weight(1f).testTag("resume"))
+            FlatButton(stringResource(R.string.detail_hide), onToggle, Modifier.testTag("detailToggle"))
+        }
+    }
+}
+
+/** Fiche réduite: juste ce qu'il faut pour savoir quelle couleur est visée pendant qu'on cherche (F25). */
+@Composable
+private fun CompactBar(detail: Detail, lang: Lang, viewModel: ScopeViewModel, onToggle: () -> Unit, modifier: Modifier) {
+    Row(modifier, verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+        when (detail) {
+            Detail.TooDark -> Label(stringResource(R.string.too_dark), Tokens.bodySize, bold = true, modifier = Modifier.weight(1f))
+            is Detail.Color -> {
+                val swatch by animateColorAsState(detail.measured.toColor(), tween(380), label = "compactSwatch")
+                Box(Modifier.size(48.dp).background(swatch, RoundedCornerShape(Tokens.corner)))
+                Column(Modifier.weight(1f)) {
+                    BasicText(
+                        viewModel.baseName(detail.base, lang).uppercase(),
+                        Modifier.testTag("compactBase"),
+                        style = TextStyle(color = Tokens.textMuted, fontSize = Tokens.labelSize, fontWeight = FontWeight.Bold, letterSpacing = 2.sp),
+                    )
+                    Label(detail.shade.name[lang], 22.sp, bold = true, modifier = Modifier.testTag("compactShade"))
+                }
+            }
+        }
+        FlatButton(stringResource(R.string.detail_show), onToggle, Modifier.testTag("detailToggle"))
     }
 }
 
