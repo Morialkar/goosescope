@@ -1,4 +1,18 @@
 <resources>
     <string name="app_name">Goosescope</string>
-    <string name="placeholder_tagline">Pointe un objet pour voir sa couleur.</string>
+    <string name="freeze">Figer</string>
+    <string name="resume">Retour à la caméra</string>
+    <string name="torch_on">Allumer la lampe</string>
+    <string name="torch_off">Éteindre la lampe</string>
+    <string name="too_dark">Trop sombre</string>
+    <string name="too_dark_hint">Ajoute de la lumière ou allume la lampe pour voir la couleur.</string>
+    <string name="warming">Vise un objet avec le cercle.</string>
+    <string name="permission_title">Goosescope a besoin de la caméra</string>
+    <string name="permission_body">L\'app regarde par la caméra pour te dire la couleur de ce que tu vises. Les images restent sur ce téléphone : rien n\'est enregistré ni envoyé.</string>
+    <string name="permission_allow">Autoriser la caméra</string>
+    <string name="permission_settings">Ouvrir les paramètres de l\'app</string>
+    <string name="error_title">Un problème est survenu</string>
+    <string name="error_catalog">La liste de couleurs de l\'app n\'a pas pu être lue. Réinstalle l\'app pour corriger le problème.</string>
+    <string name="error_camera">La caméra n\'a pas pu démarrer. Ferme les autres apps qui utilisent la caméra, puis réessaie.</string>
+    <string name="retry">Réessayer</string>
 </resources>
