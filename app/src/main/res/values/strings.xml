@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Goosescope</string>
+    <string name="placeholder_tagline">Point at something to see its color.</string>
+</resources>
