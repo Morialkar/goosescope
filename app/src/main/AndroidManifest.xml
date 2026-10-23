@@ -8,6 +8,12 @@
 
     <!-- Ajoutée par androidx.core pour enregistrer des récepteurs sous l'API 33.
          Inutile avec minSdk 33, et NF6 n'autorise que CAMERA. -->
+    <!-- Ajoutée par androidx.media3-common, tiré par CameraX. L'app ne lit jamais l'état du réseau
+         et NF6 n'autorise que CAMERA. -->
+    <uses-permission
+        android:name="android.permission.ACCESS_NETWORK_STATE"
+        tools:node="remove" />
+
     <permission
         android:name="${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         tools:node="remove" />

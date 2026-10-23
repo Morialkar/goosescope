@@ -5,6 +5,10 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 }
 
+val releaseSigning: Map<String, String?> =
+    listOf("goosescope.storeFile", "goosescope.storePassword", "goosescope.keyAlias", "goosescope.keyPassword")
+        .associateWith { providers.gradleProperty(it).orNull }
+
 android {
     namespace = "com.morialkar.goosescope"
     compileSdk = 37
@@ -24,6 +28,23 @@ android {
     }
 
     buildFeatures { compose = true }
+
+    // REQUIRES_REVIEW: signature de publication (SPEC F22). La clé et ses mots de passe vivent hors
+    // du dépôt public, dans ~/.gradle/gradle.properties (docs/RELEASING.md).
+    signingConfigs {
+        create("release") {
+            releaseSigning["goosescope.storeFile"]?.let { storeFile = file(it) }
+            storePassword = releaseSigning["goosescope.storePassword"]
+            keyAlias = releaseSigning["goosescope.keyAlias"]
+            keyPassword = releaseSigning["goosescope.keyPassword"]
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig = if (releaseSigning.values.all { it != null }) signingConfigs.getByName("release") else null
+        }
+    }
 }
 
 dependencies {
@@ -70,7 +91,8 @@ androidComponents {
         val verify = tasks.register<VerifyNoInternetPermission>("verify${name}NoInternetPermission") {
             mergedManifest.set(variant.artifacts.get(SingleArtifact.MERGED_MANIFEST))
         }
-        tasks.matching { it.name == "assemble$name" }.configureEach { dependsOn(verify) }
+        // Branché sur assemble ET install: en T10, un install sans assemble avait laissé passer une permission.
+        tasks.matching { it.name == "assemble$name" || it.name == "install$name" }.configureEach { dependsOn(verify) }
     }
 }
 
@@ -81,4 +103,14 @@ tasks.register("verifyNoInternetPermission") {
 // StringsParityTest lit les fichiers de ressources: sans cette entrée, Gradle réutilise un ancien résultat.
 tasks.withType<Test>().configureEach {
     inputs.dir("src/main/res").withPathSensitivity(PathSensitivity.RELATIVE)
+}
+
+// Sans clé, AGP produirait un APK release non signé: on refuse plutôt que de risquer de le publier.
+tasks.matching { it.name == "assembleRelease" }.configureEach {
+    doFirst {
+        val missing = releaseSigning.filterValues { it == null }.keys
+        if (missing.isNotEmpty()) {
+            throw GradleException("Signature de publication absente: $missing. Voir docs/RELEASING.md.")
+        }
+    }
 }
