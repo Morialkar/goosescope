@@ -38,6 +38,8 @@ dependencies {
     implementation(libs.camera.lifecycle)
     implementation(libs.camera.view)
 
+    testImplementation(libs.junit4)
+
     androidTestImplementation(platform(libs.compose.bom))
     androidTestImplementation(libs.compose.ui.test.junit4)
     androidTestImplementation(libs.test.runner)
@@ -74,4 +76,9 @@ androidComponents {
 
 tasks.register("verifyNoInternetPermission") {
     dependsOn("verifyDebugNoInternetPermission", "verifyReleaseNoInternetPermission")
+}
+
+// StringsParityTest lit les fichiers de ressources: sans cette entrée, Gradle réutilise un ancien résultat.
+tasks.withType<Test>().configureEach {
+    inputs.dir("src/main/res").withPathSensitivity(PathSensitivity.RELATIVE)
 }

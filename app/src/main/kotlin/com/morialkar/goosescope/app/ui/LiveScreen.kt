@@ -39,6 +39,7 @@ fun LiveScreen(
     onCameraError: (Throwable) -> Unit,
     onFreeze: () -> Unit,
     onToggleTorch: () -> Unit,
+    onToggleLanguage: () -> Unit,
 ) {
     BoxWithConstraints(Modifier.fillMaxSize().background(Tokens.surface)) {
         val landscape = maxWidth > maxHeight
@@ -47,7 +48,7 @@ fun LiveScreen(
             Reticle(Modifier.align(Alignment.Center).testTag("reticle"))
         }
         val panel = @Composable { modifier: Modifier ->
-            InfoPanel(reading, torchOn, hasTorch, baseName, onFreeze, onToggleTorch, landscape, modifier)
+            InfoPanel(reading, torchOn, hasTorch, baseName, onFreeze, onToggleTorch, onToggleLanguage, landscape, modifier)
         }
         if (landscape) {
             panel(Modifier.align(Alignment.CenterEnd).fillMaxHeight().width(340.dp))
@@ -65,6 +66,7 @@ private fun InfoPanel(
     baseName: (com.morialkar.goosescope.core.catalog.BaseColor) -> String,
     onFreeze: () -> Unit,
     onToggleTorch: () -> Unit,
+    onToggleLanguage: () -> Unit,
     landscape: Boolean,
     modifier: Modifier,
 ) {
@@ -103,6 +105,8 @@ private fun InfoPanel(
                     Modifier.testTag("torch"),
                 )
             }
+            // Le bouton affiche l'autre langue, dans cette langue: on la reconnaît même sans lire la langue actuelle.
+            FlatButton(stringResource(R.string.other_language), onToggleLanguage, Modifier.testTag("language"))
         }
     }
 }

@@ -24,7 +24,13 @@ fun currentLang(): Lang =
     if (LocalConfiguration.current.locales[0].language == "fr") Lang.FR else Lang.EN
 
 @Composable
-fun ScopeApp(viewModel: ScopeViewModel, source: FrameSource, onRequestPermission: () -> Unit, onOpenSettings: () -> Unit) {
+fun ScopeApp(
+    viewModel: ScopeViewModel,
+    source: FrameSource,
+    onRequestPermission: () -> Unit,
+    onOpenSettings: () -> Unit,
+    onToggleLanguage: () -> Unit = {},
+) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     val hasTorch by source.hasTorch.collectAsStateWithLifecycle()
     val lang = currentLang()
@@ -45,6 +51,7 @@ fun ScopeApp(viewModel: ScopeViewModel, source: FrameSource, onRequestPermission
                     onCameraError = { viewModel.onCameraError() },
                     onFreeze = viewModel::requestFreeze,
                     onToggleTorch = viewModel::toggleTorch,
+                    onToggleLanguage = onToggleLanguage,
                 )
             }
             is ScopeState.Frozen -> FrozenScreen(s, lang, viewModel)

@@ -19,4 +19,5 @@
     <string name="detail_measured">Measured</string>
     <string name="detail_nature">Also found in nature</string>
     <string name="detail_tap_hint">Tap anywhere on the image to check another spot.</string>
+    <string name="other_language">Français</string>
 </resources>

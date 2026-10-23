@@ -32,6 +32,8 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
+        val language = AppLanguage(this)
+        language.ensureDefault()
         val source = CameraXFrameSource(applicationContext)
         setContent {
             ScopeApp(
@@ -39,6 +41,7 @@ class MainActivity : ComponentActivity() {
                 source = source,
                 onRequestPermission = { permissionLauncher.launch(Manifest.permission.CAMERA) },
                 onOpenSettings = ::openAppSettings,
+                onToggleLanguage = language::toggle,
             )
         }
     }
