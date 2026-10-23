@@ -16,7 +16,8 @@
     <string name="error_camera">La caméra n\'a pas pu démarrer. Ferme les autres apps qui utilisent la caméra, puis réessaie.</string>
     <string name="retry">Réessayer</string>
     <string name="too_dark_frozen_hint">Cette image a été prise avec trop peu de lumière pour nommer ses couleurs. Reviens à la caméra et ajoute de la lumière.</string>
-    <string name="detail_measured">Mesurée</string>
+    <string name="detail_reference">Référence</string>
+    <string name="detail_compared">Par rapport à %1$s</string>
     <string name="detail_nature">Aussi dans la nature</string>
     <string name="detail_tap_hint">Touche n\'importe où sur l\'image pour vérifier un autre endroit.</string>
     <string name="other_language">English</string>

@@ -11,6 +11,8 @@ object Tokens {
     val surface = Color(0xFF3F4752)
     val surfaceRaised = Color(0xFF545D69)
     val textOnSurface = Color(0xFFF4F2EC)
+    /** Texte secondaire (étiquettes); 6,8:1 sur `surface`, 4,8:1 sur `surfaceRaised`, vérifié dans ContrastTest. */
+    val textMuted = Color(0xFFD8DBDF)
     val reticleOuter = Color(0xFFF4F2EC)
     val reticleInner = Color(0xFF1F2328)
 

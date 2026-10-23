@@ -39,5 +39,8 @@ class ContrastTest {
         val text = Srgb8.fromHex("#F4F2EC")
         assertTrue(Contrast.ratio(text, Srgb8.fromHex("#3F4752")) >= 4.5)
         assertTrue(Contrast.ratio(text, Srgb8.fromHex("#545D69")) >= 4.5)
+        // textMuted, sur surface et sur surfaceRaised (étiquettes de la fiche).
+        assertTrue(Contrast.ratio(Srgb8.fromHex("#D8DBDF"), Srgb8.fromHex("#3F4752")) >= 4.5)
+        assertTrue(Contrast.ratio(Srgb8.fromHex("#D8DBDF"), Srgb8.fromHex("#545D69")) >= 4.5)
     }
 }

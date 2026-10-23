@@ -242,3 +242,5 @@ Cette section est en vigueur; elle prime sur NG4 et sur la ligne « Distribution
 - AC17. Caméra immobile sur une couleur à la frontière de deux nuances d'une même base → la
   nuance affichée ne clignote pas (test unitaire sur séquence synthétique); en direct, le texte
   affiché est « <base> — <nuance> » dans la langue de l'app (test instrumenté).
+- Précision de présentation de F14 (Naomi, 2026-10-23): les éléments de la nature s'affichent en
+  étiquettes; la fiche est animée (STANDARDS §4, « Mouvement »).

@@ -1,7 +1,9 @@
 package com.morialkar.goosescope.app
 
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.test.assertCountEquals
 import androidx.compose.ui.test.assertIsDisplayed
+import androidx.compose.ui.test.onAllNodesWithTag
 import androidx.compose.ui.test.assertTextEquals
 import androidx.compose.ui.test.click
 import androidx.compose.ui.test.junit4.createComposeRule
@@ -46,10 +48,13 @@ class FrozenScreenTest {
     @Test
     fun freezing_on_peach_opens_the_detail_sheet() {
         freezeOn { _, _ -> Srgb8.fromHex("#FFC4A0") }
-        rule.onNodeWithTag("detailBase").assertTextEquals(TestSupport.name(BaseColor.ORANGE))
+        rule.onNodeWithTag("detailBase").assertTextEquals(TestSupport.name(BaseColor.ORANGE).uppercase())
         rule.onNodeWithTag("detailShade").assertTextEquals(shadeName("peach"))
         rule.onNodeWithTag("detailComparison").assertIsDisplayed()
         rule.onNodeWithTag("detailNature").assertIsDisplayed()
+        // Les éléments de la nature sont des étiquettes, une par élément.
+        val nature = TestSupport.catalog.shades.first { it.id == "peach" }.nature[TestSupport.lang]
+        rule.onAllNodesWithTag("natureTag").assertCountEquals(nature.size)
     }
 
     @Test
@@ -58,7 +63,7 @@ class FrozenScreenTest {
         assertFalse(source.isPreviewing)
         // Une nouvelle image de la caméra ne change rien: l'aperçu est arrêté.
         assertFalse(source.emit { _, _ -> Srgb8.fromHex("#E02020") })
-        rule.onNodeWithTag("detailBase").assertTextEquals(TestSupport.name(BaseColor.BLUE))
+        rule.onNodeWithTag("detailBase").assertTextEquals(TestSupport.name(BaseColor.BLUE).uppercase())
         rule.onNodeWithTag("resume").performClick()
         rule.waitUntil { source.isPreviewing }
         rule.onNodeWithTag("freeze").assertIsDisplayed()
@@ -79,7 +84,7 @@ class FrozenScreenTest {
         listOf(0.10f to BaseColor.RED, 0.27f to BaseColor.GREEN, 0.42f to BaseColor.BLUE).forEach { (fy, expected) ->
             rule.onNodeWithTag("frozenImage").performTouchInput { click(Offset(width / 2f, height * fy)) }
             rule.waitForIdle()
-            rule.onNodeWithTag("detailBase").assertTextEquals(TestSupport.name(expected))
+            rule.onNodeWithTag("detailBase").assertTextEquals(TestSupport.name(expected).uppercase())
         }
     }
 

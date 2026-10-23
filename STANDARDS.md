@@ -74,6 +74,7 @@ rédigée naturellement, pas traduite mot à mot.
 | `surface` | `#3F4752` | panneaux, fond de fiche | 8,4:1 |
 | `surfaceRaised` | `#545D69` | boutons, puces | 6,0:1 |
 | `textOnSurface` | `#F4F2EC` | texte sur surfaces | — |
+| `textMuted` | `#D8DBDF` | étiquettes secondaires de la fiche | 6,8:1 sur `surface`, 4,8:1 sur `surfaceRaised` |
 | `reticle` | `#F4F2EC` contour + `#1F2328` contour intérieur | lisible sur toute image | — |
 
 - Texte posé **sur un aplat de couleur mesurée**: noir `#000000` ou blanc
@@ -83,6 +84,10 @@ rédigée naturellement, pas traduite mot à mot.
   contraste (ARCHITECTURE §3.7) protège ce choix.
 - Tailles: nom de base en direct ≥ 32 sp (cible 40 sp), nom de nuance ≥ 28 sp,
   texte de fiche ≥ 18 sp, boutons ≥ 48 dp de cible tactile.
+- Mouvement (fiche détaillée, ajouté à la demande de Naomi le 2026-10-23): la fiche entre en
+  glissant, le réticule glisse jusqu'au point touché, les aplats changent en fondu, les éléments
+  de la nature sont des étiquettes qui apparaissent en cascade. Animations courtes (≤ 400 ms),
+  sans dégradé ni ombre: le mouvement remplace la décoration.
 - Mise en page adaptative: portrait → bandeau d'info en bas; paysage → panneau à
   droite. La fiche ne couvre jamais le point visé sur l'image figée.
 
