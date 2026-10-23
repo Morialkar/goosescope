@@ -1,11 +1,13 @@
 [versions]
 agp = "9.4.1"
 kotlin = "2.4.21"
+kotlinxSerialization = "1.12.0"
 composeBom = "2026.09.00"
 activityCompose = "1.13.0"
 junit = "5.14.4"
 
 [libraries]
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerialization" }
 compose-bom = { module = "androidx.compose:compose-bom", version.ref = "composeBom" }
 compose-ui = { module = "androidx.compose.ui:ui" }
 compose-foundation = { module = "androidx.compose.foundation:foundation" }
@@ -18,3 +20,4 @@ junit-launcher = { module = "org.junit.platform:junit-platform-launcher" }
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }

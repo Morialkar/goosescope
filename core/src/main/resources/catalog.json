@@ -1,0 +1,116 @@
+{
+  "version": 1,
+  "bases": [
+    {
+      "id": "red",
+      "name": {
+        "en": "Red",
+        "fr": "Rouge"
+      },
+      "anchors": [
+        "#D62828"
+      ]
+    },
+    {
+      "id": "orange",
+      "name": {
+        "en": "Orange",
+        "fr": "Orange"
+      },
+      "anchors": [
+        "#F28C28"
+      ]
+    },
+    {
+      "id": "yellow",
+      "name": {
+        "en": "Yellow",
+        "fr": "Jaune"
+      },
+      "anchors": [
+        "#F5D300"
+      ]
+    },
+    {
+      "id": "green",
+      "name": {
+        "en": "Green",
+        "fr": "Vert"
+      },
+      "anchors": [
+        "#2E9E44"
+      ]
+    },
+    {
+      "id": "blue",
+      "name": {
+        "en": "Blue",
+        "fr": "Bleu"
+      },
+      "anchors": [
+        "#2F6FD6"
+      ]
+    },
+    {
+      "id": "purple",
+      "name": {
+        "en": "Purple",
+        "fr": "Violet"
+      },
+      "anchors": [
+        "#7B3FB5"
+      ]
+    },
+    {
+      "id": "pink",
+      "name": {
+        "en": "Pink",
+        "fr": "Rose"
+      },
+      "anchors": [
+        "#F49AC1"
+      ]
+    },
+    {
+      "id": "brown",
+      "name": {
+        "en": "Brown",
+        "fr": "Brun"
+      },
+      "anchors": [
+        "#7A4A23"
+      ]
+    },
+    {
+      "id": "gray",
+      "name": {
+        "en": "Gray",
+        "fr": "Gris"
+      },
+      "anchors": [
+        "#808080"
+      ]
+    },
+    {
+      "id": "black",
+      "name": {
+        "en": "Black",
+        "fr": "Noir"
+      },
+      "anchors": [
+        "#141414"
+      ]
+    },
+    {
+      "id": "white",
+      "name": {
+        "en": "White",
+        "fr": "Blanc"
+      },
+      "anchors": [
+        "#F5F5F5"
+      ]
+    }
+  ],
+  "shades": []
+}

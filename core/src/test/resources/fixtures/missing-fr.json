@@ -1,0 +1,194 @@
+{
+  "version": 1,
+  "bases": [
+    {
+      "id": "red",
+      "name": {
+        "en": "Red",
+        "fr": "Rouge"
+      },
+      "anchors": [
+        "#D62828"
+      ]
+    },
+    {
+      "id": "orange",
+      "name": {
+        "en": "Orange",
+        "fr": "Orange"
+      },
+      "anchors": [
+        "#F28C28"
+      ]
+    },
+    {
+      "id": "yellow",
+      "name": {
+        "en": "Yellow",
+        "fr": "Jaune"
+      },
+      "anchors": [
+        "#F5D300"
+      ]
+    },
+    {
+      "id": "green",
+      "name": {
+        "en": "Green",
+        "fr": "Vert"
+      },
+      "anchors": [
+        "#2E9E44"
+      ]
+    },
+    {
+      "id": "blue",
+      "name": {
+        "en": "Blue",
+        "fr": "Bleu"
+      },
+      "anchors": [
+        "#2F6FD6"
+      ]
+    },
+    {
+      "id": "purple",
+      "name": {
+        "en": "Purple",
+        "fr": "Violet"
+      },
+      "anchors": [
+        "#7B3FB5"
+      ]
+    },
+    {
+      "id": "pink",
+      "name": {
+        "en": "Pink",
+        "fr": "Rose"
+      },
+      "anchors": [
+        "#F49AC1"
+      ]
+    },
+    {
+      "id": "brown",
+      "name": {
+        "en": "Brown",
+        "fr": "Brun"
+      },
+      "anchors": [
+        "#7A4A23"
+      ]
+    },
+    {
+      "id": "gray",
+      "name": {
+        "en": "Gray",
+        "fr": "Gris"
+      },
+      "anchors": [
+        "#808080"
+      ]
+    },
+    {
+      "id": "black",
+      "name": {
+        "en": "Black",
+        "fr": "Noir"
+      },
+      "anchors": [
+        "#141414"
+      ]
+    },
+    {
+      "id": "white",
+      "name": {
+        "en": "White",
+        "fr": "Blanc"
+      },
+      "anchors": [
+        "#F5F5F5"
+      ]
+    }
+  ],
+  "shades": [
+    {
+      "id": "peach",
+      "base": "orange",
+      "ref": "#FFCBA4",
+      "name": {
+        "en": "Peach",
+        "fr": "Pêche"
+      },
+      "description": {
+        "en": "A test description for Peach.",
+        "fr": ""
+      },
+      "nature": {
+        "en": [
+          "thing 0",
+          "thing 1",
+          "thing 2"
+        ],
+        "fr": [
+          "chose 0",
+          "chose 1",
+          "chose 2"
+        ]
+      }
+    },
+    {
+      "id": "sky_blue",
+      "base": "blue",
+      "ref": "#87CEEB",
+      "name": {
+        "en": "Sky blue",
+        "fr": "Bleu ciel"
+      },
+      "description": {
+        "en": "A test description for Sky blue.",
+        "fr": "Une description de test pour Bleu ciel."
+      },
+      "nature": {
+        "en": [
+          "thing 0",
+          "thing 1",
+          "thing 2",
+          "thing 3"
+        ],
+        "fr": [
+          "chose 0",
+          "chose 1",
+          "chose 2",
+          "chose 3"
+        ]
+      }
+    },
+    {
+      "id": "forest_green",
+      "base": "green",
+      "ref": "#228B22",
+      "name": {
+        "en": "Forest green",
+        "fr": "Vert forêt"
+      },
+      "description": {
+        "en": "A test description for Forest green.",
+        "fr": "Une description de test pour Vert forêt."
+      },
+      "nature": {
+        "en": [
+          "thing 0",
+          "thing 1",
+          "thing 2"
+        ],
+        "fr": [
+          "chose 0",
+          "chose 1",
+          "chose 2"
+        ]
+      }
+    }
+  ]
+}
