@@ -69,6 +69,8 @@ dependencies {
     androidTestImplementation(libs.compose.ui.test.junit4)
     androidTestImplementation(libs.test.runner)
     androidTestImplementation(libs.test.ext.junit)
+    // Compose tire Espresso 3.5, qui plante sur API 37 (InputManager.getInstance retiré): l'émulateur en a besoin.
+    androidTestImplementation(libs.espresso.core)
     debugImplementation(libs.compose.ui.test.manifest)
 }
 

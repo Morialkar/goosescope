@@ -20,6 +20,7 @@ import com.morialkar.goosescope.core.sample.DarknessGate
 import com.morialkar.goosescope.core.sample.PixelGrid
 import com.morialkar.goosescope.core.sample.Point
 import com.morialkar.goosescope.core.sample.Sampler
+import com.morialkar.goosescope.core.smooth.ShadeStabilizer
 import com.morialkar.goosescope.core.smooth.Smoother
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -31,7 +32,7 @@ enum class FailureReason { CATALOG, CAMERA }
 sealed interface LiveReading {
     data object Warming : LiveReading
     data object TooDark : LiveReading
-    data class Color(val base: BaseColor, val swatch: Srgb8) : LiveReading
+    data class Color(val base: BaseColor, val shade: Shade, val swatch: Srgb8) : LiveReading
 }
 
 sealed interface Detail {
@@ -62,6 +63,7 @@ class ScopeViewModel(loadCatalog: () -> Catalog) : ViewModel() {
     private val classifier = catalog?.let { BaseClassifier(it) }
     private val matcher = catalog?.let { ShadeMatcher(it) }
     private val smoother = classifier?.let { Smoother(it) }
+    private val shadeStabilizer = matcher?.let { ShadeStabilizer(it) }
     private val gate = DarknessGate()
     private val freezeRequested = AtomicBoolean(false)
     private var frozenGrid: PixelGrid? = null
@@ -92,6 +94,7 @@ class ScopeViewModel(loadCatalog: () -> Catalog) : ViewModel() {
     fun retryCamera() {
         if (mutableState.value == ScopeState.Failure(FailureReason.CAMERA)) {
             smoother?.reset()
+        shadeStabilizer?.reset()
             mutableState.value = ScopeState.Live(LiveReading.Warming, torchOn = false)
         }
     }
@@ -108,10 +111,11 @@ class ScopeViewModel(loadCatalog: () -> Catalog) : ViewModel() {
         }
         val reading = if (gate.isTooDark(Sampler.meanLuminance(frame.grid))) {
             smoother?.reset()
+        shadeStabilizer?.reset()
             LiveReading.TooDark
         } else {
             val s = checkNotNull(smoother).push(ColorMath.toOklab(Sampler.sampleCenter(frame.grid)), frame.timestampMs)
-            LiveReading.Color(s.base, ColorMath.toSrgb8(s.color))
+            LiveReading.Color(s.base, checkNotNull(shadeStabilizer).update(s.color, s.base), ColorMath.toSrgb8(s.color))
         }
         mutableState.update { if (it is ScopeState.Live) ScopeState.Live(reading, live.torchOn) else it }
     }
@@ -143,6 +147,7 @@ class ScopeViewModel(loadCatalog: () -> Catalog) : ViewModel() {
         // Pas de recycle(): Compose peut encore dessiner l'image pendant la transition; le GC la libère.
         frozenGrid = null
         smoother?.reset()
+        shadeStabilizer?.reset()
         mutableState.value = ScopeState.Live(LiveReading.Warming, torchOn = false)
     }
 

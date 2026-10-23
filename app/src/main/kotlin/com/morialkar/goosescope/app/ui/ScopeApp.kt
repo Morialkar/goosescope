@@ -47,6 +47,7 @@ fun ScopeApp(
                     hasTorch = hasTorch,
                     source = source,
                     baseName = { viewModel.baseName(it, lang) },
+                    shadeName = { it.name[lang] },
                     onFrame = viewModel::onFrame,
                     onCameraError = { viewModel.onCameraError() },
                     onFreeze = viewModel::requestFreeze,

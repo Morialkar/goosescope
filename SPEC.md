@@ -227,3 +227,18 @@ Cette section est en vigueur; elle prime sur NG4 et sur la ligne « Distribution
   langues, sans script tiers ni requête vers un autre domaine que GitHub.
 - AC16. Un APK téléchargé depuis la page s'installe sur la tablette cible, et une
   version suivante s'installe par-dessus sans désinstaller.
+
+---
+
+## 12. Amendement — révision 4 (demandé et approuvé par Naomi le 2026-10-23)
+
+- AC14 réalisé: Naomi a validé les 122 fiches (version 1) le 2026-10-23.
+- Modifie F4: en mode direct, l'app affiche le nom de base **et** le nom de nuance, sur une
+  ligne, au format « Rouge — Écarlate ». Quand la nuance porte le même nom que la base
+  (« Rose », « Noir »…), seul le nom de base s'affiche.
+- F24. La nuance affichée en direct est stabilisée comme le nom de base (F5): elle ne change
+  que si une autre nuance de la même base devient nettement plus proche. Un changement de base
+  change la nuance immédiatement.
+- AC17. Caméra immobile sur une couleur à la frontière de deux nuances d'une même base → la
+  nuance affichée ne clignote pas (test unitaire sur séquence synthétique); en direct, le texte
+  affiché est « <base> — <nuance> » dans la langue de l'app (test instrumenté).

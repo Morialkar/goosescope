@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
@@ -35,6 +36,7 @@ fun LiveScreen(
     hasTorch: Boolean,
     source: FrameSource,
     baseName: (com.morialkar.goosescope.core.catalog.BaseColor) -> String,
+    shadeName: (com.morialkar.goosescope.core.catalog.Shade) -> String,
     onFrame: (Frame) -> Unit,
     onCameraError: (Throwable) -> Unit,
     onFreeze: () -> Unit,
@@ -48,7 +50,7 @@ fun LiveScreen(
             Reticle(Modifier.align(Alignment.Center).testTag("reticle"))
         }
         val panel = @Composable { modifier: Modifier ->
-            InfoPanel(reading, torchOn, hasTorch, baseName, onFreeze, onToggleTorch, onToggleLanguage, landscape, modifier)
+            InfoPanel(reading, torchOn, hasTorch, baseName, shadeName, onFreeze, onToggleTorch, onToggleLanguage, landscape, modifier)
         }
         if (landscape) {
             panel(Modifier.align(Alignment.CenterEnd).fillMaxHeight().width(340.dp))
@@ -64,6 +66,7 @@ private fun InfoPanel(
     torchOn: Boolean,
     hasTorch: Boolean,
     baseName: (com.morialkar.goosescope.core.catalog.BaseColor) -> String,
+    shadeName: (com.morialkar.goosescope.core.catalog.Shade) -> String,
     onFreeze: () -> Unit,
     onToggleTorch: () -> Unit,
     onToggleLanguage: () -> Unit,
@@ -80,7 +83,15 @@ private fun InfoPanel(
                 swatchModifier.background(reading.swatch.toColor(), RoundedCornerShape(Tokens.corner)).padding(16.dp).testTag("swatch"),
                 contentAlignment = Alignment.CenterStart,
             ) {
-                Label(baseName(reading.base), Tokens.baseNameSize, reading.swatch.textColor(), bold = true, modifier = Modifier.testTag("baseName"))
+                // SPEC révision 4: « Rouge — Écarlate »; la nuance est omise si elle porte le nom de la base.
+                val base = baseName(reading.base)
+                val shade = shadeName(reading.shade)
+                FlowRow(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                    Label(base, Tokens.baseNameSize, reading.swatch.textColor(), bold = true, modifier = Modifier.testTag("baseName"))
+                    if (!shade.equals(base, ignoreCase = true)) {
+                        Label("— $shade", Tokens.baseNameSize, reading.swatch.textColor(), modifier = Modifier.testTag("shadeName"))
+                    }
+                }
             }
             LiveReading.TooDark -> Column(
                 swatchModifier.background(Tokens.surfaceRaised, RoundedCornerShape(Tokens.corner)).padding(16.dp),

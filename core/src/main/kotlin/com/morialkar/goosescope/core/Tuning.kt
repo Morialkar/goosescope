@@ -24,6 +24,9 @@ object Tuning {
      */
     const val HYSTERESIS_DWELL_MS = 150L
 
+    /** Avance minimale, en distance OKLab, qu'une autre nuance doit prendre pour remplacer l'actuelle (SPEC F24). */
+    const val SHADE_HYSTERESIS_MARGIN = 0.01
+
     // Comparaison (§3.6).
     const val COMPARE_VERY_CLOSE = 0.02
     const val COMPARE_SLIGHT = 0.06

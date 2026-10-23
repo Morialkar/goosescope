@@ -45,6 +45,25 @@ class LiveScreenTest {
     }
 
     @Test
+    fun shows_base_and_shade_on_one_line() {
+        // AC17: « <base> — <nuance> » dans la langue de l'app.
+        val scarlet = TestSupport.catalog.shades.first { it.id == "scarlet" }
+        source.emitColor(scarlet.ref, times = 5)
+        rule.waitUntil { rule.onAllNodesWithTagExists("shadeName") }
+        rule.onNodeWithTag("baseName").assertTextEquals(TestSupport.name(BaseColor.RED))
+        rule.onNodeWithTag("shadeName").assertTextEquals("— " + scarlet.name[TestSupport.lang])
+    }
+
+    @Test
+    fun hides_the_shade_when_it_repeats_the_base_name() {
+        val pink = TestSupport.catalog.shades.first { it.id == "pink" }
+        source.emitColor(pink.ref, times = 5)
+        rule.waitUntil { rule.onAllNodesWithTagExists("baseName") }
+        rule.onNodeWithTag("baseName").assertTextEquals(TestSupport.name(BaseColor.PINK))
+        rule.onNodeWithTag("shadeName").assertDoesNotExist()
+    }
+
+    @Test
     fun says_too_dark_when_the_camera_is_covered() {
         source.emitColor(Srgb8(5, 5, 5), times = 3)
         rule.waitUntil { rule.onAllNodesWithTagExists("tooDark") }
