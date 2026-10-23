@@ -59,6 +59,18 @@ class BaseClassifierTest {
     }
 
     @Test
+    fun `muted purple fabric measured on the tablet is purple`() {
+        // T13, 2026-10-23: pixels réels d'un tissu violet sous éclairage intérieur.
+        listOf("#695086", "#5A4A6F", "#644B80", "#7A6A90").forEach { assertEquals(BaseColor.PURPLE, classify(it), it) }
+    }
+
+    @Test
+    fun `chroma gate keeps true neutrals neutral`() {
+        // Gris chauds et froids, sous le seuil de chroma: restent gris.
+        listOf("#8C8680", "#708090", "#808080").forEach { assertEquals(BaseColor.GRAY, classify(it), it) }
+    }
+
+    @Test
     fun `every base has between 3 and 10 anchors`() {
         catalog.bases.forEach { assertTrue(it.anchors.size in 3..10, "${it.color}: ${it.anchors.size} ancres") }
     }
@@ -68,6 +80,7 @@ class BaseClassifierTest {
         val c = ColorMath.toOklab(Srgb8.fromHex("#FFCBA4"))
         val match = classifier.classify(c)
         assertEquals(match.distance, classifier.distanceTo(match.base, c))
-        BaseColor.entries.forEach { assertTrue(classifier.distanceTo(it, c) >= match.distance) }
+        // La pêche est colorée: les neutres sont écartés par le seuil de chroma, même s'ils sont plus proches.
+        BaseColor.entries.filterNot { it.isNeutral }.forEach { assertTrue(classifier.distanceTo(it, c) >= match.distance) }
     }
 }

@@ -1,5 +1,6 @@
 package com.morialkar.goosescope.core.classify
 
+import com.morialkar.goosescope.core.Tuning
 import com.morialkar.goosescope.core.catalog.BaseColor
 import com.morialkar.goosescope.core.catalog.Catalog
 import com.morialkar.goosescope.core.color.ColorMath
@@ -16,7 +17,13 @@ class BaseClassifier(private val catalog: Catalog) {
     fun classify(c: Oklab): BaseMatch =
         catalog.bases.map { BaseMatch(it.color, distanceTo(it.color, c)) }.minBy { it.distance }
 
-    /** Distance à l'ancre la plus proche d'une base donnée; sert à l'hystérésis du lissage (§3.5). */
-    fun distanceTo(base: BaseColor, c: Oklab): Double =
-        catalog.base(base).anchors.minOf { ColorMath.distance(it.lab, c) }
+    /**
+     * Distance à l'ancre la plus proche d'une base donnée; sert aussi à l'hystérésis du lissage (§3.5).
+     * Une couleur nettement colorée n'est jamais un neutre: la distance à gris/noir/blanc est alors
+     * infinie, ce qui l'exclut aussi bien du classement que du maintien par le lissage.
+     */
+    fun distanceTo(base: BaseColor, c: Oklab): Double {
+        if (base.isNeutral && ColorMath.toOklch(c).c >= Tuning.NEUTRAL_MAX_CHROMA) return Double.POSITIVE_INFINITY
+        return catalog.base(base).anchors.minOf { ColorMath.distance(it.lab, c) }
+    }
 }

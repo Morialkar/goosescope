@@ -15,6 +15,14 @@ object Tuning {
     /** Poids de la nouvelle mesure dans la moyenne exponentielle OKLab (§3.5). */
     const val SMOOTHING_ALPHA = 0.35
 
+    /**
+     * Au-delà de ce chroma OKLab, une couleur ne peut plus être grise, noire ni blanche (ARCHITECTURE §3.2).
+     * Mesure terrain du 2026-10-23 (T13): un tissu violet terne (#695086, C = 0,089) sous éclairage
+     * intérieur était classé gris, parce que l'ancre grise la plus proche l'emportait en distance.
+     * Les références neutres du catalogue ont toutes C ≤ 0,04.
+     */
+    const val NEUTRAL_MAX_CHROMA = 0.06
+
     /** Avance minimale, en distance OKLab, qu'une autre base doit prendre pour remplacer l'actuelle (§3.5). */
     const val HYSTERESIS_MARGIN = 0.015
 

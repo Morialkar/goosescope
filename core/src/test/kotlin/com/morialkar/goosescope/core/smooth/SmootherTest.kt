@@ -68,6 +68,16 @@ class SmootherTest {
     }
 
     @Test
+    fun `a gray reading gives way to a muted purple`() {
+        // Le gris ne doit pas rester affiché par hystérésis quand la couleur devient nettement colorée.
+        val s = Smoother(classifier)
+        repeat(30) { i -> s.push(lab("#606060"), i * frameMs) }
+        var i = 0
+        while (s.push(lab("#695086"), (30 + i) * frameMs).base != BaseColor.PURPLE && i < 60) i++
+        assertTrue(i < 60, "toujours gris après 2 s")
+    }
+
+    @Test
     fun `reset forgets the previous color`() {
         val s = Smoother(classifier)
         repeat(10) { i -> s.push(lab("#1E90FF"), i * frameMs) }

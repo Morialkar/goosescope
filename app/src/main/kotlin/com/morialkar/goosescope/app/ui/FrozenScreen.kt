@@ -199,9 +199,8 @@ private fun DetailBody(detail: Detail.Color, lang: Lang, viewModel: ScopeViewMod
 
         Column(
             Modifier.fillMaxWidth().background(Tokens.surfaceRaised, RoundedCornerShape(Tokens.corner)).padding(14.dp),
-            verticalArrangement = Arrangement.spacedBy(4.dp),
         ) {
-            Label(stringResource(R.string.detail_compared, shadeName), Tokens.labelSize, color = Tokens.textMuted, bold = true)
+            // La phrase nomme déjà la nuance de référence: pas de titre qui la répète.
             Label(
                 ComparisonText.render(detail.facts, shadeName, lang) { viewModel.baseName(it, lang) },
                 modifier = Modifier.testTag("detailComparison"),
@@ -244,7 +243,8 @@ private fun NatureTag(text: String, color: Srgb8, index: Int, key: String) {
             .testTag("natureTag"),
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        Box(Modifier.size(12.dp).background(color.toColor(), CircleShape))
+        // Anneau clair: la pastille reste visible même quand la nuance est aussi sombre que l'étiquette.
+        Box(Modifier.size(14.dp).background(Tokens.textMuted, CircleShape).padding(1.5.dp).background(color.toColor(), CircleShape))
         Box(Modifier.width(8.dp))
         Label(text, Tokens.labelSize)
     }
