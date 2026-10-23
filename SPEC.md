@@ -256,3 +256,19 @@ Cette section est en vigueur; elle prime sur NG4 et sur la ligne « Distribution
 - AC18. Fiche réduite → la description n'est plus affichée, la barre montre base et nuance; un
   toucher dans la zone qu'occupait la fiche met la barre à jour; « Détails » rouvre la fiche;
   retour Android → mode direct (tests instrumentés).
+
+## 14. Amendement — révision 6 (demandé par Naomi le 2026-10-23)
+
+- F27. L'app propose une tuile de réglages rapides « Goosescope »: un appui ouvre directement le
+  mode direct.
+- F28. L'écran de Goosescope peut s'afficher par-dessus l'écran verrouillé, sans déverrouiller
+  (depuis la tuile ou un raccourci d'écran verrouillé). Le retour ramène à l'écran verrouillé.
+  `REQUIRES_REVIEW:` affichage sur l'écran verrouillé. Justification: l'app n'affiche aucune
+  donnée personnelle et n'enregistre rien (NG3); ce qui demande d'aller plus loin (paramètres
+  Android) reste soumis au déverrouillage par le système.
+- NG9. Pas de widget d'écran d'accueil ni d'écran verrouillé: un widget ne peut pas montrer la
+  caméra, et montrer la dernière couleur exigerait de l'enregistrer (NG3).
+- AC19. La tuile est déclarée avec la permission système des tuiles; un appui ouvre le mode
+  direct (vérifié par `cmd statusbar click-tile` sur la tablette).
+- AC20. Appareil verrouillé → appui sur la tuile → l'écran de Goosescope s'affiche sans
+  déverrouillage; retour → écran verrouillé (vérification manuelle sur la tablette).

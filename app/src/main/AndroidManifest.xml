@@ -28,13 +28,28 @@
         android:label="@string/app_name"
         android:localeConfig="@xml/locales_config"
         android:theme="@android:style/Theme.Material.NoActionBar">
+        <!-- REQUIRES_REVIEW: s'affiche par-dessus l'écran verrouillé (SPEC F28). L'app n'affiche aucune
+             donnée personnelle et n'enregistre rien; les paramètres Android restent derrière le déverrouillage. -->
         <activity
             android:name=".app.MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:showWhenLocked="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Tuile de réglages rapides (SPEC F27). Seul le système peut s'y lier. -->
+        <service
+            android:name=".app.GoosescopeTileService"
+            android:exported="true"
+            android:icon="@drawable/ic_tile"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
     </application>
 </manifest>
