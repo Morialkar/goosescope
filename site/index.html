@@ -32,8 +32,12 @@ h1 { font-size: clamp(36px, 7vw, 64px); line-height: 1.02; margin: 0 0 16px; let
 .cta { display: inline-flex; align-items: center; gap: 10px; background: var(--ink); color: var(--surface); font-weight: 800; text-decoration: none; padding: 14px 22px; border-radius: 12px; }
 .cta:focus-visible, .lang button:focus-visible, a:focus-visible { outline: 3px solid #8EA6FF; outline-offset: 3px; }
 .small { font-size: 15px; color: var(--muted); margin-top: 10px; }
-.shots { display: flex; gap: 16px; justify-content: center; }
-.shots img { width: 48%; max-width: 230px; border-radius: 18px; border: 1px solid var(--line); display: block; }
+.shots { display: flex; gap: 24px; justify-content: center; align-items: flex-start; }
+.shot { margin: 0; flex: 0 0 auto; width: min(230px, 44%); }
+/* Décalage vertical sur grand écran: les deux téléphones ne sont pas posés au garde-à-vous. */
+.shot + .shot { margin-top: 56px; }
+.shot img { width: 100%; height: auto; display: block; border-radius: 26px; border: 7px solid var(--raised); background: var(--raised); }
+.shot figcaption { margin-top: 12px; text-align: center; font-size: 15px; color: var(--muted); }
 section { padding-block: 40px; border-top: 1px solid var(--line); }
 h2 { font-size: 28px; margin: 0 0 20px; }
 .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
@@ -49,6 +53,16 @@ footer { padding-block: 32px 48px; color: var(--muted); font-size: 15px; border-
 @media (max-width: 760px) {
   .hero, .cols { grid-template-columns: 1fr; }
   .steps { grid-template-columns: 1fr; }
+  /* Sur téléphone: carrousel horizontal qui déborde jusqu'aux bords de l'écran. */
+  .shots {
+    justify-content: flex-start; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory;
+    margin-inline: calc(-1 * max(16px, env(safe-area-inset-left)));
+    padding-inline: max(16px, env(safe-area-inset-left)); padding-bottom: 8px;
+    scrollbar-width: none;
+  }
+  .shots::-webkit-scrollbar { display: none; }
+  .shot { width: 68vw; max-width: 290px; scroll-snap-align: center; }
+  .shot + .shot { margin-top: 0; }
 }
 </style>
 </head>
@@ -78,9 +92,15 @@ footer { padding-block: 32px 48px; color: var(--muted); font-size: 15px; border-
       <p class="small"><span data-l="en">Free · Android 13 or newer · No account</span><span data-l="fr">Gratuit · Android 13 ou plus récent · Aucun compte</span></p>
     </div>
     <div class="shots">
-      <img src="screenshots/live.png" width="480" height="1040" alt="Live camera view: the circle is on a checkerboard and the app says Gray.">
-      <img data-l="en" src="screenshots/detail-en.png" width="480" height="1040" alt="Frozen image: the app says Brown, then Coffee, with a description of how the shade feels.">
-      <img data-l="fr" src="screenshots/detail-fr.png" width="480" height="1040" alt="Image figée : l'app dit Brun, puis Café, avec une description de ce que la nuance fait ressentir.">
+      <figure class="shot">
+        <img src="screenshots/live.png" width="480" height="1040" alt="Live camera view: the circle is on a checkerboard and the app says Gray.">
+        <figcaption><span data-l="en">Live: point and read</span><span data-l="fr">En direct : vise et lis</span></figcaption>
+      </figure>
+      <figure class="shot">
+        <img data-l="en" src="screenshots/detail-en.png" width="480" height="1040" alt="Frozen image: the app says Brown, then Coffee, with a description of how the shade feels.">
+        <img data-l="fr" src="screenshots/detail-fr.png" width="480" height="1040" alt="Image figée : l'app dit Brun, puis Café, avec une description de ce que la nuance fait ressentir.">
+        <figcaption><span data-l="en">Frozen: the exact shade</span><span data-l="fr">Figée : la nuance exacte</span></figcaption>
+      </figure>
     </div>
   </div>
 
