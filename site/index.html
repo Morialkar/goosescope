@@ -51,6 +51,14 @@ h2 { font-size: 28px; margin: 0 0 20px; }
 ol.install { margin: 0; padding-left: 22px; color: var(--muted); }
 ol.install li { margin-bottom: 8px; }
 a { color: var(--ink); }
+.log { display: grid; gap: 16px; }
+.release { background: var(--raised); border-radius: 12px; padding: 18px 20px; }
+.release header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; margin-bottom: 8px; }
+.release h3 { margin: 0; font-size: 20px; }
+.release time { color: var(--muted); font-size: 15px; font-variant-numeric: tabular-nums; }
+.release .tag { font-size: 13px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; background: var(--ink); color: var(--surface); border-radius: 999px; padding: 2px 10px; }
+.release ul { margin: 0; padding-left: 20px; color: var(--muted); }
+.release li { margin-bottom: 6px; }
 footer { padding-block: 32px 48px; color: var(--muted); font-size: 15px; border-top: 1px solid var(--line); }
 [data-l]:not(.on) { display: none; }
 @media (max-width: 760px) {
@@ -92,7 +100,7 @@ footer { padding-block: 32px 48px; color: var(--muted); font-size: 15px; border-
       <a class="cta" href="https://github.com/Morialkar/goosescope/releases/latest/download/goosescope.apk">
         <span data-l="en">Download for Android</span><span data-l="fr">Télécharger pour Android</span>
       </a>
-      <p class="small"><span data-l="en">Free · Android 13 or newer · No account</span><span data-l="fr">Gratuit · Android 13 ou plus récent · Aucun compte</span></p>
+      <p class="small"><span data-l="en">Version 0.3.0 · Free · Android 13 or newer · No account · <a href="#changelog">What's new</a></span><span data-l="fr">Version 0.3.0 · Gratuit · Android 13 ou plus récent · Aucun compte · <a href="#changelog">Nouveautés</a></span></p>
     </div>
     <div class="shots">
       <figure class="shot">
@@ -137,6 +145,45 @@ footer { padding-block: 32px 48px; color: var(--muted); font-size: 15px; border-
         <li><span data-l="en">Open it. Android asks to allow installs from your browser or file app: allow it for this install.</span><span data-l="fr">Ouvre-le. Android demande d'autoriser les installations depuis ton navigateur ou ton gestionnaire de fichiers : autorise-le pour cette installation.</span></li>
         <li><span data-l="en">Open Goosescope and allow the camera.</span><span data-l="fr">Ouvre Goosescope et autorise la caméra.</span></li>
       </ol>
+    </div>
+  </section>
+
+  <section id="changelog">
+    <h2><span data-l="en">What's new</span><span data-l="fr">Nouveautés</span></h2>
+    <div class="log">
+      <article class="release">
+        <header>
+          <h3>0.3.0</h3>
+          <span class="tag"><span data-l="en">Latest</span><span data-l="fr">Dernière</span></span>
+          <time datetime="2026-10-23">2026-10-23</time>
+        </header>
+        <ul>
+          <li><span data-l="en">New app icon: a flat white goose whose eye is the app's aiming circle. Its colors were checked under simulated red-blind, green-blind and blue-blind vision, so the beak never blends into the background.</span><span data-l="fr">Nouvelle icône : une oie blanche dessinée à plat, dont l'œil est le cercle de visée de l'app. Ses couleurs ont été vérifiées en simulant les visions protan, deutan et tritan : le bec ne se fond jamais dans le fond.</span></li>
+          <li><span data-l="en">Single-color version of the icon for Android themed icons.</span><span data-l="fr">Version d'une seule couleur de l'icône pour les icônes à thème d'Android.</span></li>
+        </ul>
+      </article>
+      <article class="release">
+        <header>
+          <h3>0.2.0</h3>
+          <time datetime="2026-10-23">2026-10-23</time>
+        </header>
+        <ul>
+          <li><span data-l="en">On a frozen image, hide the detail sheet to see the whole picture and tap another spot. A compact bar keeps showing the color and its shade; “Details” opens the sheet again.</span><span data-l="fr">Sur une image figée, masque la fiche pour voir toute l'image et toucher un autre endroit. Une barre compacte continue d'afficher la couleur et sa nuance ; « Détails » rouvre la fiche.</span></li>
+          <li><span data-l="en">Android's back button on a frozen image returns to the camera.</span><span data-l="fr">Le bouton retour d'Android sur une image figée ramène à la caméra.</span></li>
+        </ul>
+      </article>
+      <article class="release">
+        <header>
+          <h3>0.1.0</h3>
+          <time datetime="2026-10-23">2026-10-23</time>
+        </header>
+        <ul>
+          <li><span data-l="en">First version. Point the camera: one of 11 simple color names appears in big letters with the closest shade, like “Red — Scarlet”, steady even when your hand moves.</span><span data-l="fr">Première version. Pointe la caméra : un des 11 noms de couleur simples s'affiche en grand avec la nuance la plus proche, par exemple « Rouge — Écarlate », stable même si la main bouge.</span></li>
+          <li><span data-l="en">Freeze the image to learn about the exact shade among 122: what it feels like, how the color you aimed at compares, and where it shows up in nature.</span><span data-l="fr">Fige l'image pour découvrir la nuance exacte parmi 122 : ce qu'elle fait ressentir, comment la couleur visée s'y compare et où on la trouve dans la nature.</span></li>
+          <li><span data-l="en">Tells you when it's too dark to name a color, with a light button where the device has one.</span><span data-l="fr">Indique quand il fait trop sombre pour nommer une couleur, avec un bouton de lampe si l'appareil en a une.</span></li>
+          <li><span data-l="en">English and French, switchable in the app. Fully offline: the camera is the only permission, nothing is saved or sent.</span><span data-l="fr">Anglais et français, au choix dans l'app. Entièrement hors ligne : la caméra est la seule permission, rien n'est enregistré ni envoyé.</span></li>
+        </ul>
+      </article>
     </div>
   </section>
 </main>
