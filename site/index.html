@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Goosescope</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="description" content="Point your phone's camera at something and Goosescope tells you its color. Offline, for colorblind people.">
 <style>
 /* Mêmes jetons que l'app (STANDARDS §4): aplats, tons moyens, aucune ressource externe (AC15). */
@@ -20,7 +22,8 @@ html { background: var(--surface); }
 body { margin: 0; color: var(--ink); font: 18px/1.55 var(--font); }
 .wrap { max-width: 1040px; margin: 0 auto; padding-inline: max(16px, env(safe-area-inset-left)); }
 header.top { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-block: 16px; }
-.brand { font-weight: 800; font-size: 20px; letter-spacing: .01em; }
+.brand { font-weight: 800; font-size: 20px; letter-spacing: .01em; display: flex; align-items: center; gap: 10px; }
+.brand img { width: 36px; height: 36px; border-radius: 10px; }
 .lang { display: flex; gap: 6px; }
 .lang button { font: 700 14px var(--font); color: var(--ink); background: transparent; border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; cursor: pointer; }
 .lang button[aria-pressed="true"] { background: var(--ink); color: var(--surface); border-color: var(--ink); }
@@ -68,7 +71,7 @@ footer { padding-block: 32px 48px; color: var(--muted); font-size: 15px; border-
 </head>
 <body>
 <header class="top wrap">
-  <div class="brand">Goosescope</div>
+  <div class="brand"><img src="icon-512.png" width="36" height="36" alt="">Goosescope</div>
   <div class="lang" role="group" aria-label="Language / Langue">
     <button type="button" data-set="en" aria-pressed="true">English</button>
     <button type="button" data-set="fr" aria-pressed="false">Français</button>
