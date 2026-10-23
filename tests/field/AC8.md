@@ -11,4 +11,11 @@
   logiciel; la mesure qui fait foi pour NF7 est celle de la tablette, AC1).
 - Limite observée: une image figée en portrait puis affichée en paysage est rognée en haut et en
   bas; le point visé peut sortir de la zone visible (le réticule disparaît). Backlog.
+- 2026-10-23 (après révision 4 et fiche animée): `live-portrait-en.png` (« Gray — Charcoal »),
+  `frozen-portrait-en.png`, `frozen-portrait-fr.png` refaites. Corrigés au passage: fiche coupée au
+  milieu de la comparaison sur téléphone (hauteur 62 %, bandeau 112 dp, indication déplacée dans la
+  zone qui défile), marge de barre d'état inutile au-dessus de la fiche, fiche qui changeait de côté
+  en paysage au moment de figer.
+- Tablette, tissu violet réel: direct « Purple — Plum », figé « Purple → Plum », toucher plus bas
+  « Purple → Grape ».
 - **En attente**: validation de Naomi contre le prompt de style.

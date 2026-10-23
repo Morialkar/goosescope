@@ -29,7 +29,12 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.safeDrawingPadding
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.WindowInsetsSides
+import androidx.compose.foundation.layout.only
+import androidx.compose.foundation.layout.plus
+import androidx.compose.foundation.layout.safeDrawing
+import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
@@ -100,13 +105,17 @@ fun FrozenScreen(state: ScopeState.Frozen, lang: Lang, viewModel: ScopeViewModel
         // La fiche entre en glissant, et ne couvre jamais le point visé (STANDARDS §4).
         val entered = remember { MutableTransitionState(false).apply { targetState = true } }
         if (landscape) {
-            val onRight = tx < viewW / 2f
+            // Même marge qu'en portrait: au centre, la fiche reste du même côté que le panneau du direct.
+            val onRight = tx < viewW * 0.55f
             AnimatedVisibility(
                 entered,
                 Modifier.align(if (onRight) Alignment.CenterEnd else Alignment.CenterStart),
                 enter = fadeIn(tween(220)) + slideInVertically(tween(320)) { it / 6 },
             ) {
-                DetailSheet(state.detail, lang, viewModel, Modifier.fillMaxHeight().width(400.dp))
+                DetailSheet(
+                    state.detail, lang, viewModel, Modifier.fillMaxHeight().width(400.dp),
+                    WindowInsetsSides.Vertical + if (onRight) WindowInsetsSides.End else WindowInsetsSides.Start,
+                )
             }
         } else {
             // Marge autour du centre: au départ le point visé est au centre et la fiche reste en bas.
@@ -116,16 +125,20 @@ fun FrozenScreen(state: ScopeState.Frozen, lang: Lang, viewModel: ScopeViewModel
                 Modifier.align(if (atBottom) Alignment.BottomCenter else Alignment.TopCenter),
                 enter = fadeIn(tween(220)) + slideInVertically(tween(320)) { if (atBottom) it / 3 else -it / 3 },
             ) {
-                DetailSheet(state.detail, lang, viewModel, Modifier.fillMaxWidth().heightIn(max = maxHeight * 0.55f))
+                DetailSheet(
+                    state.detail, lang, viewModel, Modifier.fillMaxWidth().heightIn(max = maxHeight * 0.62f),
+                    WindowInsetsSides.Horizontal + if (atBottom) WindowInsetsSides.Bottom else WindowInsetsSides.Top,
+                )
             }
         }
     }
 }
 
 @Composable
-private fun DetailSheet(detail: Detail, lang: Lang, viewModel: ScopeViewModel, modifier: Modifier) {
+private fun DetailSheet(detail: Detail, lang: Lang, viewModel: ScopeViewModel, modifier: Modifier, edges: WindowInsetsSides) {
+    // Marges système seulement du côté où la fiche touche le bord de l'écran.
     Column(
-        modifier.background(Tokens.surface).safeDrawingPadding().padding(16.dp).testTag("detail"),
+        modifier.background(Tokens.surface).windowInsetsPadding(WindowInsets.safeDrawing.only(edges)).padding(16.dp).testTag("detail"),
         verticalArrangement = Arrangement.spacedBy(14.dp),
     ) {
         when (detail) {
@@ -150,12 +163,10 @@ private fun DetailSheet(detail: Detail, lang: Lang, viewModel: ScopeViewModel, m
                     ) { d ->
                         DetailBody(d, lang, viewModel)
                     }
+                    // Dans la zone qui défile: sur un téléphone, seul le bouton reste fixe en bas.
+                    Label(stringResource(R.string.detail_tap_hint), Tokens.labelSize, color = Tokens.textMuted)
                 }
             }
-        }
-        // Image entière trop sombre: viser ailleurs ne changerait rien, on ne le propose pas.
-        if (detail is Detail.Color) {
-            Label(stringResource(R.string.detail_tap_hint), Tokens.labelSize, color = Tokens.textMuted)
         }
         FlatButton(stringResource(R.string.resume), viewModel::resume, Modifier.fillMaxWidth().testTag("resume"))
     }
@@ -169,7 +180,7 @@ private fun DetailSheet(detail: Detail, lang: Lang, viewModel: ScopeViewModel, m
 private fun ColorHeader(detail: Detail.Color, baseName: String, shadeName: String) {
     val measured by animateColorAsState(detail.measured.toColor(), tween(380), label = "measured")
     val reference by animateColorAsState(detail.shade.ref.toColor(), tween(380), label = "reference")
-    Row(Modifier.fillMaxWidth().height(132.dp).clip(RoundedCornerShape(16.dp))) {
+    Row(Modifier.fillMaxWidth().height(112.dp).clip(RoundedCornerShape(16.dp))) {
         Column(
             Modifier.weight(0.7f).fillMaxHeight().background(measured).padding(16.dp),
             verticalArrangement = Arrangement.SpaceBetween,
