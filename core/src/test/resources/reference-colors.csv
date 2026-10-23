@@ -1,0 +1,95 @@
+hex,expected,kind,source
+#FF0000,red,typical,pure red
+#DC143C,red,typical,crimson
+#B22222,red,typical,firebrick
+#C0392B,red,typical,flat red
+#E53935,red,typical,material red
+#8B0000,red,typical,dark red
+#CD5C5C,red,typical,indian red
+#FFA500,orange,typical,orange
+#FF8C00,orange,typical,dark orange
+#E67E22,orange,typical,carrot
+#FF6600,orange,typical,safety orange
+#FF7F50,orange,typical,coral
+#FFB347,orange,typical,pastel orange
+#FFFF00,yellow,typical,pure yellow
+#FFD700,yellow,typical,gold
+#FFEB3B,yellow,typical,material yellow
+#FFF176,yellow,typical,light yellow
+#F0E68C,yellow,typical,khaki
+#E1C340,yellow,typical,mustard light
+#008000,green,typical,green
+#00FF00,green,typical,lime
+#228B22,green,typical,forest green
+#32CD32,green,typical,lime green
+#6B8E23,green,typical,olive drab
+#90EE90,green,typical,light green
+#2E8B57,green,typical,sea green
+#006400,green,typical,dark green
+#7FFF00,green,typical,chartreuse
+#0000FF,blue,typical,pure blue
+#1E90FF,blue,typical,dodger blue
+#4169E1,blue,typical,royal blue
+#87CEEB,blue,typical,sky blue
+#000080,blue,typical,navy
+#4682B4,blue,typical,steel blue
+#00BFFF,blue,typical,deep sky blue
+#ADD8E6,blue,typical,light blue
+#800080,purple,typical,purple
+#8A2BE2,purple,typical,blue violet
+#9370DB,purple,typical,medium purple
+#4B0082,purple,typical,indigo
+#663399,purple,typical,rebecca purple
+#B57EDC,purple,typical,lavender purple
+#FFC0CB,pink,typical,pink
+#FF69B4,pink,typical,hot pink
+#FF1493,pink,typical,deep pink
+#DB7093,pink,typical,pale violet red
+#FFB6C1,pink,typical,light pink
+#C71585,pink,typical,medium violet red
+#8B4513,brown,typical,saddle brown
+#A0522D,brown,typical,sienna
+#964B00,brown,typical,brown
+#5C4033,brown,typical,dark brown
+#C19A6B,brown,typical,camel
+#D2B48C,brown,typical,tan
+#A52A2A,brown,typical,css brown
+#808080,gray,typical,gray
+#A9A9A9,gray,typical,dark gray
+#696969,gray,typical,dim gray
+#C0C0C0,gray,typical,silver
+#4A4A4A,gray,typical,charcoal light
+#000000,black,typical,black
+#141414,black,typical,near black
+#1C1C1C,black,typical,eerie black
+#FFFFFF,white,typical,white
+#F5F5F5,white,typical,white smoke
+#F8F8FF,white,typical,ghost white
+#FFFAF0,white,typical,floral white
+#808000,green,frontier,olive: green or brown -> green
+#008080,blue,frontier,teal: green or blue -> blue
+#40E0D0,blue,frontier,turquoise: green or blue -> blue
+#D2691E,brown,frontier,chocolate: orange or brown -> brown
+#800000,red,frontier,maroon: red or brown -> red
+#FFFACD,yellow,frontier,lemon chiffon: yellow or white -> yellow
+#E6E6FA,purple,frontier,lavender: purple or white -> purple
+#FF00FF,pink,frontier,magenta: pink or purple -> pink
+#DA70D6,purple,frontier,orchid: purple or pink -> purple
+#EE82EE,purple,frontier,violet: purple or pink -> purple
+#708090,gray,frontier,slate gray: gray or blue -> gray
+#2B2B2B,black,frontier,very dark gray: gray or black -> black
+#3B2A1A,brown,frontier,very dark brown: brown or black -> brown
+#F5F5DC,white,frontier,beige: white or brown -> white
+#FFFFF0,white,frontier,ivory: white or yellow -> white
+#DAA520,yellow,frontier,goldenrod: yellow or orange -> yellow
+#CC7722,orange,frontier,ochre: orange or brown -> orange
+#BC8F8F,pink,frontier,rosy brown: pink or brown -> pink
+#D3D3D3,gray,frontier,light gray: gray or white -> gray
+#191970,blue,frontier,midnight blue: blue or black -> blue
+#5F9EA0,blue,frontier,cadet blue: blue or gray -> blue
+#9ACD32,green,frontier,yellow green: green or yellow -> green
+#E9967A,orange,frontier,dark salmon: orange or pink -> orange
+#FA8072,pink,frontier,salmon: pink or orange -> pink
+#B8860B,yellow,frontier,dark goldenrod: yellow or brown -> yellow
+#556B2F,green,frontier,dark olive green: green or brown -> green
+#2F4F4F,gray,frontier,dark slate gray: gray or green -> gray
