@@ -64,7 +64,7 @@
         "#50B080",
         "#6E8B1E",
         "#B0E890",
-        "#00E040",
+        "#9CB088",
         "#4E6B2A"
       ]
     },
@@ -114,6 +114,7 @@
         "#FF80B0",
         "#F0509A",
         "#FFB0C8",
+        "#FFD0E2",
         "#D03070",
         "#E890B0",
         "#FF40C0",
@@ -136,7 +137,8 @@
         "#D8B888",
         "#9A3A2A",
         "#7A5A3A",
-        "#B8601E"
+        "#B8601E",
+        "#8A7258"
       ]
     },
     {
@@ -181,5 +183,3058 @@
       ]
     }
   ],
-  "shades": []
+  "shades": [
+    {
+      "id": "scarlet",
+      "base": "red",
+      "ref": "#E8261C",
+      "name": {
+        "en": "Scarlet",
+        "fr": "Écarlate"
+      },
+      "description": {
+        "en": "A loud, full red with a hint of orange, like a fire truck or a ripe tomato. It grabs attention instantly.",
+        "fr": "Un rouge franc et éclatant, avec une pointe d'orange, comme un camion de pompiers ou une tomate bien mûre. Il attire l'œil tout de suite."
+      },
+      "nature": {
+        "en": [
+          "ripe tomato",
+          "cardinal bird",
+          "wild strawberry",
+          "poppy petals"
+        ],
+        "fr": [
+          "tomate mûre",
+          "cardinal rouge",
+          "fraise des bois",
+          "pétales de coquelicot"
+        ]
+      }
+    },
+    {
+      "id": "cherry_red",
+      "base": "red",
+      "ref": "#C8102E",
+      "name": {
+        "en": "Cherry red",
+        "fr": "Rouge cerise"
+      },
+      "description": {
+        "en": "A deep, juicy red with a slight cool edge, like a glossy cherry. Rich without being dark.",
+        "fr": "Un rouge profond et juteux, légèrement froid, comme une cerise brillante. Riche sans être sombre."
+      },
+      "nature": {
+        "en": [
+          "sweet cherries",
+          "red currants",
+          "pomegranate seeds"
+        ],
+        "fr": [
+          "cerises",
+          "groseilles",
+          "grains de grenade"
+        ]
+      }
+    },
+    {
+      "id": "crimson",
+      "base": "red",
+      "ref": "#B0122A",
+      "name": {
+        "en": "Crimson",
+        "fr": "Cramoisi"
+      },
+      "description": {
+        "en": "A strong red leaning slightly toward purple, serious and dramatic, like a velvet theater curtain.",
+        "fr": "Un rouge intense qui tire légèrement vers le violet, sérieux et théâtral, comme un rideau de velours."
+      },
+      "nature": {
+        "en": [
+          "red rose",
+          "raspberry",
+          "autumn sumac leaves"
+        ],
+        "fr": [
+          "rose rouge",
+          "framboise",
+          "feuilles de sumac en automne"
+        ]
+      }
+    },
+    {
+      "id": "blood_red",
+      "base": "red",
+      "ref": "#8A0A12",
+      "name": {
+        "en": "Blood red",
+        "fr": "Rouge sang"
+      },
+      "description": {
+        "en": "A dark, heavy red, almost brown in low light. It feels intense and grave.",
+        "fr": "Un rouge sombre et lourd, presque brun dans la pénombre. Il paraît intense et grave."
+      },
+      "nature": {
+        "en": [
+          "dark cherries",
+          "beetroot juice",
+          "red garnet stone"
+        ],
+        "fr": [
+          "cerises noires",
+          "jus de betterave",
+          "grenat"
+        ]
+      }
+    },
+    {
+      "id": "burgundy",
+      "base": "red",
+      "ref": "#7A1A2C",
+      "name": {
+        "en": "Burgundy",
+        "fr": "Bordeaux"
+      },
+      "description": {
+        "en": "A deep wine red with a purple undertone, calm and elegant, like a glass of red wine held to the light.",
+        "fr": "Un rouge vin profond aux reflets violets, calme et élégant, comme un verre de vin rouge à la lumière."
+      },
+      "nature": {
+        "en": [
+          "red wine grapes",
+          "beet",
+          "dark plum skin"
+        ],
+        "fr": [
+          "raisins de vin rouge",
+          "betterave",
+          "peau de prune foncée"
+        ]
+      }
+    },
+    {
+      "id": "brick_red",
+      "base": "red",
+      "ref": "#B03428",
+      "name": {
+        "en": "Brick red",
+        "fr": "Rouge brique"
+      },
+      "description": {
+        "en": "A dusty, earthy red with brown in it, like old bricks warmed by the sun. Warm and solid.",
+        "fr": "Un rouge poussiéreux et terreux, un peu brun, comme de vieilles briques chauffées au soleil. Chaleureux et solide."
+      },
+      "nature": {
+        "en": [
+          "red clay",
+          "canyon rock",
+          "rose hips"
+        ],
+        "fr": [
+          "argile rouge",
+          "roche de canyon",
+          "cynorhodons"
+        ]
+      }
+    },
+    {
+      "id": "tomato_red",
+      "base": "red",
+      "ref": "#F04A32",
+      "name": {
+        "en": "Tomato",
+        "fr": "Tomate"
+      },
+      "description": {
+        "en": "A bright, warm red with orange in it, cheerful and appetizing, like a sliced tomato.",
+        "fr": "Un rouge vif et chaud, teinté d'orange, joyeux et appétissant, comme une tomate tranchée."
+      },
+      "nature": {
+        "en": [
+          "tomatoes",
+          "red bell pepper",
+          "ladybug"
+        ],
+        "fr": [
+          "tomates",
+          "poivron rouge",
+          "coccinelle"
+        ]
+      }
+    },
+    {
+      "id": "vermilion",
+      "base": "red",
+      "ref": "#E0391E",
+      "name": {
+        "en": "Vermilion",
+        "fr": "Vermillon"
+      },
+      "description": {
+        "en": "A vivid red-orange, the red of lacquered boxes and old temple gates. Lively and warm.",
+        "fr": "Un rouge orangé éclatant, celui des boîtes laquées et des portes de vieux temples. Vif et chaud."
+      },
+      "nature": {
+        "en": [
+          "red chili peppers",
+          "scarlet tanager",
+          "red maple in fall"
+        ],
+        "fr": [
+          "piments rouges",
+          "tangara écarlate",
+          "érable rouge en automne"
+        ]
+      }
+    },
+    {
+      "id": "raspberry_red",
+      "base": "red",
+      "ref": "#C0204A",
+      "name": {
+        "en": "Raspberry",
+        "fr": "Framboise"
+      },
+      "description": {
+        "en": "A juicy red with a pink-purple tint, sweet and fresh, between red and deep pink.",
+        "fr": "Un rouge juteux teinté de rose et de violet, doux et frais, entre le rouge et le rose foncé."
+      },
+      "nature": {
+        "en": [
+          "raspberries",
+          "cranberries",
+          "red clover"
+        ],
+        "fr": [
+          "framboises",
+          "canneberges",
+          "trèfle rouge"
+        ]
+      }
+    },
+    {
+      "id": "ruby",
+      "base": "red",
+      "ref": "#9E1030",
+      "name": {
+        "en": "Ruby",
+        "fr": "Rubis"
+      },
+      "description": {
+        "en": "A deep, glowing red with a touch of purple, like a gemstone catching light.",
+        "fr": "Un rouge profond et lumineux avec une touche de violet, comme une pierre précieuse qui accroche la lumière."
+      },
+      "nature": {
+        "en": [
+          "ruby gemstone",
+          "pomegranate",
+          "cranberry juice"
+        ],
+        "fr": [
+          "rubis",
+          "grenade",
+          "jus de canneberge"
+        ]
+      }
+    },
+    {
+      "id": "indian_red",
+      "base": "red",
+      "ref": "#C8504E",
+      "name": {
+        "en": "Faded red",
+        "fr": "Rouge passé"
+      },
+      "description": {
+        "en": "A soft, muted red, like a red shirt washed many times. Gentle and warm, not loud.",
+        "fr": "Un rouge doux et adouci, comme un chandail rouge lavé souvent. Tendre et chaud, pas criard."
+      },
+      "nature": {
+        "en": [
+          "dried rose petals",
+          "red apple skin in shade",
+          "terracotta flower"
+        ],
+        "fr": [
+          "pétales de rose séchés",
+          "peau de pomme rouge à l'ombre",
+          "fleur de terre cuite"
+        ]
+      }
+    },
+    {
+      "id": "maroon",
+      "base": "red",
+      "ref": "#7A1418",
+      "name": {
+        "en": "Maroon",
+        "fr": "Rouge marron"
+      },
+      "description": {
+        "en": "A very dark red, close to brown, quiet and serious, like dried cherries or old leather.",
+        "fr": "Un rouge très sombre, proche du brun, discret et sérieux, comme des cerises séchées ou un vieux cuir."
+      },
+      "nature": {
+        "en": [
+          "dried cherries",
+          "dark red apple",
+          "chestnut skin"
+        ],
+        "fr": [
+          "cerises séchées",
+          "pomme rouge foncé",
+          "peau de châtaigne"
+        ]
+      }
+    },
+    {
+      "id": "pure_orange",
+      "base": "orange",
+      "ref": "#FF8A00",
+      "name": {
+        "en": "Orange",
+        "fr": "Orange vif"
+      },
+      "description": {
+        "en": "A bright, juicy orange, energetic and warm, exactly like the fruit.",
+        "fr": "Un orange vif et juteux, énergique et chaleureux, exactement comme le fruit."
+      },
+      "nature": {
+        "en": [
+          "oranges",
+          "marigolds",
+          "monarch butterfly"
+        ],
+        "fr": [
+          "oranges",
+          "soucis",
+          "papillon monarque"
+        ]
+      }
+    },
+    {
+      "id": "tangerine",
+      "base": "orange",
+      "ref": "#F57C1F",
+      "name": {
+        "en": "Tangerine",
+        "fr": "Mandarine"
+      },
+      "description": {
+        "en": "A lively orange with a touch of red, sweet and sunny, like a peeled tangerine.",
+        "fr": "Un orange vivant avec une touche de rouge, doux et ensoleillé, comme une mandarine pelée."
+      },
+      "nature": {
+        "en": [
+          "tangerines",
+          "koi fish",
+          "orange lily"
+        ],
+        "fr": [
+          "mandarines",
+          "carpe koï",
+          "lys orange"
+        ]
+      }
+    },
+    {
+      "id": "pumpkin",
+      "base": "orange",
+      "ref": "#E8701A",
+      "name": {
+        "en": "Pumpkin",
+        "fr": "Citrouille"
+      },
+      "description": {
+        "en": "A deep, warm orange, a bit earthy, like a pumpkin in a fall field.",
+        "fr": "Un orange profond et chaud, un peu terreux, comme une citrouille dans un champ d'automne."
+      },
+      "nature": {
+        "en": [
+          "pumpkin",
+          "butternut squash flesh",
+          "fox fur"
+        ],
+        "fr": [
+          "citrouille",
+          "chair de courge musquée",
+          "pelage de renard"
+        ]
+      }
+    },
+    {
+      "id": "carrot",
+      "base": "orange",
+      "ref": "#ED7724",
+      "name": {
+        "en": "Carrot",
+        "fr": "Carotte"
+      },
+      "description": {
+        "en": "A crisp, bright orange, fresh and crunchy-feeling, like a freshly pulled carrot.",
+        "fr": "Un orange net et vif, frais et croquant, comme une carotte tout juste arrachée."
+      },
+      "nature": {
+        "en": [
+          "carrots",
+          "orange tulips",
+          "clownfish"
+        ],
+        "fr": [
+          "carottes",
+          "tulipes orange",
+          "poisson-clown"
+        ]
+      }
+    },
+    {
+      "id": "apricot",
+      "base": "orange",
+      "ref": "#FBB37A",
+      "name": {
+        "en": "Apricot",
+        "fr": "Abricot"
+      },
+      "description": {
+        "en": "A soft, warm orange with a creamy feel, gentle like the skin of a ripe apricot.",
+        "fr": "Un orange doux et chaud, crémeux, tendre comme la peau d'un abricot mûr."
+      },
+      "nature": {
+        "en": [
+          "apricots",
+          "cantaloupe flesh",
+          "sunset clouds"
+        ],
+        "fr": [
+          "abricots",
+          "chair de cantaloup",
+          "nuages au coucher du soleil"
+        ]
+      }
+    },
+    {
+      "id": "peach",
+      "base": "orange",
+      "ref": "#FFC8A0",
+      "name": {
+        "en": "Peach",
+        "fr": "Pêche"
+      },
+      "description": {
+        "en": "A pale, soft orange that looks like the skin of a ripe peach. Gentle, warm and a little fuzzy-feeling.",
+        "fr": "Un orange pâle et doux qui ressemble à la peau d'une pêche mûre. Tendre, chaud, presque velouté."
+      },
+      "nature": {
+        "en": [
+          "ripe peach skin",
+          "apricot flesh",
+          "dawn sky"
+        ],
+        "fr": [
+          "peau de pêche mûre",
+          "chair d'abricot",
+          "ciel à l'aube"
+        ]
+      }
+    },
+    {
+      "id": "coral",
+      "base": "orange",
+      "ref": "#FF7F50",
+      "name": {
+        "en": "Coral",
+        "fr": "Corail"
+      },
+      "description": {
+        "en": "A warm orange with pink in it, lively and tropical, like coral in shallow water.",
+        "fr": "Un orange chaud teinté de rose, vivant et tropical, comme du corail en eau peu profonde."
+      },
+      "nature": {
+        "en": [
+          "coral reef",
+          "salmon flesh",
+          "hibiscus"
+        ],
+        "fr": [
+          "récif de corail",
+          "chair de saumon",
+          "hibiscus"
+        ]
+      }
+    },
+    {
+      "id": "amber",
+      "base": "orange",
+      "ref": "#F59A1A",
+      "name": {
+        "en": "Amber",
+        "fr": "Ambre"
+      },
+      "description": {
+        "en": "A golden orange that glows, like honey or tree resin with the sun behind it.",
+        "fr": "Un orange doré et lumineux, comme du miel ou de la résine d'arbre éclairée par le soleil."
+      },
+      "nature": {
+        "en": [
+          "amber resin",
+          "dark honey",
+          "autumn birch leaves"
+        ],
+        "fr": [
+          "résine d'ambre",
+          "miel foncé",
+          "feuilles de bouleau en automne"
+        ]
+      }
+    },
+    {
+      "id": "burnt_orange",
+      "base": "orange",
+      "ref": "#DA6418",
+      "name": {
+        "en": "Burnt orange",
+        "fr": "Orange brûlé"
+      },
+      "description": {
+        "en": "A deep orange with brown in it, cozy and autumnal, like fallen leaves and spices.",
+        "fr": "Un orange profond mêlé de brun, douillet et automnal, comme des feuilles mortes et des épices."
+      },
+      "nature": {
+        "en": [
+          "fallen maple leaves",
+          "paprika",
+          "red fox"
+        ],
+        "fr": [
+          "feuilles d'érable tombées",
+          "paprika",
+          "renard roux"
+        ]
+      }
+    },
+    {
+      "id": "mango",
+      "base": "orange",
+      "ref": "#FFA62B",
+      "name": {
+        "en": "Mango",
+        "fr": "Mangue"
+      },
+      "description": {
+        "en": "A sunny yellow-orange, ripe and sweet, like the inside of a mango.",
+        "fr": "Un orange jaune ensoleillé, mûr et sucré, comme l'intérieur d'une mangue."
+      },
+      "nature": {
+        "en": [
+          "mango flesh",
+          "papaya",
+          "orange nasturtium"
+        ],
+        "fr": [
+          "chair de mangue",
+          "papaye",
+          "capucine orange"
+        ]
+      }
+    },
+    {
+      "id": "salmon_orange",
+      "base": "orange",
+      "ref": "#F4926A",
+      "name": {
+        "en": "Salmon",
+        "fr": "Saumon"
+      },
+      "description": {
+        "en": "A soft pink-orange, like a fresh salmon fillet. Warm and gentle.",
+        "fr": "Un orange rosé et doux, comme un filet de saumon frais. Chaleureux et tendre."
+      },
+      "nature": {
+        "en": [
+          "salmon fillet",
+          "pink grapefruit",
+          "shrimp"
+        ],
+        "fr": [
+          "filet de saumon",
+          "pamplemousse rose",
+          "crevettes"
+        ]
+      }
+    },
+    {
+      "id": "ochre_orange",
+      "base": "orange",
+      "ref": "#CC7A22",
+      "name": {
+        "en": "Ochre",
+        "fr": "Ocre"
+      },
+      "description": {
+        "en": "An earthy golden orange, like the painted cliffs of old quarries.",
+        "fr": "Un orange doré et terreux, comme les falaises colorées des vieilles carrières."
+      },
+      "nature": {
+        "en": [
+          "ochre cliffs",
+          "dried apricots",
+          "turmeric root"
+        ],
+        "fr": [
+          "falaises d'ocre",
+          "abricots secs",
+          "racine de curcuma"
+        ]
+      }
+    },
+    {
+      "id": "lemon",
+      "base": "yellow",
+      "ref": "#FFE81A",
+      "name": {
+        "en": "Lemon",
+        "fr": "Citron"
+      },
+      "description": {
+        "en": "A bright, fresh yellow with a slightly cool edge, like a lemon in full sun.",
+        "fr": "Un jaune vif et frais, légèrement froid, comme un citron en plein soleil."
+      },
+      "nature": {
+        "en": [
+          "lemons",
+          "buttercups",
+          "yellow warbler"
+        ],
+        "fr": [
+          "citrons",
+          "boutons d'or",
+          "paruline jaune"
+        ]
+      }
+    },
+    {
+      "id": "canary",
+      "base": "yellow",
+      "ref": "#FFEF4A",
+      "name": {
+        "en": "Canary yellow",
+        "fr": "Jaune canari"
+      },
+      "description": {
+        "en": "A cheerful, light yellow, bright and happy, like a singing canary.",
+        "fr": "Un jaune clair et joyeux, lumineux et gai, comme un canari qui chante."
+      },
+      "nature": {
+        "en": [
+          "canary",
+          "goldfinch",
+          "yellow daffodil"
+        ],
+        "fr": [
+          "canari",
+          "chardonneret jaune",
+          "jonquille"
+        ]
+      }
+    },
+    {
+      "id": "sunflower",
+      "base": "yellow",
+      "ref": "#FFC61A",
+      "name": {
+        "en": "Sunflower",
+        "fr": "Tournesol"
+      },
+      "description": {
+        "en": "A warm, golden yellow with a hint of orange, like sunflower petals.",
+        "fr": "Un jaune doré et chaud avec une pointe d'orange, comme les pétales d'un tournesol."
+      },
+      "nature": {
+        "en": [
+          "sunflower petals",
+          "egg yolk",
+          "marigold"
+        ],
+        "fr": [
+          "pétales de tournesol",
+          "jaune d'œuf",
+          "souci"
+        ]
+      }
+    },
+    {
+      "id": "gold",
+      "base": "yellow",
+      "ref": "#F2C200",
+      "name": {
+        "en": "Gold",
+        "fr": "Doré"
+      },
+      "description": {
+        "en": "A rich, warm yellow, like gold jewelry or a wheat field at sunset.",
+        "fr": "Un jaune riche et chaud, comme un bijou en or ou un champ de blé au coucher du soleil."
+      },
+      "nature": {
+        "en": [
+          "ripe wheat",
+          "goldenrod flowers",
+          "honeycomb"
+        ],
+        "fr": [
+          "blé mûr",
+          "fleurs de verge d'or",
+          "rayon de miel"
+        ]
+      }
+    },
+    {
+      "id": "butter",
+      "base": "yellow",
+      "ref": "#FFF0A0",
+      "name": {
+        "en": "Butter",
+        "fr": "Beurre"
+      },
+      "description": {
+        "en": "A soft, pale yellow, creamy and calm, like fresh butter.",
+        "fr": "Un jaune pâle et doux, crémeux et calme, comme du beurre frais."
+      },
+      "nature": {
+        "en": [
+          "fresh butter",
+          "primrose",
+          "banana flesh"
+        ],
+        "fr": [
+          "beurre frais",
+          "primevère",
+          "chair de banane"
+        ]
+      }
+    },
+    {
+      "id": "cream_yellow",
+      "base": "yellow",
+      "ref": "#FFF6C0",
+      "name": {
+        "en": "Pale yellow",
+        "fr": "Jaune pâle"
+      },
+      "description": {
+        "en": "A very light yellow, barely there, like early morning sunlight on a white wall.",
+        "fr": "Un jaune très clair, à peine présent, comme le soleil du matin sur un mur blanc."
+      },
+      "nature": {
+        "en": [
+          "vanilla custard",
+          "pale primrose",
+          "moonlight"
+        ],
+        "fr": [
+          "crème pâtissière",
+          "primevère pâle",
+          "clair de lune"
+        ]
+      }
+    },
+    {
+      "id": "mustard",
+      "base": "yellow",
+      "ref": "#D4A817",
+      "name": {
+        "en": "Mustard",
+        "fr": "Moutarde"
+      },
+      "description": {
+        "en": "A deep, slightly dull yellow with a touch of brown, like mustard on a sandwich.",
+        "fr": "Un jaune profond, un peu terne, avec une touche de brun, comme de la moutarde."
+      },
+      "nature": {
+        "en": [
+          "mustard seeds",
+          "dried goldenrod",
+          "autumn ginkgo leaves"
+        ],
+        "fr": [
+          "graines de moutarde",
+          "verge d'or séchée",
+          "feuilles de ginkgo en automne"
+        ]
+      }
+    },
+    {
+      "id": "banana",
+      "base": "yellow",
+      "ref": "#FFE14D",
+      "name": {
+        "en": "Banana",
+        "fr": "Banane"
+      },
+      "description": {
+        "en": "A sunny, friendly yellow, like the skin of a ripe banana.",
+        "fr": "Un jaune ensoleillé et sympathique, comme la peau d'une banane mûre."
+      },
+      "nature": {
+        "en": [
+          "banana peel",
+          "yellow squash",
+          "dandelion"
+        ],
+        "fr": [
+          "pelure de banane",
+          "courge jaune",
+          "pissenlit"
+        ]
+      }
+    },
+    {
+      "id": "honey",
+      "base": "yellow",
+      "ref": "#E8B020",
+      "name": {
+        "en": "Honey",
+        "fr": "Miel"
+      },
+      "description": {
+        "en": "A warm, golden yellow that feels sweet and thick, like honey in a jar.",
+        "fr": "Un jaune doré et chaud, qui semble sucré et épais, comme du miel en pot."
+      },
+      "nature": {
+        "en": [
+          "honey",
+          "beeswax",
+          "late summer grass"
+        ],
+        "fr": [
+          "miel",
+          "cire d'abeille",
+          "herbes de fin d'été"
+        ]
+      }
+    },
+    {
+      "id": "khaki_yellow",
+      "base": "yellow",
+      "ref": "#E6D78A",
+      "name": {
+        "en": "Khaki",
+        "fr": "Kaki clair"
+      },
+      "description": {
+        "en": "A muted, sandy yellow, soft and dusty, like dry grass or beach sand.",
+        "fr": "Un jaune sable adouci, doux et poussiéreux, comme de l'herbe sèche ou du sable de plage."
+      },
+      "nature": {
+        "en": [
+          "dry grass",
+          "beach sand",
+          "straw"
+        ],
+        "fr": [
+          "herbe sèche",
+          "sable de plage",
+          "paille"
+        ]
+      }
+    },
+    {
+      "id": "chartreuse_yellow",
+      "base": "yellow",
+      "ref": "#E6E83A",
+      "name": {
+        "en": "Lime yellow",
+        "fr": "Jaune citron vert"
+      },
+      "description": {
+        "en": "A yellow leaning toward green, sharp and zesty, like an unripe lemon.",
+        "fr": "Un jaune qui tire vers le vert, vif et acidulé, comme un citron pas tout à fait mûr."
+      },
+      "nature": {
+        "en": [
+          "unripe lemons",
+          "yellow-green pears",
+          "spring willow buds"
+        ],
+        "fr": [
+          "citrons pas mûrs",
+          "poires jaune-vert",
+          "bourgeons de saule au printemps"
+        ]
+      }
+    },
+    {
+      "id": "saffron",
+      "base": "yellow",
+      "ref": "#F4C430",
+      "name": {
+        "en": "Saffron",
+        "fr": "Safran"
+      },
+      "description": {
+        "en": "A warm yellow with a golden-orange glow, like rice cooked with saffron.",
+        "fr": "Un jaune chaud aux reflets orange doré, comme un riz cuit au safran."
+      },
+      "nature": {
+        "en": [
+          "saffron rice",
+          "golden chanterelles",
+          "yellow tulips"
+        ],
+        "fr": [
+          "riz au safran",
+          "chanterelles dorées",
+          "tulipes jaunes"
+        ]
+      }
+    },
+    {
+      "id": "grass_green",
+      "base": "green",
+      "ref": "#3FA535",
+      "name": {
+        "en": "Grass green",
+        "fr": "Vert gazon"
+      },
+      "description": {
+        "en": "A fresh, healthy green, like a lawn after the rain. Lively and natural.",
+        "fr": "Un vert frais et sain, comme une pelouse après la pluie. Vivant et naturel."
+      },
+      "nature": {
+        "en": [
+          "lawn grass",
+          "young lettuce",
+          "green tree frog"
+        ],
+        "fr": [
+          "gazon",
+          "jeune laitue",
+          "rainette verte"
+        ]
+      }
+    },
+    {
+      "id": "leaf_green",
+      "base": "green",
+      "ref": "#2E8B3A",
+      "name": {
+        "en": "Leaf green",
+        "fr": "Vert feuille"
+      },
+      "description": {
+        "en": "A full, balanced green, the green of a summer leaf with the sun on it.",
+        "fr": "Un vert plein et équilibré, celui d'une feuille d'été au soleil."
+      },
+      "nature": {
+        "en": [
+          "maple leaves in summer",
+          "basil",
+          "green beans"
+        ],
+        "fr": [
+          "feuilles d'érable en été",
+          "basilic",
+          "haricots verts"
+        ]
+      }
+    },
+    {
+      "id": "forest_green",
+      "base": "green",
+      "ref": "#1F6B2E",
+      "name": {
+        "en": "Forest green",
+        "fr": "Vert forêt"
+      },
+      "description": {
+        "en": "A deep, shaded green, calm and cool, like the inside of a pine forest.",
+        "fr": "Un vert profond et ombragé, calme et frais, comme l'intérieur d'une forêt de pins."
+      },
+      "nature": {
+        "en": [
+          "pine needles",
+          "holly leaves",
+          "moss in shade"
+        ],
+        "fr": [
+          "aiguilles de pin",
+          "feuilles de houx",
+          "mousse à l'ombre"
+        ]
+      }
+    },
+    {
+      "id": "dark_green",
+      "base": "green",
+      "ref": "#0F4A22",
+      "name": {
+        "en": "Dark green",
+        "fr": "Vert foncé"
+      },
+      "description": {
+        "en": "A very deep green, close to black in dim light, like evergreen trees at dusk.",
+        "fr": "Un vert très profond, presque noir dans la pénombre, comme des sapins au crépuscule."
+      },
+      "nature": {
+        "en": [
+          "spruce trees",
+          "ivy",
+          "seaweed"
+        ],
+        "fr": [
+          "épinettes",
+          "lierre",
+          "algues"
+        ]
+      }
+    },
+    {
+      "id": "lime",
+      "base": "green",
+      "ref": "#7ED321",
+      "name": {
+        "en": "Lime green",
+        "fr": "Vert lime"
+      },
+      "description": {
+        "en": "A bright, zesty green with yellow in it, sharp and energetic like a fresh lime.",
+        "fr": "Un vert vif et acidulé, teinté de jaune, énergique comme une lime fraîche."
+      },
+      "nature": {
+        "en": [
+          "limes",
+          "new spring shoots",
+          "green apples"
+        ],
+        "fr": [
+          "limes",
+          "jeunes pousses du printemps",
+          "pommes vertes"
+        ]
+      }
+    },
+    {
+      "id": "chartreuse",
+      "base": "green",
+      "ref": "#9ACD32",
+      "name": {
+        "en": "Yellow green",
+        "fr": "Vert jaune"
+      },
+      "description": {
+        "en": "A green with a lot of yellow, like new leaves backlit by the spring sun.",
+        "fr": "Un vert très teinté de jaune, comme de jeunes feuilles éclairées par le soleil du printemps."
+      },
+      "nature": {
+        "en": [
+          "spring leaves",
+          "celery",
+          "green grapes"
+        ],
+        "fr": [
+          "feuilles de printemps",
+          "céleri",
+          "raisins verts"
+        ]
+      }
+    },
+    {
+      "id": "mint",
+      "base": "green",
+      "ref": "#98E0B0",
+      "name": {
+        "en": "Mint",
+        "fr": "Menthe"
+      },
+      "description": {
+        "en": "A light, cool green with a fresh feel, like mint ice cream or a mint leaf.",
+        "fr": "Un vert clair et frais, comme une crème glacée à la menthe ou une feuille de menthe."
+      },
+      "nature": {
+        "en": [
+          "mint leaves",
+          "sea glass",
+          "pale jade"
+        ],
+        "fr": [
+          "feuilles de menthe",
+          "verre de mer",
+          "jade pâle"
+        ]
+      }
+    },
+    {
+      "id": "pastel_green",
+      "base": "green",
+      "ref": "#B8E8A8",
+      "name": {
+        "en": "Pale green",
+        "fr": "Vert pâle"
+      },
+      "description": {
+        "en": "A soft, very light green, gentle and calm, like the inside of a pea pod.",
+        "fr": "Un vert doux et très clair, tendre et calme, comme l'intérieur d'une cosse de pois."
+      },
+      "nature": {
+        "en": [
+          "pea pods",
+          "honeydew melon",
+          "young fern"
+        ],
+        "fr": [
+          "cosses de pois",
+          "melon miel",
+          "jeune fougère"
+        ]
+      }
+    },
+    {
+      "id": "olive",
+      "base": "green",
+      "ref": "#6B7A1E",
+      "name": {
+        "en": "Olive",
+        "fr": "Olive"
+      },
+      "description": {
+        "en": "A dull, yellowish green with brown in it, earthy and quiet, like green olives.",
+        "fr": "Un vert terne et jaunâtre mêlé de brun, terreux et discret, comme des olives vertes."
+      },
+      "nature": {
+        "en": [
+          "green olives",
+          "olive tree leaves",
+          "dry moss"
+        ],
+        "fr": [
+          "olives vertes",
+          "feuilles d'olivier",
+          "mousse sèche"
+        ]
+      }
+    },
+    {
+      "id": "moss",
+      "base": "green",
+      "ref": "#5E7A2A",
+      "name": {
+        "en": "Moss green",
+        "fr": "Vert mousse"
+      },
+      "description": {
+        "en": "A soft, earthy green, like moss on a rock in the woods.",
+        "fr": "Un vert doux et terreux, comme de la mousse sur un rocher en forêt."
+      },
+      "nature": {
+        "en": [
+          "moss",
+          "lichen",
+          "artichoke"
+        ],
+        "fr": [
+          "mousse",
+          "lichen",
+          "artichaut"
+        ]
+      }
+    },
+    {
+      "id": "sage",
+      "base": "green",
+      "ref": "#9CAF88",
+      "name": {
+        "en": "Sage",
+        "fr": "Sauge"
+      },
+      "description": {
+        "en": "A soft, grayish green, calm and dusty, like dried sage leaves.",
+        "fr": "Un vert grisé et doux, calme et poudré, comme des feuilles de sauge séchées."
+      },
+      "nature": {
+        "en": [
+          "sage leaves",
+          "eucalyptus",
+          "lamb's ear plant"
+        ],
+        "fr": [
+          "feuilles de sauge",
+          "eucalyptus",
+          "oreille d'agneau"
+        ]
+      }
+    },
+    {
+      "id": "emerald",
+      "base": "green",
+      "ref": "#1E9E5A",
+      "name": {
+        "en": "Emerald",
+        "fr": "Émeraude"
+      },
+      "description": {
+        "en": "A rich, jewel-like green with a touch of blue, bright and precious.",
+        "fr": "Un vert riche comme un bijou, avec une touche de bleu, lumineux et précieux."
+      },
+      "nature": {
+        "en": [
+          "emerald stone",
+          "hummingbird feathers",
+          "tropical leaves"
+        ],
+        "fr": [
+          "émeraude",
+          "plumes de colibri",
+          "feuilles tropicales"
+        ]
+      }
+    },
+    {
+      "id": "jade",
+      "base": "green",
+      "ref": "#3AA878",
+      "name": {
+        "en": "Jade",
+        "fr": "Jade"
+      },
+      "description": {
+        "en": "A soft green with blue in it, smooth and calm, like polished jade.",
+        "fr": "Un vert doux teinté de bleu, lisse et calme, comme du jade poli."
+      },
+      "nature": {
+        "en": [
+          "jade stone",
+          "sea grapes",
+          "succulent leaves"
+        ],
+        "fr": [
+          "jade",
+          "raisins de mer",
+          "feuilles de plantes grasses"
+        ]
+      }
+    },
+    {
+      "id": "pine_green",
+      "base": "green",
+      "ref": "#1D5C4A",
+      "name": {
+        "en": "Pine green",
+        "fr": "Vert sapin"
+      },
+      "description": {
+        "en": "A deep, cool green with a blue shadow, like pine trees in winter.",
+        "fr": "Un vert profond et froid, avec une ombre bleutée, comme des sapins en hiver."
+      },
+      "nature": {
+        "en": [
+          "fir trees",
+          "juniper",
+          "deep pond water"
+        ],
+        "fr": [
+          "sapins",
+          "genévrier",
+          "eau d'étang profonde"
+        ]
+      }
+    },
+    {
+      "id": "pistachio",
+      "base": "green",
+      "ref": "#A8C878",
+      "name": {
+        "en": "Pistachio",
+        "fr": "Pistache"
+      },
+      "description": {
+        "en": "A light, nutty green, soft and pleasant, like shelled pistachios.",
+        "fr": "Un vert clair et doux, comme des pistaches décortiquées."
+      },
+      "nature": {
+        "en": [
+          "pistachios",
+          "avocado flesh",
+          "green tea"
+        ],
+        "fr": [
+          "pistaches",
+          "chair d'avocat",
+          "thé vert"
+        ]
+      }
+    },
+    {
+      "id": "army_green",
+      "base": "green",
+      "ref": "#4B5320",
+      "name": {
+        "en": "Army green",
+        "fr": "Vert kaki"
+      },
+      "description": {
+        "en": "A dark, dull olive green, practical and earthy, like army canvas.",
+        "fr": "Un vert olive sombre et terne, pratique et terreux, comme une toile militaire."
+      },
+      "nature": {
+        "en": [
+          "dry pine needles",
+          "dark olives",
+          "marsh grass"
+        ],
+        "fr": [
+          "aiguilles de pin sèches",
+          "olives foncées",
+          "herbes de marais"
+        ]
+      }
+    },
+    {
+      "id": "true_blue",
+      "base": "blue",
+      "ref": "#1F5FD8",
+      "name": {
+        "en": "Blue",
+        "fr": "Bleu franc"
+      },
+      "description": {
+        "en": "A clear, strong blue, the blue of a summer sky at noon reflected in deep water.",
+        "fr": "Un bleu clair et franc, celui d'un ciel d'été à midi reflété dans une eau profonde."
+      },
+      "nature": {
+        "en": [
+          "blue jay feathers",
+          "cornflowers",
+          "deep lake"
+        ],
+        "fr": [
+          "plumes de geai bleu",
+          "centaurées bleues",
+          "lac profond"
+        ]
+      }
+    },
+    {
+      "id": "sky_blue",
+      "base": "blue",
+      "ref": "#87CEEB",
+      "name": {
+        "en": "Sky blue",
+        "fr": "Bleu ciel"
+      },
+      "description": {
+        "en": "A light, airy blue, open and calm, like a clear sky on a nice day.",
+        "fr": "Un bleu clair et aérien, ouvert et calme, comme un ciel dégagé par beau temps."
+      },
+      "nature": {
+        "en": [
+          "clear sky",
+          "forget-me-nots",
+          "robin's eggs"
+        ],
+        "fr": [
+          "ciel dégagé",
+          "myosotis",
+          "œufs de merle"
+        ]
+      }
+    },
+    {
+      "id": "baby_blue",
+      "base": "blue",
+      "ref": "#BFDDF5",
+      "name": {
+        "en": "Pale blue",
+        "fr": "Bleu pâle"
+      },
+      "description": {
+        "en": "A very soft, light blue, gentle and quiet, like a winter sky through thin clouds.",
+        "fr": "Un bleu très doux et très clair, tendre et calme, comme un ciel d'hiver à travers de fins nuages."
+      },
+      "nature": {
+        "en": [
+          "winter sky",
+          "blue hydrangea",
+          "glacier ice"
+        ],
+        "fr": [
+          "ciel d'hiver",
+          "hortensia bleu",
+          "glace de glacier"
+        ]
+      }
+    },
+    {
+      "id": "navy",
+      "base": "blue",
+      "ref": "#14246B",
+      "name": {
+        "en": "Navy",
+        "fr": "Bleu marine"
+      },
+      "description": {
+        "en": "A very dark blue, serious and calm, like the sea at night.",
+        "fr": "Un bleu très foncé, sérieux et calme, comme la mer la nuit."
+      },
+      "nature": {
+        "en": [
+          "night sea",
+          "blueberries",
+          "deep ocean"
+        ],
+        "fr": [
+          "mer la nuit",
+          "bleuets",
+          "océan profond"
+        ]
+      }
+    },
+    {
+      "id": "midnight_blue",
+      "base": "blue",
+      "ref": "#191970",
+      "name": {
+        "en": "Midnight blue",
+        "fr": "Bleu nuit"
+      },
+      "description": {
+        "en": "A deep blue close to black, like the sky right after sunset.",
+        "fr": "Un bleu profond proche du noir, comme le ciel juste après le coucher du soleil."
+      },
+      "nature": {
+        "en": [
+          "night sky",
+          "blackberries in shade",
+          "deep sea"
+        ],
+        "fr": [
+          "ciel nocturne",
+          "mûres à l'ombre",
+          "fond de la mer"
+        ]
+      }
+    },
+    {
+      "id": "royal_blue",
+      "base": "blue",
+      "ref": "#3A5FD9",
+      "name": {
+        "en": "Royal blue",
+        "fr": "Bleu roi"
+      },
+      "description": {
+        "en": "A vivid, rich blue, bright and confident, like a royal banner.",
+        "fr": "Un bleu vif et riche, lumineux et affirmé, comme un étendard royal."
+      },
+      "nature": {
+        "en": [
+          "morpho butterfly",
+          "blue iris",
+          "sapphire"
+        ],
+        "fr": [
+          "papillon morpho",
+          "iris bleu",
+          "saphir"
+        ]
+      }
+    },
+    {
+      "id": "cobalt",
+      "base": "blue",
+      "ref": "#0047AB",
+      "name": {
+        "en": "Cobalt",
+        "fr": "Cobalt"
+      },
+      "description": {
+        "en": "A deep, saturated blue, strong and cool, like blue painted pottery.",
+        "fr": "Un bleu profond et saturé, fort et froid, comme de la poterie peinte en bleu."
+      },
+      "nature": {
+        "en": [
+          "blue glass",
+          "delphinium",
+          "sapphire"
+        ],
+        "fr": [
+          "verre bleu",
+          "delphinium",
+          "saphir"
+        ]
+      }
+    },
+    {
+      "id": "azure",
+      "base": "blue",
+      "ref": "#3399E6",
+      "name": {
+        "en": "Azure",
+        "fr": "Azur"
+      },
+      "description": {
+        "en": "A bright, sunny blue, like a Mediterranean sky above the sea.",
+        "fr": "Un bleu lumineux et ensoleillé, comme un ciel méditerranéen au-dessus de la mer."
+      },
+      "nature": {
+        "en": [
+          "Mediterranean sky",
+          "kingfisher",
+          "blue morning glory"
+        ],
+        "fr": [
+          "ciel méditerranéen",
+          "martin-pêcheur",
+          "ipomée bleue"
+        ]
+      }
+    },
+    {
+      "id": "steel_blue",
+      "base": "blue",
+      "ref": "#4A7FAF",
+      "name": {
+        "en": "Steel blue",
+        "fr": "Bleu acier"
+      },
+      "description": {
+        "en": "A calm, grayish blue, cool and quiet, like a lake under a cloudy sky.",
+        "fr": "Un bleu grisé, calme et froid, comme un lac sous un ciel nuageux."
+      },
+      "nature": {
+        "en": [
+          "lake under clouds",
+          "blue spruce",
+          "slate rooftops in rain"
+        ],
+        "fr": [
+          "lac sous les nuages",
+          "épinette bleue",
+          "toits d'ardoise sous la pluie"
+        ]
+      }
+    },
+    {
+      "id": "denim",
+      "base": "blue",
+      "ref": "#3A62A4",
+      "name": {
+        "en": "Denim",
+        "fr": "Denim"
+      },
+      "description": {
+        "en": "A medium, slightly faded blue, relaxed and familiar, like a pair of jeans.",
+        "fr": "Un bleu moyen un peu délavé, détendu et familier, comme un jean."
+      },
+      "nature": {
+        "en": [
+          "blue jeans",
+          "dusk sky",
+          "blue mussel shell"
+        ],
+        "fr": [
+          "jean",
+          "ciel au crépuscule",
+          "coquille de moule"
+        ]
+      }
+    },
+    {
+      "id": "teal",
+      "base": "blue",
+      "ref": "#00808A",
+      "name": {
+        "en": "Teal",
+        "fr": "Sarcelle"
+      },
+      "description": {
+        "en": "A deep blue-green, calm and rich, like a mountain lake or a duck's wing.",
+        "fr": "Un bleu-vert profond, calme et riche, comme un lac de montagne ou l'aile d'un canard."
+      },
+      "nature": {
+        "en": [
+          "teal duck wing",
+          "mountain lake",
+          "peacock feathers"
+        ],
+        "fr": [
+          "aile de sarcelle",
+          "lac de montagne",
+          "plumes de paon"
+        ]
+      }
+    },
+    {
+      "id": "turquoise",
+      "base": "blue",
+      "ref": "#30C8CC",
+      "name": {
+        "en": "Turquoise",
+        "fr": "Turquoise"
+      },
+      "description": {
+        "en": "A bright blue-green, fresh and tropical, like shallow sea water over white sand.",
+        "fr": "Un bleu-vert lumineux, frais et tropical, comme une mer peu profonde sur du sable blanc."
+      },
+      "nature": {
+        "en": [
+          "tropical lagoon",
+          "turquoise stone",
+          "glacier water"
+        ],
+        "fr": [
+          "lagon tropical",
+          "pierre turquoise",
+          "eau de glacier"
+        ]
+      }
+    },
+    {
+      "id": "cyan",
+      "base": "blue",
+      "ref": "#20B4E0",
+      "name": {
+        "en": "Cyan",
+        "fr": "Cyan"
+      },
+      "description": {
+        "en": "A vivid, clear light blue with a hint of green, crisp and electric.",
+        "fr": "Un bleu clair et vif avec une pointe de vert, net et électrique."
+      },
+      "nature": {
+        "en": [
+          "swimming pool water",
+          "blue tang fish",
+          "ice caves"
+        ],
+        "fr": [
+          "eau de piscine",
+          "poisson chirurgien bleu",
+          "grottes de glace"
+        ]
+      }
+    },
+    {
+      "id": "periwinkle",
+      "base": "blue",
+      "ref": "#8C9EE8",
+      "name": {
+        "en": "Periwinkle",
+        "fr": "Pervenche"
+      },
+      "description": {
+        "en": "A soft blue with a lilac tint, between blue and purple, gentle like the flower.",
+        "fr": "Un bleu doux teinté de lilas, entre bleu et violet, tendre comme la fleur."
+      },
+      "nature": {
+        "en": [
+          "periwinkle flowers",
+          "bluebells",
+          "twilight sky"
+        ],
+        "fr": [
+          "pervenches",
+          "jacinthes des bois",
+          "ciel au crépuscule"
+        ]
+      }
+    },
+    {
+      "id": "powder_blue",
+      "base": "blue",
+      "ref": "#A2CAE6",
+      "name": {
+        "en": "Powder blue",
+        "fr": "Bleu poudre"
+      },
+      "description": {
+        "en": "A soft, slightly grayish light blue, calm and hazy, like a foggy morning by the sea.",
+        "fr": "Un bleu clair et poudré, légèrement gris, calme et brumeux, comme un matin de brume au bord de la mer."
+      },
+      "nature": {
+        "en": [
+          "morning fog over water",
+          "blue spruce frost",
+          "pale sea glass"
+        ],
+        "fr": [
+          "brume du matin sur l'eau",
+          "givre sur l'épinette bleue",
+          "verre de mer pâle"
+        ]
+      }
+    },
+    {
+      "id": "cadet_blue",
+      "base": "blue",
+      "ref": "#5F9EA0",
+      "name": {
+        "en": "Gray teal",
+        "fr": "Bleu-vert grisé"
+      },
+      "description": {
+        "en": "A muted blue-green with gray in it, quiet and cool, like the sea on a cloudy day.",
+        "fr": "Un bleu-vert adouci de gris, discret et frais, comme la mer par temps couvert."
+      },
+      "nature": {
+        "en": [
+          "cloudy sea",
+          "eucalyptus leaves",
+          "blue-gray lichen"
+        ],
+        "fr": [
+          "mer par temps gris",
+          "feuilles d'eucalyptus",
+          "lichen bleu-gris"
+        ]
+      }
+    },
+    {
+      "id": "true_purple",
+      "base": "purple",
+      "ref": "#7E2DB8",
+      "name": {
+        "en": "Purple",
+        "fr": "Violet franc"
+      },
+      "description": {
+        "en": "A strong, rich purple, halfway between red and blue, deep and mysterious.",
+        "fr": "Un violet riche et franc, à mi-chemin entre rouge et bleu, profond et mystérieux."
+      },
+      "nature": {
+        "en": [
+          "purple iris",
+          "eggplant",
+          "amethyst"
+        ],
+        "fr": [
+          "iris violet",
+          "aubergine",
+          "améthyste"
+        ]
+      }
+    },
+    {
+      "id": "violet",
+      "base": "purple",
+      "ref": "#8F4FD8",
+      "name": {
+        "en": "Violet",
+        "fr": "Violette"
+      },
+      "description": {
+        "en": "A bright, bluish purple, lively and fresh, like violets in spring.",
+        "fr": "Un violet lumineux et bleuté, vif et frais, comme des violettes au printemps."
+      },
+      "nature": {
+        "en": [
+          "violets",
+          "purple crocus",
+          "lilac blossoms"
+        ],
+        "fr": [
+          "violettes",
+          "crocus violets",
+          "fleurs de lilas"
+        ]
+      }
+    },
+    {
+      "id": "lavender",
+      "base": "purple",
+      "ref": "#B9A0E0",
+      "name": {
+        "en": "Lavender",
+        "fr": "Lavande"
+      },
+      "description": {
+        "en": "A soft, light purple with a gray-blue touch, calm and soothing, like lavender fields.",
+        "fr": "Un violet clair et doux, avec une touche gris-bleu, calme et apaisant, comme un champ de lavande."
+      },
+      "nature": {
+        "en": [
+          "lavender flowers",
+          "wisteria",
+          "dusk clouds"
+        ],
+        "fr": [
+          "fleurs de lavande",
+          "glycine",
+          "nuages au crépuscule"
+        ]
+      }
+    },
+    {
+      "id": "lilac",
+      "base": "purple",
+      "ref": "#C8A2D8",
+      "name": {
+        "en": "Lilac",
+        "fr": "Lilas"
+      },
+      "description": {
+        "en": "A pale, pinkish purple, light and delicate, like lilac blossoms in May.",
+        "fr": "Un violet pâle et rosé, léger et délicat, comme des fleurs de lilas en mai."
+      },
+      "nature": {
+        "en": [
+          "lilac blossoms",
+          "sweet peas",
+          "orchid petals"
+        ],
+        "fr": [
+          "fleurs de lilas",
+          "pois de senteur",
+          "pétales d'orchidée"
+        ]
+      }
+    },
+    {
+      "id": "pale_lavender",
+      "base": "purple",
+      "ref": "#E4DCF6",
+      "name": {
+        "en": "Pale lilac",
+        "fr": "Lilas très pâle"
+      },
+      "description": {
+        "en": "An almost white purple, barely tinted, like the inside of a seashell.",
+        "fr": "Un violet presque blanc, à peine teinté, comme l'intérieur d'un coquillage."
+      },
+      "nature": {
+        "en": [
+          "seashell interior",
+          "pale crocus",
+          "frosted grapes"
+        ],
+        "fr": [
+          "intérieur de coquillage",
+          "crocus pâle",
+          "raisins givrés"
+        ]
+      }
+    },
+    {
+      "id": "indigo",
+      "base": "purple",
+      "ref": "#4B1A8A",
+      "name": {
+        "en": "Indigo",
+        "fr": "Indigo"
+      },
+      "description": {
+        "en": "A deep blue-purple, dark and rich, like the night sky just before full dark.",
+        "fr": "Un violet bleuté profond, sombre et riche, comme le ciel juste avant la nuit noire."
+      },
+      "nature": {
+        "en": [
+          "indigo dye plant",
+          "late twilight",
+          "dark irises"
+        ],
+        "fr": [
+          "indigotier",
+          "fin du crépuscule",
+          "iris foncés"
+        ]
+      }
+    },
+    {
+      "id": "eggplant",
+      "base": "purple",
+      "ref": "#4A1E4E",
+      "name": {
+        "en": "Eggplant",
+        "fr": "Aubergine"
+      },
+      "description": {
+        "en": "A very dark, reddish purple, glossy and deep, like the skin of an eggplant.",
+        "fr": "Un violet très sombre et rougeâtre, brillant et profond, comme la peau d'une aubergine."
+      },
+      "nature": {
+        "en": [
+          "eggplant skin",
+          "black grapes",
+          "dark plums"
+        ],
+        "fr": [
+          "peau d'aubergine",
+          "raisins noirs",
+          "prunes foncées"
+        ]
+      }
+    },
+    {
+      "id": "plum",
+      "base": "purple",
+      "ref": "#7A3A78",
+      "name": {
+        "en": "Plum",
+        "fr": "Prune"
+      },
+      "description": {
+        "en": "A deep purple with red in it, rich and juicy, like a ripe plum.",
+        "fr": "Un violet profond teinté de rouge, riche et juteux, comme une prune mûre."
+      },
+      "nature": {
+        "en": [
+          "plums",
+          "red cabbage",
+          "blackberries"
+        ],
+        "fr": [
+          "prunes",
+          "chou rouge",
+          "mûres"
+        ]
+      }
+    },
+    {
+      "id": "orchid",
+      "base": "purple",
+      "ref": "#C060C8",
+      "name": {
+        "en": "Orchid",
+        "fr": "Orchidée"
+      },
+      "description": {
+        "en": "A bright pink-purple, exotic and lively, like an orchid flower.",
+        "fr": "Un violet rosé lumineux, exotique et vivant, comme une fleur d'orchidée."
+      },
+      "nature": {
+        "en": [
+          "orchids",
+          "fuchsia flowers",
+          "purple coneflower"
+        ],
+        "fr": [
+          "orchidées",
+          "fleurs de fuchsia",
+          "échinacée pourpre"
+        ]
+      }
+    },
+    {
+      "id": "grape",
+      "base": "purple",
+      "ref": "#5E2A84",
+      "name": {
+        "en": "Grape",
+        "fr": "Raisin"
+      },
+      "description": {
+        "en": "A deep, juicy purple, like a bunch of dark grapes.",
+        "fr": "Un violet profond et juteux, comme une grappe de raisins noirs."
+      },
+      "nature": {
+        "en": [
+          "dark grapes",
+          "blueberry skin in sun",
+          "purple pansies"
+        ],
+        "fr": [
+          "raisins noirs",
+          "peau de bleuet au soleil",
+          "pensées violettes"
+        ]
+      }
+    },
+    {
+      "id": "amethyst",
+      "base": "purple",
+      "ref": "#9966CC",
+      "name": {
+        "en": "Amethyst",
+        "fr": "Améthyste"
+      },
+      "description": {
+        "en": "A clear, medium purple, calm and glassy, like an amethyst crystal.",
+        "fr": "Un violet moyen et limpide, calme et cristallin, comme un cristal d'améthyste."
+      },
+      "nature": {
+        "en": [
+          "amethyst crystal",
+          "purple asters",
+          "heather"
+        ],
+        "fr": [
+          "cristal d'améthyste",
+          "asters violets",
+          "bruyère"
+        ]
+      }
+    },
+    {
+      "id": "mauve",
+      "base": "purple",
+      "ref": "#A878B4",
+      "name": {
+        "en": "Mauve",
+        "fr": "Mauve"
+      },
+      "description": {
+        "en": "A dusty, grayish pink-purple, soft and vintage, like dried flowers.",
+        "fr": "Un violet rosé et poudré, grisé, doux et rétro, comme des fleurs séchées."
+      },
+      "nature": {
+        "en": [
+          "dried heather",
+          "mallow flowers",
+          "dusk clouds"
+        ],
+        "fr": [
+          "bruyère séchée",
+          "fleurs de mauve",
+          "nuages du soir"
+        ]
+      }
+    },
+    {
+      "id": "pink",
+      "base": "pink",
+      "ref": "#FFB6C8",
+      "name": {
+        "en": "Pink",
+        "fr": "Rose"
+      },
+      "description": {
+        "en": "A soft, light pink, sweet and gentle, like cherry blossoms.",
+        "fr": "Un rose clair et doux, tendre et délicat, comme des fleurs de cerisier."
+      },
+      "nature": {
+        "en": [
+          "cherry blossoms",
+          "pink peonies",
+          "flamingo"
+        ],
+        "fr": [
+          "fleurs de cerisier",
+          "pivoines roses",
+          "flamant rose"
+        ]
+      }
+    },
+    {
+      "id": "baby_pink",
+      "base": "pink",
+      "ref": "#FFD4DE",
+      "name": {
+        "en": "Pale pink",
+        "fr": "Rose pâle"
+      },
+      "description": {
+        "en": "A very light, barely-there pink, soft like the inside of a rose petal.",
+        "fr": "Un rose très clair, à peine présent, doux comme l'intérieur d'un pétale de rose."
+      },
+      "nature": {
+        "en": [
+          "apple blossoms",
+          "pink seashell",
+          "sakura petals"
+        ],
+        "fr": [
+          "fleurs de pommier",
+          "coquillage rose",
+          "pétales de sakura"
+        ]
+      }
+    },
+    {
+      "id": "hot_pink",
+      "base": "pink",
+      "ref": "#FF4FA0",
+      "name": {
+        "en": "Hot pink",
+        "fr": "Rose vif"
+      },
+      "description": {
+        "en": "A loud, vivid pink full of energy, bright and playful.",
+        "fr": "Un rose éclatant et plein d'énergie, vif et espiègle."
+      },
+      "nature": {
+        "en": [
+          "pink bougainvillea",
+          "dragon fruit skin",
+          "azaleas"
+        ],
+        "fr": [
+          "bougainvillier rose",
+          "peau de fruit du dragon",
+          "azalées"
+        ]
+      }
+    },
+    {
+      "id": "fuchsia",
+      "base": "pink",
+      "ref": "#E0208A",
+      "name": {
+        "en": "Fuchsia",
+        "fr": "Fuchsia"
+      },
+      "description": {
+        "en": "A deep, intense pink with purple in it, bold and exotic, like the fuchsia flower.",
+        "fr": "Un rose profond et intense, teinté de violet, audacieux et exotique, comme la fleur de fuchsia."
+      },
+      "nature": {
+        "en": [
+          "fuchsia flowers",
+          "orchid cactus",
+          "pink dahlias"
+        ],
+        "fr": [
+          "fleurs de fuchsia",
+          "cactus orchidée",
+          "dahlias roses"
+        ]
+      }
+    },
+    {
+      "id": "magenta",
+      "base": "pink",
+      "ref": "#E81CC8",
+      "name": {
+        "en": "Magenta",
+        "fr": "Magenta"
+      },
+      "description": {
+        "en": "A vivid purple-pink, electric and striking, halfway between pink and purple.",
+        "fr": "Un rose violacé éclatant, électrique et frappant, à mi-chemin entre rose et violet."
+      },
+      "nature": {
+        "en": [
+          "magenta petunias",
+          "bougainvillea",
+          "sea urchin"
+        ],
+        "fr": [
+          "pétunias magenta",
+          "bougainvillier",
+          "oursin"
+        ]
+      }
+    },
+    {
+      "id": "rose",
+      "base": "pink",
+      "ref": "#E8708A",
+      "name": {
+        "en": "Rose",
+        "fr": "Rose soutenu"
+      },
+      "description": {
+        "en": "A warm medium pink, like a pink rose in full bloom.",
+        "fr": "Un rose moyen et chaud, comme une rose rose en pleine floraison."
+      },
+      "nature": {
+        "en": [
+          "garden roses",
+          "watermelon flesh",
+          "pink carnations"
+        ],
+        "fr": [
+          "roses de jardin",
+          "chair de melon d'eau",
+          "œillets roses"
+        ]
+      }
+    },
+    {
+      "id": "dusty_rose",
+      "base": "pink",
+      "ref": "#C8899A",
+      "name": {
+        "en": "Dusty rose",
+        "fr": "Vieux rose"
+      },
+      "description": {
+        "en": "A muted, grayish pink, soft and nostalgic, like old roses.",
+        "fr": "Un rose adouci et grisé, tendre et nostalgique, comme des roses anciennes."
+      },
+      "nature": {
+        "en": [
+          "dried roses",
+          "heather",
+          "rhubarb stalks"
+        ],
+        "fr": [
+          "roses séchées",
+          "bruyère",
+          "tiges de rhubarbe"
+        ]
+      }
+    },
+    {
+      "id": "salmon_pink",
+      "base": "pink",
+      "ref": "#F8888E",
+      "name": {
+        "en": "Salmon pink",
+        "fr": "Rose saumon"
+      },
+      "description": {
+        "en": "A warm pink with orange in it, like the flesh of fresh salmon or a summer sunset.",
+        "fr": "Un rose chaud teinté d'orange, comme la chair du saumon ou un coucher de soleil d'été."
+      },
+      "nature": {
+        "en": [
+          "salmon flesh",
+          "pink grapefruit",
+          "sunset clouds"
+        ],
+        "fr": [
+          "chair de saumon",
+          "pamplemousse rose",
+          "nuages au couchant"
+        ]
+      }
+    },
+    {
+      "id": "blush",
+      "base": "pink",
+      "ref": "#F2B8B0",
+      "name": {
+        "en": "Blush",
+        "fr": "Rose poudré"
+      },
+      "description": {
+        "en": "A soft, warm pink, like cheeks flushed by the cold.",
+        "fr": "Un rose doux et chaud, comme des joues rosies par le froid."
+      },
+      "nature": {
+        "en": [
+          "ripe peach blush",
+          "pink tulips",
+          "conch shell"
+        ],
+        "fr": [
+          "joue d'une pêche mûre",
+          "tulipes roses",
+          "coquille de lambi"
+        ]
+      }
+    },
+    {
+      "id": "raspberry_pink",
+      "base": "pink",
+      "ref": "#D23A78",
+      "name": {
+        "en": "Raspberry pink",
+        "fr": "Rose framboise"
+      },
+      "description": {
+        "en": "A juicy, deep pink with a red edge, sweet and bold.",
+        "fr": "Un rose profond et juteux, avec une pointe de rouge, sucré et affirmé."
+      },
+      "nature": {
+        "en": [
+          "raspberry sorbet",
+          "pink peony",
+          "red clover"
+        ],
+        "fr": [
+          "sorbet framboise",
+          "pivoine rose",
+          "trèfle rouge"
+        ]
+      }
+    },
+    {
+      "id": "rosy_brown",
+      "base": "pink",
+      "ref": "#BC8F8F",
+      "name": {
+        "en": "Rosy brown",
+        "fr": "Rose brun"
+      },
+      "description": {
+        "en": "A soft pink with brown in it, earthy and warm, like dried rose petals.",
+        "fr": "Un rose doux mêlé de brun, terreux et chaud, comme des pétales de rose séchés."
+      },
+      "nature": {
+        "en": [
+          "dried rose petals",
+          "pink granite",
+          "rose clay"
+        ],
+        "fr": [
+          "pétales de rose séchés",
+          "granit rose",
+          "argile rose"
+        ]
+      }
+    },
+    {
+      "id": "flamingo",
+      "base": "pink",
+      "ref": "#F68FA8",
+      "name": {
+        "en": "Flamingo",
+        "fr": "Flamant"
+      },
+      "description": {
+        "en": "A bright, warm pink, cheerful and tropical, like a flamingo's feathers.",
+        "fr": "Un rose vif et chaud, joyeux et tropical, comme les plumes d'un flamant."
+      },
+      "nature": {
+        "en": [
+          "flamingo feathers",
+          "pink hibiscus",
+          "shrimp"
+        ],
+        "fr": [
+          "plumes de flamant",
+          "hibiscus rose",
+          "crevettes"
+        ]
+      }
+    },
+    {
+      "id": "rust",
+      "base": "brown",
+      "ref": "#A8461C",
+      "name": {
+        "en": "Rust",
+        "fr": "Rouille"
+      },
+      "description": {
+        "en": "An orange-red brown, like iron that has weathered outside for years. Warm but rough.",
+        "fr": "Un brun orangé et rougeâtre, comme du fer resté dehors pendant des années. Chaud mais rugueux."
+      },
+      "nature": {
+        "en": [
+          "red sandstone",
+          "autumn oak leaves",
+          "red ochre earth"
+        ],
+        "fr": [
+          "grès rouge",
+          "feuilles de chêne en automne",
+          "terre d'ocre rouge"
+        ]
+      }
+    },
+    {
+      "id": "chocolate",
+      "base": "brown",
+      "ref": "#7B3F1A",
+      "name": {
+        "en": "Chocolate",
+        "fr": "Chocolat"
+      },
+      "description": {
+        "en": "A rich, warm medium brown, like a bar of milk chocolate.",
+        "fr": "Un brun moyen, riche et chaud, comme une tablette de chocolat au lait."
+      },
+      "nature": {
+        "en": [
+          "cocoa beans",
+          "chestnuts",
+          "brown bear fur"
+        ],
+        "fr": [
+          "fèves de cacao",
+          "châtaignes",
+          "fourrure d'ours brun"
+        ]
+      }
+    },
+    {
+      "id": "dark_chocolate",
+      "base": "brown",
+      "ref": "#4A2A18",
+      "name": {
+        "en": "Dark chocolate",
+        "fr": "Chocolat noir"
+      },
+      "description": {
+        "en": "A deep, dark brown, rich and bitter-looking, like dark chocolate or wet earth.",
+        "fr": "Un brun profond et sombre, riche, comme du chocolat noir ou de la terre mouillée."
+      },
+      "nature": {
+        "en": [
+          "wet soil",
+          "coffee beans",
+          "dark tree bark"
+        ],
+        "fr": [
+          "terre mouillée",
+          "grains de café",
+          "écorce foncée"
+        ]
+      }
+    },
+    {
+      "id": "coffee",
+      "base": "brown",
+      "ref": "#6F4E37",
+      "name": {
+        "en": "Coffee",
+        "fr": "Café"
+      },
+      "description": {
+        "en": "A medium brown, warm and comforting, like coffee with a drop of milk.",
+        "fr": "Un brun moyen, chaud et réconfortant, comme un café avec une goutte de lait."
+      },
+      "nature": {
+        "en": [
+          "coffee",
+          "walnut shells",
+          "sparrow feathers"
+        ],
+        "fr": [
+          "café",
+          "coquilles de noix",
+          "plumes de moineau"
+        ]
+      }
+    },
+    {
+      "id": "caramel",
+      "base": "brown",
+      "ref": "#B5733A",
+      "name": {
+        "en": "Caramel",
+        "fr": "Caramel"
+      },
+      "description": {
+        "en": "A golden brown, sweet and warm, like melted caramel.",
+        "fr": "Un brun doré, sucré et chaud, comme du caramel fondu."
+      },
+      "nature": {
+        "en": [
+          "caramel",
+          "maple syrup",
+          "fox fur in sun"
+        ],
+        "fr": [
+          "caramel",
+          "sirop d'érable",
+          "pelage de renard au soleil"
+        ]
+      }
+    },
+    {
+      "id": "chestnut",
+      "base": "brown",
+      "ref": "#8B4A2B",
+      "name": {
+        "en": "Chestnut",
+        "fr": "Châtaigne"
+      },
+      "description": {
+        "en": "A reddish brown, glossy and warm, like a fresh chestnut.",
+        "fr": "Un brun rougeâtre, brillant et chaud, comme une châtaigne fraîche."
+      },
+      "nature": {
+        "en": [
+          "chestnuts",
+          "horse coat",
+          "autumn oak leaves"
+        ],
+        "fr": [
+          "châtaignes",
+          "robe d'un cheval alezan",
+          "feuilles de chêne en automne"
+        ]
+      }
+    },
+    {
+      "id": "cinnamon",
+      "base": "brown",
+      "ref": "#A0582A",
+      "name": {
+        "en": "Cinnamon",
+        "fr": "Cannelle"
+      },
+      "description": {
+        "en": "A warm, spicy brown with orange in it, like cinnamon sticks.",
+        "fr": "Un brun chaud et épicé, teinté d'orange, comme des bâtons de cannelle."
+      },
+      "nature": {
+        "en": [
+          "cinnamon sticks",
+          "red squirrel",
+          "pine cones"
+        ],
+        "fr": [
+          "bâtons de cannelle",
+          "écureuil roux",
+          "cocottes de pin"
+        ]
+      }
+    },
+    {
+      "id": "tan",
+      "base": "brown",
+      "ref": "#D2B48C",
+      "name": {
+        "en": "Tan",
+        "fr": "Fauve clair"
+      },
+      "description": {
+        "en": "A light, sandy brown, soft and natural, like a paper bag or light suede.",
+        "fr": "Un brun clair et sablé, doux et naturel, comme un sac en papier ou du suède clair."
+      },
+      "nature": {
+        "en": [
+          "deer fur",
+          "wheat straw",
+          "sand dunes"
+        ],
+        "fr": [
+          "pelage de chevreuil",
+          "paille de blé",
+          "dunes de sable"
+        ]
+      }
+    },
+    {
+      "id": "camel",
+      "base": "brown",
+      "ref": "#C19A6B",
+      "name": {
+        "en": "Camel",
+        "fr": "Camel"
+      },
+      "description": {
+        "en": "A warm light brown with gold in it, like camel hair.",
+        "fr": "Un brun clair et chaud, aux reflets dorés, comme le poil de chameau."
+      },
+      "nature": {
+        "en": [
+          "camel hair",
+          "dry autumn grass",
+          "hazelnuts"
+        ],
+        "fr": [
+          "poil de chameau",
+          "herbes sèches d'automne",
+          "noisettes"
+        ]
+      }
+    },
+    {
+      "id": "beige_brown",
+      "base": "brown",
+      "ref": "#C8AD8A",
+      "name": {
+        "en": "Sand",
+        "fr": "Sable"
+      },
+      "description": {
+        "en": "A pale, warm brown, like damp beach sand.",
+        "fr": "Un brun pâle et chaud, comme du sable de plage humide."
+      },
+      "nature": {
+        "en": [
+          "damp sand",
+          "oatmeal",
+          "birch bark inner"
+        ],
+        "fr": [
+          "sable humide",
+          "flocons d'avoine",
+          "écorce de bouleau intérieure"
+        ]
+      }
+    },
+    {
+      "id": "sienna",
+      "base": "brown",
+      "ref": "#A0522D",
+      "name": {
+        "en": "Sienna",
+        "fr": "Terre de Sienne"
+      },
+      "description": {
+        "en": "An earthy reddish brown, like the soil and rooftops of Tuscany.",
+        "fr": "Un brun rouge terreux, comme la terre et les toits de Toscane."
+      },
+      "nature": {
+        "en": [
+          "red earth",
+          "terracotta pots",
+          "cedar bark"
+        ],
+        "fr": [
+          "terre rouge",
+          "pots en terre cuite",
+          "écorce de cèdre"
+        ]
+      }
+    },
+    {
+      "id": "mahogany",
+      "base": "brown",
+      "ref": "#6A2A1A",
+      "name": {
+        "en": "Mahogany",
+        "fr": "Acajou"
+      },
+      "description": {
+        "en": "A deep reddish brown, rich and polished, like fine mahogany wood.",
+        "fr": "Un brun rouge profond, riche et poli, comme un bois d'acajou."
+      },
+      "nature": {
+        "en": [
+          "mahogany wood",
+          "dark cherry wood",
+          "red-brown horse"
+        ],
+        "fr": [
+          "bois d'acajou",
+          "bois de cerisier foncé",
+          "cheval bai"
+        ]
+      }
+    },
+    {
+      "id": "taupe",
+      "base": "brown",
+      "ref": "#8E765C",
+      "name": {
+        "en": "Taupe",
+        "fr": "Taupe"
+      },
+      "description": {
+        "en": "A grayish brown, quiet and neutral, like a mole's fur or river stones.",
+        "fr": "Un brun grisé, discret et neutre, comme le pelage d'une taupe ou des galets de rivière."
+      },
+      "nature": {
+        "en": [
+          "mole fur",
+          "river stones",
+          "dry mushrooms"
+        ],
+        "fr": [
+          "pelage de taupe",
+          "galets de rivière",
+          "champignons séchés"
+        ]
+      }
+    },
+    {
+      "id": "khaki_brown",
+      "base": "brown",
+      "ref": "#8A7A4A",
+      "name": {
+        "en": "Olive brown",
+        "fr": "Brun olive"
+      },
+      "description": {
+        "en": "A dull brown with a green-yellow tint, earthy and muted, like dry reeds.",
+        "fr": "Un brun terne teinté de vert et de jaune, terreux et discret, comme des roseaux secs."
+      },
+      "nature": {
+        "en": [
+          "dry reeds",
+          "dead leaves",
+          "toad skin"
+        ],
+        "fr": [
+          "roseaux secs",
+          "feuilles mortes",
+          "peau de crapaud"
+        ]
+      }
+    },
+    {
+      "id": "walnut",
+      "base": "brown",
+      "ref": "#5C4033",
+      "name": {
+        "en": "Walnut",
+        "fr": "Noyer"
+      },
+      "description": {
+        "en": "A dark, warm brown with a gray touch, like walnut wood furniture.",
+        "fr": "Un brun foncé et chaud avec une touche de gris, comme un meuble en noyer."
+      },
+      "nature": {
+        "en": [
+          "walnut wood",
+          "tree trunks",
+          "brown owl feathers"
+        ],
+        "fr": [
+          "bois de noyer",
+          "troncs d'arbres",
+          "plumes de chouette brune"
+        ]
+      }
+    },
+    {
+      "id": "medium_gray",
+      "base": "gray",
+      "ref": "#808080",
+      "name": {
+        "en": "Gray",
+        "fr": "Gris"
+      },
+      "description": {
+        "en": "A neutral middle gray, neither warm nor cool, like a rain cloud or a pebble.",
+        "fr": "Un gris moyen et neutre, ni chaud ni froid, comme un nuage de pluie ou un caillou."
+      },
+      "nature": {
+        "en": [
+          "rain clouds",
+          "pebbles",
+          "pigeon feathers"
+        ],
+        "fr": [
+          "nuages de pluie",
+          "cailloux",
+          "plumes de pigeon"
+        ]
+      }
+    },
+    {
+      "id": "silver",
+      "base": "gray",
+      "ref": "#C0C0C0",
+      "name": {
+        "en": "Silver",
+        "fr": "Argent"
+      },
+      "description": {
+        "en": "A light, shiny-feeling gray, clean and cool, like silver or birch bark in winter.",
+        "fr": "Un gris clair, comme brillant, net et frais, comme l'argent ou l'écorce de bouleau en hiver."
+      },
+      "nature": {
+        "en": [
+          "silver birch",
+          "mist",
+          "fish scales"
+        ],
+        "fr": [
+          "bouleau argenté",
+          "brume",
+          "écailles de poisson"
+        ]
+      }
+    },
+    {
+      "id": "charcoal",
+      "base": "gray",
+      "ref": "#4A4A4A",
+      "name": {
+        "en": "Charcoal",
+        "fr": "Anthracite"
+      },
+      "description": {
+        "en": "A dark gray close to black, solid and serious, like charcoal or wet slate.",
+        "fr": "Un gris foncé proche du noir, solide et sérieux, comme du charbon de bois ou de l'ardoise mouillée."
+      },
+      "nature": {
+        "en": [
+          "charcoal",
+          "wet slate",
+          "storm clouds"
+        ],
+        "fr": [
+          "charbon de bois",
+          "ardoise mouillée",
+          "nuages d'orage"
+        ]
+      }
+    },
+    {
+      "id": "slate_gray",
+      "base": "gray",
+      "ref": "#708090",
+      "name": {
+        "en": "Slate gray",
+        "fr": "Gris ardoise"
+      },
+      "description": {
+        "en": "A cool gray with a blue tint, calm and stony, like slate rooftops.",
+        "fr": "Un gris froid teinté de bleu, calme et minéral, comme des toits d'ardoise."
+      },
+      "nature": {
+        "en": [
+          "slate",
+          "heron feathers",
+          "winter lake"
+        ],
+        "fr": [
+          "ardoise",
+          "plumes de héron",
+          "lac en hiver"
+        ]
+      }
+    },
+    {
+      "id": "warm_gray",
+      "base": "gray",
+      "ref": "#8C8680",
+      "name": {
+        "en": "Warm gray",
+        "fr": "Gris chaud"
+      },
+      "description": {
+        "en": "A gray with a little brown in it, soft and cozy, like wool or driftwood.",
+        "fr": "Un gris teinté d'un peu de brun, doux et douillet, comme de la laine ou du bois flotté."
+      },
+      "nature": {
+        "en": [
+          "driftwood",
+          "wool",
+          "stone walls"
+        ],
+        "fr": [
+          "bois flotté",
+          "laine",
+          "murets de pierre"
+        ]
+      }
+    },
+    {
+      "id": "light_gray",
+      "base": "gray",
+      "ref": "#D3D3D3",
+      "name": {
+        "en": "Light gray",
+        "fr": "Gris clair"
+      },
+      "description": {
+        "en": "A very pale gray, close to white, soft and calm, like fog.",
+        "fr": "Un gris très pâle, proche du blanc, doux et calme, comme du brouillard."
+      },
+      "nature": {
+        "en": [
+          "fog",
+          "ash",
+          "dove feathers"
+        ],
+        "fr": [
+          "brouillard",
+          "cendre",
+          "plumes de tourterelle"
+        ]
+      }
+    },
+    {
+      "id": "black",
+      "base": "black",
+      "ref": "#0A0A0A",
+      "name": {
+        "en": "Black",
+        "fr": "Noir"
+      },
+      "description": {
+        "en": "A deep, full black, absorbing almost all light, like a night with no moon.",
+        "fr": "Un noir profond et plein, qui absorbe presque toute la lumière, comme une nuit sans lune."
+      },
+      "nature": {
+        "en": [
+          "crow feathers",
+          "obsidian",
+          "night sky without moon"
+        ],
+        "fr": [
+          "plumes de corbeau",
+          "obsidienne",
+          "nuit sans lune"
+        ]
+      }
+    },
+    {
+      "id": "soft_black",
+      "base": "black",
+      "ref": "#1E1E1E",
+      "name": {
+        "en": "Soft black",
+        "fr": "Noir doux"
+      },
+      "description": {
+        "en": "A black with a hint of gray, slightly softened, like charcoal dust.",
+        "fr": "Un noir avec une pointe de gris, légèrement adouci, comme de la poussière de charbon."
+      },
+      "nature": {
+        "en": [
+          "charcoal dust",
+          "black cat fur",
+          "volcanic sand"
+        ],
+        "fr": [
+          "poussière de charbon",
+          "pelage de chat noir",
+          "sable volcanique"
+        ]
+      }
+    },
+    {
+      "id": "ink_black",
+      "base": "black",
+      "ref": "#141820",
+      "name": {
+        "en": "Ink black",
+        "fr": "Noir d'encre"
+      },
+      "description": {
+        "en": "A black with a faint cool blue tint, like ink or a raven's wing.",
+        "fr": "Un noir avec une légère teinte bleutée, comme de l'encre ou l'aile d'un corbeau."
+      },
+      "nature": {
+        "en": [
+          "raven wing",
+          "squid ink",
+          "black mussels"
+        ],
+        "fr": [
+          "aile de corbeau",
+          "encre de seiche",
+          "moules noires"
+        ]
+      }
+    },
+    {
+      "id": "pure_white",
+      "base": "white",
+      "ref": "#FFFFFF",
+      "name": {
+        "en": "White",
+        "fr": "Blanc"
+      },
+      "description": {
+        "en": "A clean, bright white, like fresh snow in the sun.",
+        "fr": "Un blanc net et lumineux, comme de la neige fraîche au soleil."
+      },
+      "nature": {
+        "en": [
+          "fresh snow",
+          "white swan",
+          "daisy petals"
+        ],
+        "fr": [
+          "neige fraîche",
+          "cygne blanc",
+          "pétales de marguerite"
+        ]
+      }
+    },
+    {
+      "id": "off_white",
+      "base": "white",
+      "ref": "#F4F4F0",
+      "name": {
+        "en": "Off-white",
+        "fr": "Blanc cassé"
+      },
+      "description": {
+        "en": "A soft white, not quite pure, calm and gentle, like a sheet of paper.",
+        "fr": "Un blanc doux, pas tout à fait pur, calme et tendre, comme une feuille de papier."
+      },
+      "nature": {
+        "en": [
+          "eggshell",
+          "birch bark",
+          "cotton"
+        ],
+        "fr": [
+          "coquille d'œuf",
+          "écorce de bouleau",
+          "coton"
+        ]
+      }
+    },
+    {
+      "id": "ivory",
+      "base": "white",
+      "ref": "#FFFDEA",
+      "name": {
+        "en": "Ivory",
+        "fr": "Ivoire"
+      },
+      "description": {
+        "en": "A warm white with a faint yellow touch, like old piano keys.",
+        "fr": "Un blanc chaud avec une légère touche de jaune, comme de vieilles touches de piano."
+      },
+      "nature": {
+        "en": [
+          "ivory",
+          "white magnolia",
+          "cream"
+        ],
+        "fr": [
+          "ivoire",
+          "magnolia blanc",
+          "crème"
+        ]
+      }
+    },
+    {
+      "id": "cream",
+      "base": "white",
+      "ref": "#FAF2DC",
+      "name": {
+        "en": "Cream",
+        "fr": "Crème"
+      },
+      "description": {
+        "en": "A warm, soft white, rich and smooth, like fresh cream.",
+        "fr": "Un blanc chaud et doux, riche et onctueux, comme de la crème fraîche."
+      },
+      "nature": {
+        "en": [
+          "fresh cream",
+          "vanilla ice cream",
+          "white mushrooms"
+        ],
+        "fr": [
+          "crème fraîche",
+          "crème glacée à la vanille",
+          "champignons blancs"
+        ]
+      }
+    },
+    {
+      "id": "snow_white",
+      "base": "white",
+      "ref": "#F4F8FC",
+      "name": {
+        "en": "Cool white",
+        "fr": "Blanc froid"
+      },
+      "description": {
+        "en": "A crisp white with a faint blue touch, like snow in the shade.",
+        "fr": "Un blanc net avec une légère touche de bleu, comme de la neige à l'ombre."
+      },
+      "nature": {
+        "en": [
+          "snow in shade",
+          "frost",
+          "clouds"
+        ],
+        "fr": [
+          "neige à l'ombre",
+          "givre",
+          "nuages"
+        ]
+      }
+    },
+    {
+      "id": "beige",
+      "base": "white",
+      "ref": "#F5F0DC",
+      "name": {
+        "en": "Beige",
+        "fr": "Beige"
+      },
+      "description": {
+        "en": "A very pale, warm white with a sandy touch, soft and natural, like unbleached linen.",
+        "fr": "Un blanc très pâle et chaud, avec une touche de sable, doux et naturel, comme du lin écru."
+      },
+      "nature": {
+        "en": [
+          "unbleached linen",
+          "oat milk",
+          "sea foam on sand"
+        ],
+        "fr": [
+          "lin écru",
+          "lait d'avoine",
+          "écume sur le sable"
+        ]
+      }
+    }
+  ]
 }

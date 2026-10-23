@@ -1,0 +1,249 @@
+<title>Goosescope Shade Review</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: a neutral, low-chroma workbench so every swatch is judged against gray; sections per base color, cards in a wrapping grid. */
+:root {
+  --bg: #E7E8EA;
+  --surface: #F4F4F5;
+  --ink: #1D2026;
+  --muted: #5A606B;
+  --line: #C9CCD1;
+  --ok: #2F7D4F;
+  --flag: #B5542A;
+  --focus: #3B5BDB;
+  --display: "Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
+  --body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #2A2D33; --surface: #34383F; --ink: #ECEDEF; --muted: #A7ACB5; --line: #4A4F57;
+    --ok: #6CC291; --flag: #F09A6E; --focus: #8EA6FF; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #2A2D33; --surface: #34383F; --ink: #ECEDEF; --muted: #A7ACB5; --line: #4A4F57;
+  --ok: #6CC291; --flag: #F09A6E; --focus: #8EA6FF; color-scheme: dark;
+}
+body { background: var(--bg); color: var(--ink); font: 16px/1.5 var(--body); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+.wrap { max-width: 1240px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+header.top { padding-block: 32px 12px; display: grid; gap: 10px; }
+h1 { font: 800 clamp(28px, 5vw, 44px)/1.05 var(--display); margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
+.lede { margin: 0; color: var(--muted); max-width: 65ch; }
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line); }
+.bar .wrap { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; padding-block: 10px; }
+.progress { font: 500 14px var(--mono); font-variant-numeric: tabular-nums; color: var(--muted); }
+.progress b { color: var(--ink); }
+.meter { flex: 1 1 160px; height: 8px; border-radius: 4px; background: var(--line); overflow: hidden; display: flex; min-width: 120px; }
+.meter i { display: block; height: 100%; }
+.meter .m-ok { background: var(--ok); }
+.meter .m-flag { background: var(--flag); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font: 700 13px var(--body); border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 999px; padding: 4px 11px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.chip .dot { width: 10px; height: 10px; border-radius: 50%; border: 1px solid rgba(0,0,0,.25); }
+.notice { margin: 12px 0 0; padding: 10px 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--muted); font-size: 14px; }
+section.base { padding-block: 28px 8px; }
+section.base > h2 { font: 600 22px var(--display); margin: 0 0 14px; display: flex; align-items: baseline; gap: 10px; }
+section.base > h2 small { font: 500 13px var(--mono); color: var(--muted); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 16px; }
+article.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; display: grid; grid-template-rows: auto 1fr auto; min-width: 0; }
+article.card.is-ok { border-color: var(--ok); }
+article.card.is-flag { border-color: var(--flag); }
+.swatch { height: 150px; padding: 14px 16px; display: flex; flex-direction: column; justify-content: space-between; }
+.swatch .names { font: 800 24px/1.1 var(--display); }
+.swatch .names span { display: block; font: 600 16px var(--body); opacity: .9; }
+.swatch .hex { font: 500 13px var(--mono); letter-spacing: .04em; }
+.body { padding: 14px 16px; display: grid; gap: 12px; min-width: 0; }
+.lang { display: grid; gap: 4px; }
+.lang .tag { font: 700 11px var(--body); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.lang p { margin: 0; }
+.lang ul { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 4px 6px; }
+.lang li { font-size: 13px; border: 1px solid var(--line); border-radius: 6px; padding: 1px 7px; color: var(--muted); }
+.review { border-top: 1px solid var(--line); padding: 12px 16px; display: grid; gap: 8px; }
+.review .actions { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.btn { font: 700 14px var(--body); border-radius: 8px; padding: 7px 12px; border: 1px solid var(--line); background: transparent; color: var(--ink); cursor: pointer; }
+.btn.ok[aria-pressed="true"] { background: var(--ok); border-color: var(--ok); color: var(--surface); }
+.btn.flag[aria-pressed="true"] { background: var(--flag); border-color: var(--flag); color: var(--surface); }
+.btn:disabled { opacity: .45; cursor: not-allowed; }
+.review textarea { font: 14px/1.4 var(--body); color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; resize: vertical; min-height: 64px; width: 100%; box-sizing: border-box; }
+.saved { font-size: 12px; color: var(--muted); }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+footer { padding-block: 40px; color: var(--muted); font-size: 13px; }
+</style>
+
+<header class="top wrap">
+  <h1>Goosescope shade review</h1>
+  <p class="lede">Every shade the app can name in its detail view, with its reference color. Check that each description and nature list fits the swatch, in English and French. Mark it as a match, or flag it and say what to change.</p>
+</header>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="progress" id="progress"><b>0</b> / 0 reviewed</div>
+    <div class="meter" aria-hidden="true"><i class="m-ok" id="m-ok"></i><i class="m-flag" id="m-flag"></i></div>
+    <div class="chips" id="status-chips" role="group" aria-label="Filter by review status"></div>
+    <div class="chips" id="base-chips" role="group" aria-label="Jump to a base color"></div>
+  </div>
+</div>
+
+<main class="wrap">
+  <p class="notice" id="notice">Loading saved reviews…</p>
+  <div id="sections"></div>
+</main>
+
+<footer class="wrap">Reference colors are shown as sRGB. A phone screen and the light in the room will shift them a little; judge whether the words fit the color, not the exact pixel.</footer>
+
+<script>
+const CATALOG = __DATA__;
+
+const ORDER = ["red","orange","yellow","green","blue","purple","pink","brown","gray","black","white"];
+const bases = Object.fromEntries(CATALOG.bases.map(b => [b.id, b]));
+const reviews = {};          // shade id -> {status, note}
+let db = null;
+let statusFilter = "all";
+
+function lum(hex) {
+  const c = [1, 3, 5].map(i => parseInt(hex.slice(i, i + 2), 16) / 255)
+    .map(v => v <= 0.04045 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4));
+  return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2];
+}
+// Same rule as the app (STANDARDS §4): pure black or white, whichever contrasts more.
+function textOn(hex) {
+  const L = lum(hex);
+  return (L + 0.05) / 0.05 >= 1.05 / (L + 0.05) ? "#000000" : "#FFFFFF";
+}
+function el(tag, attrs = {}, ...kids) {
+  const e = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === "class") e.className = v; else if (k === "text") e.textContent = v; else e.setAttribute(k, v);
+  }
+  kids.flat().forEach(k => k != null && e.append(k));
+  return e;
+}
+
+function langBlock(tag, desc, nature) {
+  return el("div", { class: "lang" },
+    el("span", { class: "tag", text: tag }),
+    el("p", { text: desc }),
+    el("ul", {}, nature.map(n => el("li", { text: n }))));
+}
+
+function card(s) {
+  const fg = textOn(s.ref);
+  const okBtn = el("button", { class: "btn ok", type: "button", "aria-pressed": "false", id: "ok-" + s.id, text: "✓ Matches" });
+  const flagBtn = el("button", { class: "btn flag", type: "button", "aria-pressed": "false", id: "flag-" + s.id, text: "Needs change" });
+  const note = el("textarea", { id: "note-" + s.id, placeholder: "What should change? (optional for a match)", "aria-label": "Note for " + s.name.en, hidden: "" });
+  const saved = el("span", { class: "saved", id: "saved-" + s.id });
+  const c = el("article", { class: "card", id: "card-" + s.id },
+    el("div", { class: "swatch", style: `background:${s.ref};color:${fg}` },
+      el("div", { class: "names" }, s.name.en, el("span", { text: s.name.fr })),
+      el("div", { class: "hex", text: `${s.ref.toUpperCase()} · ${bases[s.base].name.en} / ${bases[s.base].name.fr}` })),
+    el("div", { class: "body" },
+      langBlock("English", s.description.en, s.nature.en),
+      langBlock("Français", s.description.fr, s.nature.fr)),
+    el("div", { class: "review" }, el("div", { class: "actions" }, okBtn, flagBtn, saved), note));
+
+  okBtn.addEventListener("click", () => save(s.id, reviews[s.id]?.status === "ok" ? null : "ok", note.value));
+  flagBtn.addEventListener("click", () => { note.hidden = false; save(s.id, reviews[s.id]?.status === "flag" ? null : "flag", note.value); });
+  let t;
+  note.addEventListener("input", () => { clearTimeout(t); t = setTimeout(() => save(s.id, reviews[s.id]?.status ?? "flag", note.value), 700); });
+  return c;
+}
+
+function paintCard(id) {
+  const r = reviews[id] || {};
+  const c = document.getElementById("card-" + id);
+  if (!c) return;
+  c.classList.toggle("is-ok", r.status === "ok");
+  c.classList.toggle("is-flag", r.status === "flag");
+  document.getElementById("ok-" + id).setAttribute("aria-pressed", String(r.status === "ok"));
+  document.getElementById("flag-" + id).setAttribute("aria-pressed", String(r.status === "flag"));
+  const note = document.getElementById("note-" + id);
+  if (document.activeElement !== note) note.value = r.note || "";
+  if (r.status === "flag" || r.note) note.hidden = false;
+  document.getElementById("saved-" + id).textContent = r.status ? "Saved" : "";
+  c.hidden = !(statusFilter === "all" || (statusFilter === "todo" && !r.status) || r.status === statusFilter);
+}
+
+function paintProgress() {
+  const total = CATALOG.shades.length;
+  const ok = Object.values(reviews).filter(r => r.status === "ok").length;
+  const flag = Object.values(reviews).filter(r => r.status === "flag").length;
+  document.getElementById("progress").innerHTML = "";
+  document.getElementById("progress").append(el("b", { text: String(ok + flag) }), ` / ${total} reviewed · ${ok} match · ${flag} flagged`);
+  document.getElementById("m-ok").style.width = (100 * ok / total) + "%";
+  document.getElementById("m-flag").style.width = (100 * flag / total) + "%";
+}
+
+function paintAll() {
+  CATALOG.shades.forEach(s => paintCard(s.id));
+  document.querySelectorAll("section.base").forEach(sec => {
+    sec.hidden = ![...sec.querySelectorAll("article.card")].some(c => !c.hidden);
+  });
+  paintProgress();
+}
+
+async function save(id, status, note) {
+  if (!db) return;
+  const body = { status: status || null, note: (note || "").slice(0, 2000), updatedAt: new Date().toISOString() };
+  reviews[id] = body;
+  paintAll();
+  try {
+    await db.doc("reviews/" + id).set(body);
+  } catch (e) {
+    document.getElementById("saved-" + id).textContent = e && e.code === "permission_denied"
+      ? "You can't save reviews on this page" : "Not saved. Check your connection and try again.";
+  }
+}
+
+function build() {
+  const sections = document.getElementById("sections");
+  const baseChips = document.getElementById("base-chips");
+  ORDER.forEach(b => {
+    const shades = CATALOG.shades.filter(s => s.base === b);
+    const anchor = bases[b].anchors[0];
+    sections.append(el("section", { class: "base", id: "base-" + b },
+      el("h2", {}, `${bases[b].name.en} · ${bases[b].name.fr}`, el("small", { text: `${shades.length} shades` })),
+      el("div", { class: "grid" }, shades.map(card))));
+    const chip = el("button", { class: "chip", type: "button", "aria-pressed": "false" },
+      el("span", { class: "dot", style: `background:${anchor}` }), bases[b].name.en);
+    chip.addEventListener("click", () => document.getElementById("base-" + b).scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }));
+    baseChips.append(chip);
+  });
+  const statusChips = document.getElementById("status-chips");
+  [["all", "All"], ["todo", "To review"], ["flag", "Flagged"], ["ok", "Matches"]].forEach(([v, label]) => {
+    const chip = el("button", { class: "chip", type: "button", "aria-pressed": String(v === statusFilter), "data-v": v, text: label });
+    chip.addEventListener("click", () => {
+      statusFilter = v;
+      statusChips.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", String(c.dataset.v === v)));
+      paintAll();
+    });
+    statusChips.append(chip);
+  });
+  paintAll();
+}
+
+build();
+
+(async () => {
+  const notice = document.getElementById("notice");
+  db = window.claude ? await window.claude.use("db") : null;
+  if (!db) {
+    notice.textContent = "Reviews can't be saved in this view. Open the page signed in to claude.ai to mark shades.";
+    document.querySelectorAll(".review .btn").forEach(b => b.disabled = true);
+    return;
+  }
+  notice.hidden = true;
+  db.collection("reviews").onSnapshot(snap => {
+    snap.docs.forEach(d => { const v = d.data(); if (v) reviews[d.id] = v; });
+    snap.docChanges().filter(c => c.type === "removed").forEach(c => delete reviews[c.doc.id]);
+    paintAll();
+  }, () => {
+    notice.hidden = false;
+    notice.textContent = "Saved reviews couldn't load. Reload the page to try again.";
+  });
+})();
+</script>

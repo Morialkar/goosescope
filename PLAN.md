@@ -200,12 +200,13 @@ Parallélisable si voulu: T05 en parallèle de T03/T04; T07 en parallèle de T06
 - **Exigences**: F13, F14, F17, F18, F19, AC9, AC13, AC14 (préparation);
   STANDARDS §1.4.
 - **Fichiers**: `core/src/main/resources/catalog.json`,
-  `core/src/test/.../BundledCatalogTest.kt`, `docs/catalog-review.md` (une page
-  lisible de toutes les fiches, générée, pour la relecture de Naomi).
+  `core/src/test/.../BundledCatalogTest.kt`, `docs/shade-review.html` (page de
+  relecture générée par `tools/shade_review.py`, publiée en artifact à la demande de
+  Naomi: chaque fiche avec un aplat de sa couleur, approbation ou signalement).
 - **Contexte**: environ 10 à 15 nuances par base chromatique, 2 à 4 par base neutre.
   Couleurs de référence inspirées de références publiques de noms de couleur, mais
   textes originaux. Chaque fiche: comparaison évocatrice, ≥ 3 éléments de la nature.
-- **Critères**: AC9 et AC13 passent; `docs/catalog-review.md` généré.
+- **Critères**: AC9 et AC13 passent; `docs/shade-review.html` généré et publié.
 - **Cas de test**: nominal — AC9 complet; frontière — chaque référence classée dans
   sa base parente (sinon ajuster ancre ou référence, jamais retirer le test);
   AC13 sur une grille 32³; erreur — couvert par T03 (fixtures invalides).
