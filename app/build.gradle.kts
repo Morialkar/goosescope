@@ -5,9 +5,11 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 }
 
-val releaseSigning: Map<String, String?> =
-    listOf("goosescope.storeFile", "goosescope.storePassword", "goosescope.keyAlias", "goosescope.keyPassword")
-        .associateWith { providers.gradleProperty(it).orNull }
+// REQUIRES_REVIEW: clé de publication (SPEC F22). signing/ est ignoré par git; le mot de passe est lu
+// depuis un fichier pour n'apparaître ni dans le dépôt ni dans une commande (docs/RELEASING.md).
+val releaseKeystore = rootProject.file("signing/goosescope-release.jks")
+val releasePassword = rootProject.file("signing/password")
+val releaseSigningReady = releaseKeystore.isFile && releasePassword.isFile
 
 android {
     namespace = "com.morialkar.goosescope"
@@ -29,20 +31,22 @@ android {
 
     buildFeatures { compose = true }
 
-    // REQUIRES_REVIEW: signature de publication (SPEC F22). La clé et ses mots de passe vivent hors
-    // du dépôt public, dans ~/.gradle/gradle.properties (docs/RELEASING.md).
     signingConfigs {
         create("release") {
-            releaseSigning["goosescope.storeFile"]?.let { storeFile = file(it) }
-            storePassword = releaseSigning["goosescope.storePassword"]
-            keyAlias = releaseSigning["goosescope.keyAlias"]
-            keyPassword = releaseSigning["goosescope.keyPassword"]
+            if (releaseSigningReady) {
+                val password = releasePassword.readText().trim()
+                storeFile = releaseKeystore
+                storePassword = password
+                keyAlias = "goosescope"
+                // Magasin PKCS12: la clé partage le mot de passe du magasin.
+                keyPassword = password
+            }
         }
     }
 
     buildTypes {
         release {
-            signingConfig = if (releaseSigning.values.all { it != null }) signingConfigs.getByName("release") else null
+            signingConfig = if (releaseSigningReady) signingConfigs.getByName("release") else null
         }
     }
 }
@@ -108,9 +112,8 @@ tasks.withType<Test>().configureEach {
 // Sans clé, AGP produirait un APK release non signé: on refuse plutôt que de risquer de le publier.
 tasks.matching { it.name == "assembleRelease" }.configureEach {
     doFirst {
-        val missing = releaseSigning.filterValues { it == null }.keys
-        if (missing.isNotEmpty()) {
-            throw GradleException("Signature de publication absente: $missing. Voir docs/RELEASING.md.")
+        if (!releaseSigningReady) {
+            throw GradleException("Signature de publication absente: signing/goosescope-release.jks et signing/password. Voir docs/RELEASING.md.")
         }
     }
 }

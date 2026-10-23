@@ -8,3 +8,6 @@ local.properties
 *.keystore
 *.apk
 captures/
+
+# Clé de publication et mot de passe (SPEC F22): jamais dans le dépôt public.
+signing/
