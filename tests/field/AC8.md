@@ -18,4 +18,4 @@
   en paysage au moment de figer.
 - Tablette, tissu violet réel: direct « Purple — Plum », figé « Purple → Plum », toucher plus bas
   « Purple → Grape ».
-- **En attente**: validation de Naomi contre le prompt de style.
+- **Validé par Naomi le 2026-10-23.**
