@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Goosescope</title>
+<meta name="description" content="Point your phone's camera at something and Goosescope tells you its color. Offline, for colorblind people.">
+<style>
+/* Mêmes jetons que l'app (STANDARDS §4): aplats, tons moyens, aucune ressource externe (AC15). */
+:root {
+  --surface: #3F4752;
+  --raised: #545D69;
+  --ink: #F4F2EC;
+  --muted: #C9CDD3;
+  --line: #5E6773;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+* { box-sizing: border-box; }
+html { background: var(--surface); }
+body { margin: 0; color: var(--ink); font: 18px/1.55 var(--font); }
+.wrap { max-width: 1040px; margin: 0 auto; padding-inline: max(16px, env(safe-area-inset-left)); }
+header.top { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-block: 16px; }
+.brand { font-weight: 800; font-size: 20px; letter-spacing: .01em; }
+.lang { display: flex; gap: 6px; }
+.lang button { font: 700 14px var(--font); color: var(--ink); background: transparent; border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; cursor: pointer; }
+.lang button[aria-pressed="true"] { background: var(--ink); color: var(--surface); border-color: var(--ink); }
+.hero { display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; padding-block: 32px 48px; }
+h1 { font-size: clamp(36px, 7vw, 64px); line-height: 1.02; margin: 0 0 16px; letter-spacing: -.02em; text-wrap: balance; }
+.lede { font-size: 20px; color: var(--muted); max-width: 34ch; margin: 0 0 24px; }
+.chips { display: flex; gap: 0; border-radius: 12px; overflow: hidden; margin: 0 0 28px; max-width: 440px; }
+.chips span { flex: 1; height: 28px; }
+.cta { display: inline-flex; align-items: center; gap: 10px; background: var(--ink); color: var(--surface); font-weight: 800; text-decoration: none; padding: 14px 22px; border-radius: 12px; }
+.cta:focus-visible, .lang button:focus-visible, a:focus-visible { outline: 3px solid #8EA6FF; outline-offset: 3px; }
+.small { font-size: 15px; color: var(--muted); margin-top: 10px; }
+.shots { display: flex; gap: 16px; justify-content: center; }
+.shots img { width: 48%; max-width: 230px; border-radius: 18px; border: 1px solid var(--line); display: block; }
+section { padding-block: 40px; border-top: 1px solid var(--line); }
+h2 { font-size: 28px; margin: 0 0 20px; }
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.step { background: var(--raised); border-radius: 12px; padding: 18px 20px; }
+.step b { display: block; font-size: 20px; margin-bottom: 6px; }
+.step p, .cols p { margin: 0; color: var(--muted); }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+ol.install { margin: 0; padding-left: 22px; color: var(--muted); }
+ol.install li { margin-bottom: 8px; }
+a { color: var(--ink); }
+footer { padding-block: 32px 48px; color: var(--muted); font-size: 15px; border-top: 1px solid var(--line); }
+[data-l]:not(.on) { display: none; }
+@media (max-width: 760px) {
+  .hero, .cols { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<header class="top wrap">
+  <div class="brand">Goosescope</div>
+  <div class="lang" role="group" aria-label="Language / Langue">
+    <button type="button" data-set="en" aria-pressed="true">English</button>
+    <button type="button" data-set="fr" aria-pressed="false">Français</button>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <div>
+      <h1><span data-l="en">Point. Know the color.</span><span data-l="fr">Vise. Connais la couleur.</span></h1>
+      <p class="lede">
+        <span data-l="en">Goosescope names the color of whatever your camera points at. Made for colorblind people, so a red apple or a green leaf is never a guess again.</span>
+        <span data-l="fr">Goosescope nomme la couleur de ce que vise ta caméra. Fait pour les personnes daltoniennes, pour qu'une pomme rouge ou une feuille verte ne soit plus jamais une devinette.</span>
+      </p>
+      <div class="chips" aria-hidden="true">
+        <span style="background:#E8261C"></span><span style="background:#FF8A00"></span><span style="background:#FFE14D"></span><span style="background:#3FA535"></span><span style="background:#1F5FD8"></span><span style="background:#7E2DB8"></span><span style="background:#FFB6C8"></span><span style="background:#7B3F1A"></span><span style="background:#808080"></span>
+      </div>
+      <a class="cta" href="https://github.com/Morialkar/goosescope/releases/latest/download/goosescope.apk">
+        <span data-l="en">Download for Android</span><span data-l="fr">Télécharger pour Android</span>
+      </a>
+      <p class="small"><span data-l="en">Free · Android 13 or newer · No account</span><span data-l="fr">Gratuit · Android 13 ou plus récent · Aucun compte</span></p>
+    </div>
+    <div class="shots">
+      <img src="screenshots/live.png" width="480" height="1040" alt="Live camera view: the circle is on a checkerboard and the app says Gray.">
+      <img data-l="en" src="screenshots/detail-en.png" width="480" height="1040" alt="Frozen image: the app says Brown, then Coffee, with a description of how the shade feels.">
+      <img data-l="fr" src="screenshots/detail-fr.png" width="480" height="1040" alt="Image figée : l'app dit Brun, puis Café, avec une description de ce que la nuance fait ressentir.">
+    </div>
+  </div>
+
+  <section>
+    <h2><span data-l="en">How it works</span><span data-l="fr">Comment ça marche</span></h2>
+    <div class="steps">
+      <div class="step">
+        <b><span data-l="en">Point</span><span data-l="fr">Vise</span></b>
+        <p><span data-l="en">Aim the circle in the middle of the screen at an object.</span><span data-l="fr">Place le cercle au milieu de l'écran sur un objet.</span></p>
+      </div>
+      <div class="step">
+        <b><span data-l="en">Read</span><span data-l="fr">Lis</span></b>
+        <p><span data-l="en">One of 11 simple color names appears in big letters: red, green, blue, brown…</span><span data-l="fr">Un des 11 noms de couleur simples s'affiche en grand : rouge, vert, bleu, brun…</span></p>
+      </div>
+      <div class="step">
+        <b><span data-l="en">Freeze</span><span data-l="fr">Fige</span></b>
+        <p><span data-l="en">Freeze the image to learn the exact shade, what it feels like, and where it shows up in nature. Tap anywhere to check another spot.</span><span data-l="fr">Fige l'image pour connaître la nuance exacte, ce qu'elle fait ressentir et où on la trouve dans la nature. Touche n'importe où pour vérifier un autre endroit.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cols">
+    <div>
+      <h2><span data-l="en">Private by design</span><span data-l="fr">Privé, par conception</span></h2>
+      <p><span data-l="en">Goosescope works fully offline. It cannot use the internet, has no account, and never saves or sends a picture. The only permission it asks for is the camera.</span><span data-l="fr">Goosescope fonctionne entièrement hors ligne. L'app ne peut pas utiliser Internet, n'a pas de compte et n'enregistre ni n'envoie jamais d'image. La seule permission demandée est la caméra.</span></p>
+    </div>
+    <div>
+      <h2><span data-l="en">Install</span><span data-l="fr">Installer</span></h2>
+      <ol class="install">
+        <li><span data-l="en">Download <code>goosescope.apk</code> on your phone with the button above.</span><span data-l="fr">Télécharge <code>goosescope.apk</code> sur ton téléphone avec le bouton plus haut.</span></li>
+        <li><span data-l="en">Open it. Android asks to allow installs from your browser or file app: allow it for this install.</span><span data-l="fr">Ouvre-le. Android demande d'autoriser les installations depuis ton navigateur ou ton gestionnaire de fichiers : autorise-le pour cette installation.</span></li>
+        <li><span data-l="en">Open Goosescope and allow the camera.</span><span data-l="fr">Ouvre Goosescope et autorise la caméra.</span></li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <span data-l="en">Open source under the MIT license.</span><span data-l="fr">Code source ouvert, licence MIT.</span>
+  <a href="https://github.com/Morialkar/goosescope">github.com/Morialkar/goosescope</a>
+</footer>
+
+<script>
+// Anglais par défaut (SPEC F20); le choix est retenu sur cet appareil seulement.
+function setLang(l) {
+  document.documentElement.lang = l;
+  document.querySelectorAll('[data-l]').forEach(e => e.classList.toggle('on', e.dataset.l === l));
+  document.querySelectorAll('[data-set]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.set === l)));
+  try { localStorage.setItem('gs-lang', l); } catch (e) {}
+}
+document.querySelectorAll('[data-set]').forEach(b => b.addEventListener('click', () => setLang(b.dataset.set)));
+let saved = null;
+try { saved = localStorage.getItem('gs-lang'); } catch (e) {}
+setLang(saved === 'fr' ? 'fr' : 'en');
+</script>
+</body>
+</html>
