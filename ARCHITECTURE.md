@@ -196,7 +196,9 @@ Deux étapes séparées pour que la logique soit testable sans dépendre de la l
    - `lightness`: `LIGHTER` / `DARKER` / `SAME` (seuil |ΔL| > 0,03).
    - `chroma`: `MORE_VIVID` / `PALER` / `SAME` (seuil |ΔC| > 0,02).
    - `temperature`: `WARMER` / `COOLER` / `SAME`, selon que la teinte se rapproche
-     du pôle chaud (h ≈ 50°, orange) ou froid (h ≈ 230°, bleu) de plus de 6°.
+     du pôle chaud (h ≈ 40°, entre rouge et orange) ou de son opposé froid (h ≈ 220°)
+     de plus de 6°. (50° prévus au départ rendaient une pêche tirant vers le rouge
+     « plus froide », corrigé en T07.)
    Tous ces seuils sont `ASSUMPTION`, calibrés en Phase 3.
 2. `ComparisonText.render(facts, shade, lang): String`: gabarits par langue.
    Exemple FR: « Le rouge y est légèrement plus présent, ce qui la rend plus

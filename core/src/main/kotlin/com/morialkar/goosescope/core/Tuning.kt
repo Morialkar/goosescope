@@ -31,6 +31,7 @@ object Tuning {
     const val COMPARE_HUE_DEG = 6.0
     const val COMPARE_LIGHTNESS = 0.03
     const val COMPARE_CHROMA = 0.02
-    const val WARM_POLE_DEG = 50.0
-    const val COOL_POLE_DEG = 230.0
+    // Pôle chaud entre rouge et orange: une pêche qui tire vers le rouge doit paraître plus chaude.
+    // 50° prévus en Phase 1 la rendaient « plus froide » (T07). Le pôle froid est l'opposé (220°).
+    const val WARM_POLE_DEG = 40.0
 }
