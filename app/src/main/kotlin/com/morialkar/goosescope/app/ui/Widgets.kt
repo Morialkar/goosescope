@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicText
+import androidx.compose.foundation.text.TextAutoSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -16,6 +17,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.morialkar.goosescope.app.ui.theme.Tokens
 
 @Composable
@@ -28,7 +30,13 @@ fun FlatButton(label: String, onClick: () -> Unit, modifier: Modifier = Modifier
             .padding(horizontal = 18.dp, vertical = 12.dp),
         contentAlignment = Alignment.Center,
     ) {
-        BasicText(label, style = TextStyle(color = Tokens.textOnSurface, fontSize = Tokens.labelSize, fontWeight = FontWeight.Bold))
+        // Une seule ligne: le libellé rétrécit un peu plutôt que de passer à la ligne (trois boutons sur un téléphone).
+        BasicText(
+            label,
+            style = TextStyle(color = Tokens.textOnSurface, fontWeight = FontWeight.Bold),
+            maxLines = 1,
+            autoSize = TextAutoSize.StepBased(minFontSize = 11.sp, maxFontSize = Tokens.labelSize),
+        )
     }
 }
 

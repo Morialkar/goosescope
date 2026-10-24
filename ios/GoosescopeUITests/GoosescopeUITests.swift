@@ -59,6 +59,20 @@ final class GoosescopeUITests: XCTestCase {
         XCTAssertEqual(app.descendants(matching: .any).matching(identifier: "natureTag").count, 3)
     }
 
+    func testLanguageCanBeSwitchedFromTheDetailSheet() {
+        launch("#FFC4A0")
+        freeze()
+        waitText("detailShade", "Peach")
+        button("language").tap()
+        waitText("detailShade", "Pêche")
+        waitText("detailBase", "ORANGE")
+        // Attendre que le bouton affiche son nouveau libellé: le toucher pendant qu'il change de taille se perdait.
+        let switched = NSPredicate(format: "label == %@", "English")
+        XCTAssertEqual(XCTWaiter().wait(for: [expectation(for: switched, evaluatedWith: button("language"))], timeout: 5), .completed)
+        button("language").tap()
+        waitText("detailShade", "Peach")
+    }
+
     func testTappingThreeSpotsUpdatesTheSheet() {
         launch("bands")
         freeze()

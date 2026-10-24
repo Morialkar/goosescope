@@ -11,6 +11,9 @@ struct FlatButton: View {
         Button(action: action) {
             Text(label)
                 .font(.system(size: Tokens.labelSize, weight: .bold))
+                // Une seule ligne: le libellé rétrécit un peu plutôt que de passer à la ligne (trois boutons sur un téléphone).
+                .lineLimit(1)
+                .minimumScaleFactor(0.7)
                 .foregroundStyle(Tokens.textOnSurface)
                 .padding(.horizontal, 18)
                 .frame(maxWidth: fill ? .infinity : nil, minHeight: Tokens.minTouch)

@@ -82,7 +82,7 @@ import kotlin.math.roundToInt
 
 /** Image figée, réticule déplaçable au toucher et fiche détaillée (SPEC F6, F14, F16). */
 @Composable
-fun FrozenScreen(state: ScopeState.Frozen, lang: Lang, viewModel: ScopeViewModel) {
+fun FrozenScreen(state: ScopeState.Frozen, lang: Lang, viewModel: ScopeViewModel, onToggleLanguage: () -> Unit) {
     val image = remember(state.image) { state.image.asImageBitmap() }
     BoxWithConstraints(Modifier.fillMaxSize().background(Tokens.surface)) {
         val density = LocalDensity.current
@@ -131,7 +131,7 @@ fun FrozenScreen(state: ScopeState.Frozen, lang: Lang, viewModel: ScopeViewModel
                 enter = fadeIn(tween(220)) + slideInVertically(tween(320)) { it / 6 },
             ) {
                 DetailSheet(
-                    state.detail, lang, viewModel, expanded, toggle,
+                    state.detail, lang, viewModel, expanded, toggle, onToggleLanguage,
                     (if (expanded) Modifier.fillMaxHeight() else Modifier).width(400.dp),
                     (if (expanded) WindowInsetsSides.Vertical else WindowInsetsSides.Bottom) +
                         if (onRight) WindowInsetsSides.End else WindowInsetsSides.Start,
@@ -146,7 +146,7 @@ fun FrozenScreen(state: ScopeState.Frozen, lang: Lang, viewModel: ScopeViewModel
                 enter = fadeIn(tween(220)) + slideInVertically(tween(320)) { if (atBottom) it / 3 else -it / 3 },
             ) {
                 DetailSheet(
-                    state.detail, lang, viewModel, expanded, toggle,
+                    state.detail, lang, viewModel, expanded, toggle, onToggleLanguage,
                     Modifier.fillMaxWidth().heightIn(max = maxHeight * 0.62f),
                     WindowInsetsSides.Horizontal + if (atBottom) WindowInsetsSides.Bottom else WindowInsetsSides.Top,
                 )
@@ -162,6 +162,7 @@ private fun DetailSheet(
     viewModel: ScopeViewModel,
     expanded: Boolean,
     onToggle: () -> Unit,
+    onToggleLanguage: () -> Unit,
     modifier: Modifier,
     edges: WindowInsetsSides,
 ) {
@@ -206,6 +207,8 @@ private fun DetailSheet(
         Row(horizontalArrangement = Arrangement.spacedBy(12.dp), modifier = Modifier.fillMaxWidth()) {
             FlatButton(stringResource(R.string.resume), viewModel::resume, Modifier.weight(1f).testTag("resume"))
             FlatButton(stringResource(R.string.detail_hide), onToggle, Modifier.testTag("detailToggle"))
+            // Changer de langue sans quitter la fiche (SPEC F35): le texte change, l'image figée reste.
+            FlatButton(stringResource(R.string.other_language), onToggleLanguage, Modifier.testTag("language"))
         }
     }
 }

@@ -28,11 +28,12 @@ class FrozenScreenTest {
     @get:Rule val rule = createAndroidComposeRule<ComponentActivity>()
     private val source = FakeFrameSource()
     private lateinit var vm: ScopeViewModel
+    private var languageToggled = false
 
     @Before
     fun setUp() {
         vm = ScopeViewModel { TestSupport.catalog }
-        rule.setContent { ScopeApp(vm, source, onRequestPermission = {}, onOpenSettings = {}) }
+        rule.setContent { ScopeApp(vm, source, onRequestPermission = {}, onOpenSettings = {}, onToggleLanguage = { languageToggled = true }) }
         vm.onPermissionResult(true)
         rule.waitUntil(SLOW_DEVICE_MS) { source.isPreviewing }
     }
@@ -124,6 +125,14 @@ class FrozenScreenTest {
         rule.runOnUiThread { rule.activity.onBackPressedDispatcher.onBackPressed() }
         rule.waitUntil(SLOW_DEVICE_MS) { source.isPreviewing }
         rule.onNodeWithTag("freeze").assertIsDisplayed()
+    }
+
+    @Test
+    fun the_detail_sheet_offers_the_language_switch() {
+        // SPEC F35: même bouton de langue qu'en mode direct, dans la fiche.
+        freezeOn { _, _ -> Srgb8.fromHex("#FFC4A0") }
+        rule.onNodeWithTag("language").performClick()
+        assertTrue(languageToggled)
     }
 
     @Test

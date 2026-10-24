@@ -144,6 +144,8 @@ struct DetailSheet: View {
             HStack(spacing: 12) {
                 FlatButton(label: l10n.t("resume"), fill: true, action: model.resume).accessibilityIdentifier("resume")
                 FlatButton(label: l10n.t("detail_hide")) { expanded = false }.accessibilityIdentifier("detailToggle")
+                // Changer de langue sans quitter la fiche (SPEC F35).
+                FlatButton(label: l10n.t("other_language"), action: l10n.toggle).accessibilityIdentifier("language")
             }
         }
         .foregroundStyle(Tokens.textOnSurface)

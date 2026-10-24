@@ -273,3 +273,8 @@ Cette section est en vigueur; elle prime sur NG4 et sur la ligne « Distribution
   direct (vérifié par `cmd statusbar click-tile` sur la tablette).
 - AC20. Appareil verrouillé → appui sur la tuile → l'écran de Goosescope s'affiche sans
   déverrouillage; retour → écran verrouillé (vérification manuelle sur la tablette).
+
+## 15. Amendement — révision 7 (demandé par Naomi le 2026-10-24)
+
+- F35. La fiche détaillée (image figée) propose aussi le bouton de langue; la bascule change tous
+  les textes sans quitter l'image figée. S'applique à Android et à iOS (SPEC-IOS F29).

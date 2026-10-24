@@ -55,7 +55,7 @@ fun ScopeApp(
                     onToggleLanguage = onToggleLanguage,
                 )
             }
-            is ScopeState.Frozen -> FrozenScreen(s, lang, viewModel)
+            is ScopeState.Frozen -> FrozenScreen(s, lang, viewModel, onToggleLanguage)
             is ScopeState.Failure -> when (s.reason) {
                 FailureReason.CATALOG -> MessageScreen(
                     stringResource(R.string.error_title), stringResource(R.string.error_catalog), null, tag = "failure",
