@@ -106,3 +106,9 @@ de la tuile inclus, donc iOS 18 minimum.
    Android.
 4. Cible Apple pour exécuter les tests du cœur (macOS arm64 ou simulateur).
 5. Vérification « aucun réseau » côté iOS (NF12, AC26).
+
+## 9. Ajout pendant l'implémentation (Naomi, 2026-10-24)
+
+- F34. Sur iOS, la fiche se réduit aussi en la glissant vers le bord de l'écran (poignée en haut de la
+  fiche, comme les feuilles d'iOS), et se rouvre en la glissant vers le centre. Le bouton
+  « Masquer / Détails » reste. Couvert par un test d'interface.

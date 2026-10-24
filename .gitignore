@@ -11,3 +11,12 @@ captures/
 
 # Clé de publication et mot de passe (SPEC F22): jamais dans le dépôt public.
 signing/
+
+# iOS: projet régénéré par XcodeGen, sorties de build, identifiants locaux (équipe, appareil).
+ios/*.xcodeproj/
+ios/build/
+ios/local.env
+*.mobileprovision
+# Info.plist des extensions: générés par XcodeGen depuis project.yml.
+ios/Controls/Info.plist
+ios/Capture/Info.plist

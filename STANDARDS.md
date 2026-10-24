@@ -134,3 +134,17 @@ rédigée naturellement, pas traduite mot à mot.
 - Licence: MIT (décision de Naomi, 2026-10-23), fichier `LICENSE` à la racine.
 - Un commit par tâche du plan, message qui cite l'identifiant de tâche.
 - `build/`, `.gradle/`, `local.properties`, `*.jks`, `*.keystore`, `*.apk` ignorés.
+
+## 9. iOS (ajouté le 2026-10-24, IMPACT-IOS §4)
+
+- Le code Swift ne contient aucune règle de couleur: il appelle le cœur partagé (SPEC-IOS F30).
+  Un seuil ou une ancre se change dans `:core`, jamais côté Swift.
+- Swift: conventions Swift API Design Guidelines, SwiftUI, aucune dépendance tierce sans
+  `DECISION_REQUIRED`; pas de `!` forcé sauf invariant expliqué en commentaire.
+- Surcharges Kotlin exposées à Swift: nom Swift explicite (`@ObjCName`), jamais le suffixe `_`
+  généré selon l'ordre de déclaration.
+- Fonctions du cœur qui lèvent une exception attendue côté Swift: `@Throws`, sinon l'app iOS s'arrête.
+- Mêmes jetons visuels (§4), déclarés une fois dans `ios/Goosescope/Tokens.swift`.
+- Textes: `en.lproj` et `fr.lproj`, mêmes clés (`ios/tools/check-strings.sh`).
+- Aucun réseau: `ios/tools/check-no-network.sh` sur chaque build livré.
+- Identifiants d'équipe et d'appareil seulement dans `ios/local.env` (non commité).

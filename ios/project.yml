@@ -1,0 +1,97 @@
+# Projet Xcode décrit pour XcodeGen (IMPACT-IOS §2.3). Le .xcodeproj est régénéré par ios/build.sh.
+name: Goosescope
+options:
+  bundleIdPrefix: com.morialkar
+  developmentLanguage: en
+  deploymentTarget:
+    iOS: "18.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    CODE_SIGN_STYLE: Automatic
+    TARGETED_DEVICE_FAMILY: "1"
+targets:
+  Goosescope:
+    type: application
+    platform: iOS
+    sources:
+      - path: Goosescope
+      - path: Shared
+    dependencies:
+      # Cœur Kotlin partagé (F30), statique: rien à embarquer.
+      - framework: ../core/build/XCFrameworks/release/GoosescopeCore.xcframework
+        embed: false
+      - target: GoosescopeControls
+      - target: GoosescopeCapture
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.morialkar.goosescope
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: Goosescope
+        INFOPLIST_KEY_NSCameraUsageDescription: "Goosescope looks through the camera to tell you the color of what you point at."
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UIRequiresFullScreen: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+    scheme:
+      testTargets:
+        - GoosescopeUITests
+
+  # Contrôle iOS 18 (F32).
+  GoosescopeControls:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: Controls
+      - path: Shared
+    info:
+      path: Controls/Info.plist
+      properties:
+        CFBundleDisplayName: Goosescope
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.morialkar.goosescope.controls
+
+  # Extension écran verrouillé (F33): mêmes écrans que l'app, sauf le point d'entrée.
+  GoosescopeCapture:
+    type: extensionkit-extension
+    platform: iOS
+    sources:
+      - path: Capture
+      - path: Shared
+      - path: Goosescope
+        excludes:
+          - GoosescopeApp.swift
+    dependencies:
+      - framework: ../core/build/XCFrameworks/release/GoosescopeCore.xcframework
+        embed: false
+    info:
+      path: Capture/Info.plist
+      properties:
+        CFBundleDisplayName: Goosescope
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        NSCameraUsageDescription: "Goosescope looks through the camera to tell you the color of what you point at."
+        EXAppExtensionAttributes:
+          EXExtensionPointIdentifier: com.apple.securecapture
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.morialkar.goosescope.capture
+
+  GoosescopeUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: GoosescopeUITests
+    dependencies:
+      - target: Goosescope
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.morialkar.goosescope.uitests
+        GENERATE_INFOPLIST_FILE: YES

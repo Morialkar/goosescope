@@ -1,0 +1,25 @@
+/* Généré depuis app/src/main/res/values-fr/strings.xml puis complété pour iOS. */
+"app_name" = "Goosescope";
+"detail_hide" = "Masquer";
+"detail_nature" = "Aussi dans la nature";
+"detail_reference" = "Référence";
+"detail_show" = "Détails";
+"detail_tap_hint" = "Touche n'importe où sur l'image pour vérifier un autre endroit.";
+"error_camera" = "La caméra n'a pas pu démarrer. Ferme les autres apps qui utilisent la caméra, puis réessaie.";
+"error_catalog" = "La liste de couleurs de l'app n'a pas pu être lue. Réinstalle l'app pour corriger le problème.";
+"error_title" = "Un problème est survenu";
+"freeze" = "Figer";
+"open_settings" = "Ouvrir Réglages";
+"other_language" = "English";
+"permission_allow" = "Autoriser la caméra";
+"permission_body" = "L'app regarde par la caméra pour te dire la couleur de ce que tu vises. Les images restent sur ce téléphone : rien n'est enregistré ni envoyé.";
+"permission_settings" = "Ouvrir les paramètres de l'app";
+"permission_title" = "Goosescope a besoin de la caméra";
+"resume" = "Retour à la caméra";
+"retry" = "Réessayer";
+"too_dark" = "Trop sombre";
+"too_dark_frozen_hint" = "Cette image a été prise avec trop peu de lumière pour nommer ses couleurs. Reviens à la caméra et ajoute de la lumière.";
+"too_dark_hint" = "Ajoute de la lumière ou allume la lampe pour voir la couleur.";
+"torch_off" = "Éteindre la lampe";
+"torch_on" = "Allumer la lampe";
+"warming" = "Vise un objet avec le cercle.";

@@ -221,7 +221,7 @@ point image. Retourne `null` si le toucher tombe hors de l'image visible.
 
 ## 4. Schémas de données
 
-### 4.1 `catalog.json` (`:core/src/main/resources/`)
+### 4.1 `catalog.json` (`:core/src/commonMain/resources/`, embarqué en Kotlin à la compilation)
 
 ```json
 {
@@ -380,8 +380,8 @@ goosescope/
 ├── settings.gradle.kts  build.gradle.kts  gradle/libs.versions.toml  gradlew
 ├── core/
 │   ├── build.gradle.kts
-│   └── src/{main,test}/kotlin/com/morialkar/goosescope/core/...
-│       src/main/resources/catalog.json
+│   └── src/{commonMain,commonTest}/kotlin/com/morialkar/goosescope/core/...
+│       src/commonMain/resources/catalog.json
 ├── app/
 │   ├── build.gradle.kts
 │   └── src/main/{AndroidManifest.xml, kotlin/.../app/, res/values, res/values-fr, res/xml/locales_config.xml}
@@ -417,3 +417,28 @@ Architecture retenue:
 - La page explique: ce que fait l'app, comment installer un APK hors Play Store
   (sources inconnues), ce que l'app ne fait pas (aucune donnée envoyée, aucune image
   enregistrée).
+
+---
+
+## 10. iOS (ajouté le 2026-10-24)
+
+Détail et alternatives: IMPACT-IOS.md. Résumé:
+
+```
+:core (Kotlin Multiplatform) ── jvm ──────────► :app Android
+        │                    ── iosArm64 ─────► GoosescopeCore.xcframework (statique)
+        │                    ── macosArm64 ───► tests du cœur sur le Mac
+        ▼
+ios/ (XcodeGen: project.yml)
+├── Goosescope/        app SwiftUI: CameraSource (AVFoundation), ScopeModel, vues, L10n, en/fr.lproj
+├── Shared/            OpenScopeIntent (CameraCaptureIntent)
+├── Controls/          extension WidgetKit: contrôle Centre de contrôle / écran verrouillé / bouton Action
+├── Capture/           extension LockedCameraCapture: mêmes vues, par-dessus l'écran verrouillé
+├── GoosescopeUITests/ tests d'interface avec caméra factice (GOOSESCOPE_FAKE_CAMERA)
+└── tools/             check-strings.sh, check-no-network.sh; build.sh construit et installe
+```
+
+- `catalog.json` et les ressources de test sont embarqués en Kotlin par des tâches Gradle
+  (`generateCatalogSource`, `generateTestResources`), seul moyen commun à la JVM et à Kotlin/Native.
+- `ScopeModel` (Swift) orchestre le cœur comme `ScopeViewModel` (Kotlin); aucun calcul de couleur.
+- L'extension écran verrouillé n'a pas accès aux préférences de l'app: elle s'ouvre en anglais.

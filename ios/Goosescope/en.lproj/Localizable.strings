@@ -1,0 +1,25 @@
+/* Généré depuis app/src/main/res/values/strings.xml puis complété pour iOS. */
+"app_name" = "Goosescope";
+"detail_hide" = "Hide";
+"detail_nature" = "Also found in nature";
+"detail_reference" = "Reference";
+"detail_show" = "Details";
+"detail_tap_hint" = "Tap anywhere on the image to check another spot.";
+"error_camera" = "The camera could not start. Close other apps that use the camera, then try again.";
+"error_catalog" = "The color list inside the app could not be read. Reinstall the app to fix it.";
+"error_title" = "Something went wrong";
+"freeze" = "Freeze";
+"open_settings" = "Open Settings";
+"other_language" = "Français";
+"permission_allow" = "Allow camera";
+"permission_body" = "The app looks through the camera to tell you the color of what you point at. Images stay on this phone: nothing is saved or sent.";
+"permission_settings" = "Open app settings";
+"permission_title" = "Goosescope needs the camera";
+"resume" = "Back to camera";
+"retry" = "Try again";
+"too_dark" = "Too dark";
+"too_dark_frozen_hint" = "This image was taken in too little light to name its colors. Go back to the camera and add some light.";
+"too_dark_hint" = "Add some light or turn on the light to see the color.";
+"torch_off" = "Light off";
+"torch_on" = "Light on";
+"warming" = "Point the circle at something.";
