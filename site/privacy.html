@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Goosescope Privacy Policy</title>
+<meta name="description" content="Goosescope collects no personal data. The camera is used on the device only; nothing is saved or sent.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+/* Mêmes jetons que l'app (STANDARDS §4): aplats, tons moyens, aucune ressource externe (AC15). */
+:root {
+  --surface: #3F4752;
+  --raised: #545D69;
+  --ink: #F4F2EC;
+  --muted: #C9CDD3;
+  --line: #5E6773;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+* { box-sizing: border-box; }
+html { background: var(--surface); }
+body { margin: 0; color: var(--ink); font: 18px/1.55 var(--font); }
+.wrap { max-width: 1040px; margin: 0 auto; padding-inline: max(16px, env(safe-area-inset-left)); }
+header.top { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-block: 16px; }
+.brand { font-weight: 800; font-size: 20px; letter-spacing: .01em; display: flex; align-items: center; gap: 10px; }
+.brand img { width: 36px; height: 36px; border-radius: 10px; }
+.lang { display: flex; gap: 6px; }
+.lang button { font: 700 14px var(--font); color: var(--ink); background: transparent; border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; cursor: pointer; }
+.lang button[aria-pressed="true"] { background: var(--ink); color: var(--surface); border-color: var(--ink); }
+.hero { display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; padding-block: 32px 48px; }
+h1 { font-size: clamp(36px, 7vw, 64px); line-height: 1.02; margin: 0 0 16px; letter-spacing: -.02em; text-wrap: balance; }
+.lede { font-size: 20px; color: var(--muted); max-width: 34ch; margin: 0 0 24px; }
+.chips { display: flex; gap: 0; border-radius: 12px; overflow: hidden; margin: 0 0 28px; max-width: 440px; }
+.chips span { flex: 1; height: 28px; }
+.cta { display: inline-flex; align-items: center; gap: 10px; background: var(--ink); color: var(--surface); font-weight: 800; text-decoration: none; padding: 14px 22px; border-radius: 12px; }
+.cta:focus-visible, .lang button:focus-visible, a:focus-visible { outline: 3px solid #8EA6FF; outline-offset: 3px; }
+.small { font-size: 15px; color: var(--muted); margin-top: 10px; }
+.shots { display: flex; gap: 24px; justify-content: center; align-items: flex-start; }
+.shot { margin: 0; flex: 0 0 auto; width: min(230px, 44%); }
+/* Décalage vertical sur grand écran: les deux téléphones ne sont pas posés au garde-à-vous. */
+.shot + .shot { margin-top: 56px; }
+.shot img { width: 100%; height: auto; display: block; border-radius: 26px; border: 7px solid var(--raised); background: var(--raised); }
+.shot figcaption { margin-top: 12px; text-align: center; font-size: 15px; color: var(--muted); }
+section { padding-block: 40px; border-top: 1px solid var(--line); }
+h2 { font-size: 28px; margin: 0 0 20px; }
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.step { background: var(--raised); border-radius: 12px; padding: 18px 20px; }
+.step b { display: block; font-size: 20px; margin-bottom: 6px; }
+.step p, .cols p { margin: 0; color: var(--muted); }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+ol.install { margin: 0; padding-left: 22px; color: var(--muted); }
+ol.install li { margin-bottom: 8px; }
+a { color: var(--ink); }
+.log { display: grid; gap: 16px; }
+.release { background: var(--raised); border-radius: 12px; padding: 18px 20px; }
+.release header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; margin-bottom: 8px; }
+.release h3 { margin: 0; font-size: 20px; }
+.release time { color: var(--muted); font-size: 15px; font-variant-numeric: tabular-nums; }
+.release .tag { font-size: 13px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; background: var(--ink); color: var(--surface); border-radius: 999px; padding: 2px 10px; }
+.release ul { margin: 0; padding-left: 20px; color: var(--muted); }
+.release li { margin-bottom: 6px; }
+footer { padding-block: 32px 48px; color: var(--muted); font-size: 15px; border-top: 1px solid var(--line); }
+[data-l]:not(.on) { display: none; }
+@media (max-width: 760px) {
+  .hero, .cols { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr; }
+  /* Sur téléphone: carrousel horizontal qui déborde jusqu'aux bords de l'écran. */
+  .shots {
+    justify-content: flex-start; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory;
+    margin-inline: calc(-1 * max(16px, env(safe-area-inset-left)));
+    padding-inline: max(16px, env(safe-area-inset-left)); padding-bottom: 8px;
+    scrollbar-width: none;
+  }
+  .shots::-webkit-scrollbar { display: none; }
+  .shot { width: 68vw; max-width: 290px; scroll-snap-align: center; }
+  .shot + .shot { margin-top: 0; }
+}
+
+.policy { max-width: 70ch; padding-block: 8px 40px; }
+.policy h1 { font-size: clamp(30px, 6vw, 44px); margin-bottom: 8px; }
+.policy .date { color: var(--muted); margin: 0 0 24px; }
+.policy h2 { font-size: 22px; margin: 28px 0 8px; }
+.policy p, .policy li { color: var(--muted); }
+.policy strong { color: var(--ink); }
+.summary { background: var(--raised); border-radius: 12px; padding: 16px 20px; color: var(--ink) !important; }
+</style>
+</head>
+<body>
+<header class="top wrap">
+  <a class="brand" href="./" style="text-decoration:none"><img src="icon-512.png" width="36" height="36" alt="">Goosescope</a>
+  <div class="lang" role="group" aria-label="Language / Langue">
+    <button type="button" data-set="en" aria-pressed="true">English</button>
+    <button type="button" data-set="fr" aria-pressed="false">Français</button>
+  </div>
+</header>
+
+<main class="wrap policy">
+  <article data-l="en">
+    <h1>Privacy policy</h1>
+    <p class="date">Effective October 24, 2026. Applies to the Goosescope apps for Android and iPhone.</p>
+    <p class="summary"><strong>In short: Goosescope collects no personal data.</strong> It looks through your camera to name colors, on your device only. Nothing is saved, nothing is sent, and there is no account.</p>
+
+    <h2>Camera</h2>
+    <p>Goosescope asks for the camera because that is how it sees the color you point at. Each camera image is analyzed on your device and then discarded. When you freeze an image, it is kept in memory only while you look at it, and is thrown away when you go back to the camera or close the app. Images are never written to storage, never shared, and never leave your device.</p>
+
+    <h2>What stays on your device</h2>
+    <p>The only thing Goosescope remembers is your language choice (English or French), so the app opens in the language you picked. It is stored on your device by the system and is never sent anywhere.</p>
+
+    <h2>No network, no tracking</h2>
+    <ul>
+      <li>The Android app does not have the internet permission, so it cannot connect to the internet. The iPhone app contains no networking code; we check every build for it.</li>
+      <li>No account, no advertising, no analytics, no crash reporting, and no third-party tracking tools.</li>
+      <li>We do not sell, share or transfer any data, because we do not collect any.</li>
+    </ul>
+
+    <h2>Permissions</h2>
+    <p>Camera is the only permission Goosescope requests. You can turn it off at any time in your device settings; the app will then explain why it needs it and show nothing else.</p>
+
+    <h2>Lock screen and shortcuts</h2>
+    <p>Goosescope can be opened from a quick settings tile or a lock screen control without unlocking your phone. In that case it shows only the camera and color names. It cannot reach your photos, contacts or any other information on the phone.</p>
+
+    <h2>Children</h2>
+    <p>Goosescope is not directed at children under 13. It collects no personal data from anyone, including children.</p>
+
+    <h2>Changes</h2>
+    <p>If this policy changes, the new version will be posted on this page with a new effective date. App changes are listed in the <a href="./#changelog">changelog</a>.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about this policy can be asked on the project page: <a href="https://github.com/Morialkar/goosescope/issues">github.com/Morialkar/goosescope/issues</a>.</p>
+  </article>
+
+  <article data-l="fr">
+    <h1>Politique de confidentialité</h1>
+    <p class="date">En vigueur le 24 octobre 2026. S'applique aux apps Goosescope pour Android et iPhone.</p>
+    <p class="summary"><strong>En bref : Goosescope ne recueille aucune donnée personnelle.</strong> L'app regarde par ta caméra pour nommer les couleurs, uniquement sur ton appareil. Rien n'est enregistré, rien n'est envoyé, et il n'y a pas de compte.</p>
+
+    <h2>Caméra</h2>
+    <p>Goosescope demande la caméra parce que c'est ainsi qu'elle voit la couleur que tu vises. Chaque image de la caméra est analysée sur ton appareil, puis abandonnée. Quand tu figes une image, elle est gardée en mémoire seulement pendant que tu la regardes, et elle est supprimée quand tu reviens à la caméra ou que tu fermes l'app. Les images ne sont jamais enregistrées, jamais partagées et ne quittent jamais ton appareil.</p>
+
+    <h2>Ce qui reste sur ton appareil</h2>
+    <p>La seule chose que Goosescope retient, c'est ton choix de langue (anglais ou français), pour que l'app s'ouvre dans la langue choisie. Il est conservé sur ton appareil par le système et n'est jamais envoyé.</p>
+
+    <h2>Aucun réseau, aucun suivi</h2>
+    <ul>
+      <li>L'app Android n'a pas la permission Internet : elle ne peut donc pas se connecter à Internet. L'app iPhone ne contient aucun code réseau ; nous le vérifions à chaque version.</li>
+      <li>Aucun compte, aucune publicité, aucune mesure d'audience, aucun rapport de plantage et aucun outil de suivi tiers.</li>
+      <li>Nous ne vendons, ne partageons et ne transférons aucune donnée, puisque nous n'en recueillons aucune.</li>
+    </ul>
+
+    <h2>Permissions</h2>
+    <p>La caméra est la seule permission demandée. Tu peux la retirer en tout temps dans les réglages de ton appareil ; l'app expliquera alors pourquoi elle en a besoin et n'affichera rien d'autre.</p>
+
+    <h2>Écran verrouillé et raccourcis</h2>
+    <p>Goosescope peut s'ouvrir depuis une tuile des réglages rapides ou un contrôle de l'écran verrouillé, sans déverrouiller le téléphone. Elle n'affiche alors que la caméra et les noms de couleur. Elle n'a accès ni à tes photos, ni à tes contacts, ni à aucune autre information du téléphone.</p>
+
+    <h2>Enfants</h2>
+    <p>Goosescope ne s'adresse pas aux enfants de moins de 13 ans. Elle ne recueille aucune donnée personnelle, auprès de qui que ce soit, enfants compris.</p>
+
+    <h2>Modifications</h2>
+    <p>Si cette politique change, la nouvelle version sera publiée sur cette page avec une nouvelle date d'entrée en vigueur. Les changements de l'app sont listés dans le <a href="./#changelog">journal des versions</a>.</p>
+
+    <h2>Contact</h2>
+    <p>Pour toute question sur cette politique, écris-nous sur la page du projet : <a href="https://github.com/Morialkar/goosescope/issues">github.com/Morialkar/goosescope/issues</a>.</p>
+  </article>
+</main>
+
+<footer class="wrap">
+  <a href="./"><span data-l="en">Back to Goosescope</span><span data-l="fr">Retour à Goosescope</span></a>
+</footer>
+
+<script>
+// Même choix de langue que la page d'accueil (anglais par défaut).
+function setLang(l) {
+  document.documentElement.lang = l;
+  document.querySelectorAll('[data-l]').forEach(e => e.classList.toggle('on', e.dataset.l === l));
+  document.querySelectorAll('[data-set]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.set === l)));
+  try { localStorage.setItem('gs-lang', l); } catch (e) {}
+}
+document.querySelectorAll('[data-set]').forEach(b => b.addEventListener('click', () => setLang(b.dataset.set)));
+let saved = null;
+try { saved = localStorage.getItem('gs-lang'); } catch (e) {}
+setLang(saved === 'fr' ? 'fr' : 'en');
+</script>
+</body>
+</html>

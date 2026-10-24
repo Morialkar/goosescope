@@ -278,3 +278,11 @@ Cette section est en vigueur; elle prime sur NG4 et sur la ligne « Distribution
 
 - F35. La fiche détaillée (image figée) propose aussi le bouton de langue; la bascule change tous
   les textes sans quitter l'image figée. S'applique à Android et à iOS (SPEC-IOS F29).
+
+## 16. Amendement — révision 8 (demandé par Naomi le 2026-10-24)
+
+- F36. Le site publie une politique de confidentialité bilingue (`privacy.html`), liée depuis la
+  page d'accueil, pour la fiche Play Console. Elle ne décrit que ce que l'app fait réellement:
+  aucune donnée recueillie, caméra traitée sur l'appareil, seule la langue est mémorisée, aucun
+  réseau (permission absente sur Android, vérification `check-no-network.sh` à chaque build iOS).
+- Le site est servi sur `goosescope.morialkar.com` (domaine configuré par Naomi).

@@ -9,6 +9,7 @@ export JAVA_HOME
 ACTION="${1:-install}"
 
 ./gradlew :core:assembleGoosescopeCoreReleaseXCFramework --console=plain -q
+ios/tools/check-strings.sh
 (cd ios && xcodegen generate --quiet)
 
 if [ "$ACTION" = "test" ]; then
@@ -20,6 +21,8 @@ fi
 xcodebuild -project ios/Goosescope.xcodeproj -scheme Goosescope -configuration Debug \
     -destination "id=$DEVICE" -derivedDataPath ios/build DEVELOPMENT_TEAM="$TEAM" \
     -allowProvisioningUpdates -quiet build
+# Politique de confidentialité: « nous vérifions chaque version » (SPEC-IOS AC26). Échoue si du réseau apparaît.
+ios/tools/check-no-network.sh ios/build/Build/Products/Debug-iphoneos/Goosescope.app
 
 if [ "$ACTION" = "install" ]; then
     APP=ios/build/Build/Products/Debug-iphoneos/Goosescope.app
