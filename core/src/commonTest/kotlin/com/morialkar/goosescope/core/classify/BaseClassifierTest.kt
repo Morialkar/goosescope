@@ -1,5 +1,6 @@
 package com.morialkar.goosescope.core.classify
 
+import com.morialkar.goosescope.core.TestResources
 import com.morialkar.goosescope.core.catalog.BaseColor
 import com.morialkar.goosescope.core.catalog.Catalog
 import com.morialkar.goosescope.core.color.ColorMath
@@ -14,8 +15,7 @@ class BaseClassifierTest {
 
     private data class Ref(val hex: String, val expected: BaseColor, val kind: String, val source: String)
 
-    private val refs: List<Ref> = checkNotNull(javaClass.getResourceAsStream("/reference-colors.csv"))
-        .bufferedReader().readLines().drop(1).filter { it.isNotBlank() }.map { line ->
+    private val refs: List<Ref> = TestResources.text("reference-colors.csv").lines().drop(1).filter { it.isNotBlank() }.map { line ->
             val (hex, expected, kind, source) = line.split(",", limit = 4)
             Ref(hex, checkNotNull(BaseColor.fromId(expected)) { expected }, kind, source)
         }

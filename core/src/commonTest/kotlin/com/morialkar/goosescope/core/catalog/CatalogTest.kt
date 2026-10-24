@@ -1,5 +1,6 @@
 package com.morialkar.goosescope.core.catalog
 
+import com.morialkar.goosescope.core.TestResources
 import com.morialkar.goosescope.core.color.Srgb8
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -7,8 +8,7 @@ import kotlin.test.assertFailsWith
 import kotlin.test.assertTrue
 
 class CatalogTest {
-    private fun fixture(name: String): String =
-        checkNotNull(javaClass.getResourceAsStream("/fixtures/$name")) { name }.bufferedReader().readText()
+    private fun fixture(name: String): String = TestResources.text("fixtures/$name")
 
     private fun violationsOf(name: String): List<String> =
         assertFailsWith<CatalogException> { Catalog.load(fixture(name)) }.violations

@@ -1,5 +1,6 @@
 package com.morialkar.goosescope.core.catalog
 
+import com.morialkar.goosescope.core.BundledCatalogSource
 import com.morialkar.goosescope.core.CATALOG_FORMAT_VERSION
 import com.morialkar.goosescope.core.color.ColorMath
 import com.morialkar.goosescope.core.color.Srgb8
@@ -22,12 +23,12 @@ class Catalog private constructor(val bases: List<BaseEntry>, val shades: List<S
         private val HEX = Regex("^#[0-9A-Fa-f]{6}$")
         private val json = Json { ignoreUnknownKeys = false }
 
-        fun loadBundled(): Catalog {
-            val stream = Catalog::class.java.getResourceAsStream("/catalog.json")
-                ?: throw CatalogException(listOf("catalog.json introuvable dans les ressources"))
-            return load(stream.bufferedReader(Charsets.UTF_8).use { it.readText() })
-        }
+        /** Le catalogue livré, embarqué à la compilation (IMPACT-IOS §2.2): même chemin sur JVM et iOS. */
+        // @Throws: sans lui, une exception Kotlin arrête l'app iOS au lieu d'arriver à Swift (état d'erreur).
+        @Throws(CatalogException::class)
+        fun loadBundled(): Catalog = load(BundledCatalogSource.json)
 
+        @Throws(CatalogException::class)
         fun load(text: String): Catalog {
             val raw = try {
                 json.decodeFromString(CatalogJson.serializer(), text)

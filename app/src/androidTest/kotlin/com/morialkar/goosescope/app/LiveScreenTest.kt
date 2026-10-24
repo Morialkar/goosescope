@@ -28,7 +28,7 @@ class LiveScreenTest {
         vm = ScopeViewModel { TestSupport.catalog }
         rule.setContent { ScopeApp(vm, source, onRequestPermission = {}, onOpenSettings = {}) }
         vm.onPermissionResult(true)
-        rule.waitUntil { source.isPreviewing }
+        rule.waitUntil(SLOW_DEVICE_MS) { source.isPreviewing }
     }
 
     @Test
@@ -40,7 +40,7 @@ class LiveScreenTest {
     @Test
     fun names_a_blue_object() {
         source.emitColor(Srgb8.fromHex("#1E90FF"), times = 5)
-        rule.waitUntil { rule.onAllNodesWithTagExists("baseName") }
+        rule.waitUntil(SLOW_DEVICE_MS) { rule.onAllNodesWithTagExists("baseName") }
         rule.onNodeWithTag("baseName").assertTextEquals(TestSupport.name(BaseColor.BLUE))
     }
 
@@ -49,7 +49,7 @@ class LiveScreenTest {
         // AC17: « <base> — <nuance> » dans la langue de l'app.
         val scarlet = TestSupport.catalog.shades.first { it.id == "scarlet" }
         source.emitColor(scarlet.ref, times = 5)
-        rule.waitUntil { rule.onAllNodesWithTagExists("shadeName") }
+        rule.waitUntil(SLOW_DEVICE_MS) { rule.onAllNodesWithTagExists("shadeName") }
         rule.onNodeWithTag("baseName").assertTextEquals(TestSupport.name(BaseColor.RED))
         rule.onNodeWithTag("shadeName").assertTextEquals("— " + scarlet.name[TestSupport.lang])
     }
@@ -58,7 +58,7 @@ class LiveScreenTest {
     fun hides_the_shade_when_it_repeats_the_base_name() {
         val pink = TestSupport.catalog.shades.first { it.id == "pink" }
         source.emitColor(pink.ref, times = 5)
-        rule.waitUntil { rule.onAllNodesWithTagExists("baseName") }
+        rule.waitUntil(SLOW_DEVICE_MS) { rule.onAllNodesWithTagExists("baseName") }
         rule.onNodeWithTag("baseName").assertTextEquals(TestSupport.name(BaseColor.PINK))
         rule.onNodeWithTag("shadeName").assertDoesNotExist()
     }
@@ -66,14 +66,14 @@ class LiveScreenTest {
     @Test
     fun says_too_dark_when_the_camera_is_covered() {
         source.emitColor(Srgb8(5, 5, 5), times = 3)
-        rule.waitUntil { rule.onAllNodesWithTagExists("tooDark") }
+        rule.waitUntil(SLOW_DEVICE_MS) { rule.onAllNodesWithTagExists("tooDark") }
         rule.onNodeWithTag("tooDark").assertTextEquals(TestSupport.string(R.string.too_dark))
     }
 
     @Test
     fun black_object_in_a_lit_scene_is_black_not_too_dark() {
         repeat(3) { source.emit { x, y -> if (x in 140..180 && y in 70..110) Srgb8.BLACK else Srgb8(190, 180, 170) } }
-        rule.waitUntil { rule.onAllNodesWithTagExists("baseName") }
+        rule.waitUntil(SLOW_DEVICE_MS) { rule.onAllNodesWithTagExists("baseName") }
         rule.onNodeWithTag("baseName").assertTextEquals(TestSupport.name(BaseColor.BLACK))
     }
 
@@ -90,9 +90,9 @@ class LiveScreenTest {
     @Test
     fun camera_failure_shows_an_error_and_retry_restarts() {
         source.fail()
-        rule.waitUntil { rule.onAllNodesWithTagExists("failure") }
+        rule.waitUntil(SLOW_DEVICE_MS) { rule.onAllNodesWithTagExists("failure") }
         rule.onNodeWithTag("failure.primary").performClick()
-        rule.waitUntil { source.isPreviewing }
+        rule.waitUntil(SLOW_DEVICE_MS) { source.isPreviewing }
         rule.onNodeWithTag("reticle").assertIsDisplayed()
     }
 }

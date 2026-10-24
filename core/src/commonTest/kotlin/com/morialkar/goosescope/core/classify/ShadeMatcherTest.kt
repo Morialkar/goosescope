@@ -1,5 +1,6 @@
 package com.morialkar.goosescope.core.classify
 
+import com.morialkar.goosescope.core.TestResources
 import com.morialkar.goosescope.core.catalog.BaseColor
 import com.morialkar.goosescope.core.catalog.Catalog
 import com.morialkar.goosescope.core.color.ColorMath
@@ -10,7 +11,7 @@ import kotlin.test.assertFailsWith
 
 class ShadeMatcherTest {
     // Fixture: peach (orange), sky_blue (blue), forest_green (green).
-    private val catalog = Catalog.load(checkNotNull(javaClass.getResourceAsStream("/fixtures/valid.json")).bufferedReader().readText())
+    private val catalog = Catalog.load(TestResources.text("fixtures/valid.json"))
     private val matcher = ShadeMatcher(catalog)
     private fun lab(hex: String) = ColorMath.toOklab(Srgb8.fromHex(hex))
 

@@ -1,21 +1,32 @@
+@file:OptIn(ExperimentalObjCName::class)
+
 package com.morialkar.goosescope.core.color
 
+import kotlin.experimental.ExperimentalObjCName
+import kotlin.math.PI
 import kotlin.math.atan2
 import kotlin.math.cbrt
 import kotlin.math.pow
 import kotlin.math.roundToInt
 import kotlin.math.sqrt
+import kotlin.native.ObjCName
 
-// ARCHITECTURE §3.1. Matrices OKLab de Björn Ottosson (https://bottosson.github.io/posts/oklab/).
+// ARCHITECTURE §3.1. Les surcharges reçoivent un nom Swift explicite: sans cela, Swift les distingue
+// par l'ordre de déclaration (`toOklab(c:)` / `toOklab(c_:)`), ce qui casserait au moindre déplacement.
+// Matrices OKLab de Björn Ottosson (https://bottosson.github.io/posts/oklab/).
 object ColorMath {
 
+    @ObjCName(swiftName = "linearFromSrgb")
     fun toLinear(c: Srgb8): LinearRgb = LinearRgb(decode(c.r), decode(c.g), decode(c.b))
 
     /** Borne chaque canal à 0..1 avant d'encoder: les couleurs hors gamut sont ramenées au plus proche. */
+    @ObjCName(swiftName = "srgbFromLinear")
     fun toSrgb8(c: LinearRgb): Srgb8 = Srgb8(encode(c.r), encode(c.g), encode(c.b))
 
+    @ObjCName(swiftName = "oklabFromSrgb")
     fun toOklab(c: Srgb8): Oklab = toOklab(toLinear(c))
 
+    @ObjCName(swiftName = "oklabFromLinear")
     fun toOklab(c: LinearRgb): Oklab {
         val l = cbrt(0.4122214708 * c.r + 0.5363325363 * c.g + 0.0514459929 * c.b)
         val m = cbrt(0.2119034982 * c.r + 0.6806995451 * c.g + 0.1073969566 * c.b)
@@ -27,6 +38,7 @@ object ColorMath {
         )
     }
 
+    @ObjCName(swiftName = "linearFromOklab")
     fun toLinear(c: Oklab): LinearRgb {
         val l = (c.l + 0.3963377774 * c.a + 0.2158037573 * c.b).pow(3)
         val m = (c.l - 0.1055613458 * c.a - 0.0638541728 * c.b).pow(3)
@@ -38,10 +50,11 @@ object ColorMath {
         )
     }
 
+    @ObjCName(swiftName = "srgbFromOklab")
     fun toSrgb8(c: Oklab): Srgb8 = toSrgb8(toLinear(c))
 
     fun toOklch(c: Oklab): Oklch {
-        val h = Math.toDegrees(atan2(c.b, c.a))
+        val h = atan2(c.b, c.a) * 180.0 / PI
         return Oklch(c.l, sqrt(c.a * c.a + c.b * c.b), if (h < 0) h + 360.0 else h)
     }
 

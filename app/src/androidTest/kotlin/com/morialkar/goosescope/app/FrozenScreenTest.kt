@@ -6,11 +6,11 @@ import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.onAllNodesWithTag
 import androidx.compose.ui.test.assertTextEquals
 import androidx.compose.ui.test.click
-import androidx.compose.ui.test.junit4.createComposeRule
+import androidx.activity.ComponentActivity
+import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performTouchInput
-import androidx.test.espresso.Espresso
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.morialkar.goosescope.app.ui.ScopeApp
 import com.morialkar.goosescope.core.catalog.BaseColor
@@ -24,7 +24,8 @@ import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
 class FrozenScreenTest {
-    @get:Rule val rule = createComposeRule()
+    // Règle avec activité: le test du retour Android passe par son OnBackPressedDispatcher.
+    @get:Rule val rule = createAndroidComposeRule<ComponentActivity>()
     private val source = FakeFrameSource()
     private lateinit var vm: ScopeViewModel
 
@@ -33,7 +34,7 @@ class FrozenScreenTest {
         vm = ScopeViewModel { TestSupport.catalog }
         rule.setContent { ScopeApp(vm, source, onRequestPermission = {}, onOpenSettings = {}) }
         vm.onPermissionResult(true)
-        rule.waitUntil { source.isPreviewing }
+        rule.waitUntil(SLOW_DEVICE_MS) { source.isPreviewing }
     }
 
     private fun freezeOn(pixel: (Int, Int) -> Srgb8) {
@@ -41,7 +42,7 @@ class FrozenScreenTest {
         rule.onNodeWithTag("freeze").performClick()
         rule.waitForIdle()
         source.emit(pixel = pixel)
-        rule.waitUntil { rule.onAllNodesWithTagExists("detail") }
+        rule.waitUntil(SLOW_DEVICE_MS) { rule.onAllNodesWithTagExists("detail") }
     }
 
     private fun shadeName(id: String) = TestSupport.catalog.shades.first { it.id == id }.name[TestSupport.lang]
@@ -66,7 +67,7 @@ class FrozenScreenTest {
         assertFalse(source.emit { _, _ -> Srgb8.fromHex("#E02020") })
         rule.onNodeWithTag("detailBase").assertTextEquals(TestSupport.name(BaseColor.BLUE).uppercase())
         rule.onNodeWithTag("resume").performClick()
-        rule.waitUntil { source.isPreviewing }
+        rule.waitUntil(SLOW_DEVICE_MS) { source.isPreviewing }
         rule.onNodeWithTag("freeze").assertIsDisplayed()
     }
 
@@ -118,8 +119,10 @@ class FrozenScreenTest {
     @Test
     fun android_back_returns_to_the_camera() {
         freezeOn { _, _ -> Srgb8.fromHex("#1E90FF") }
-        Espresso.pressBack()
-        rule.waitUntil { source.isPreviewing }
+        // Même chemin que la touche retour du système, sans dépendre du focus de fenêtre d'Espresso
+        // (qui expirait sur l'émulateur API 37).
+        rule.runOnUiThread { rule.activity.onBackPressedDispatcher.onBackPressed() }
+        rule.waitUntil(SLOW_DEVICE_MS) { source.isPreviewing }
         rule.onNodeWithTag("freeze").assertIsDisplayed()
     }
 
