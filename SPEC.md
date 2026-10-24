@@ -42,7 +42,8 @@ n'a pas accès à la « sensation » d'une nuance (chaleureuse, pâle, terreuse�
 - NG3. Pas d'enregistrement de photo, d'historique, de galerie ni de partage. L'image
   figée n'existe qu'en mémoire et disparaît à la reprise.
 - NG4. Pas de publication sur le Play Store dans ce périmètre (installation directe).
-- NG5. Pas de version iOS dans ce périmètre.
+- NG5. ~~Pas de version iOS dans ce périmètre.~~ Remplacé le 2026-10-24 (SPEC-IOS.md, approuvé par
+  Naomi): pas de distribution publique de la version iOS (ni App Store ni TestFlight).
 - NG6. Pas de calibration colorimétrique « de laboratoire »: l'objectif est un nom
   de couleur fiable pour un humain, pas une valeur colorimétrique certifiée.
 - NG7. Pas de texte généré par IA ni par un service en ligne (D6).
