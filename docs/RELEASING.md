@@ -62,7 +62,13 @@ descriptions, notes de version en `en-US` et `fr-CA`, icône, bannière, capture
 
 ### Commandes (seulement à la demande de Naomi, SPEC révision 9)
 
-- Mettre à jour la fiche: `./gradlew publishReleaseListing`
+- Mettre à jour la fiche: `./gradlew publishReleaseListing --rerun`
+  (`--rerun`: l'outil croit sinon la fiche déjà à jour après un envoi échoué).
+  Pour une **nouvelle langue**, deux envois: d'abord le texte seul (images mises de côté, langue
+  par défaut inchangée), qui crée la langue sur Play; ensuite le tout. Sinon Google refuse les
+  images (« Listing for language not found ») ou la langue par défaut (« No listing provided in
+  the default language »). Une « Internal error » de Google pendant les images se règle en
+  relançant.
 - Envoyer un build sur la piste interne, en brouillon: `./gradlew publishReleaseBundle`
   (incrémenter `versionCode` avant).
 - Promouvoir vers une autre piste: `./gradlew promoteReleaseArtifact --from-track internal --promote-track alpha`
