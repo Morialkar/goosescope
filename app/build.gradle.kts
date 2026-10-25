@@ -3,6 +3,8 @@ import com.android.build.api.artifact.SingleArtifact
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
+    // Publication Google Play (SPEC révision 9, D11): outil de build, jamais inclus dans l'app.
+    alias(libs.plugins.play.publisher)
 }
 
 // REQUIRES_REVIEW: clé de publication (SPEC F22). signing/ est ignoré par git; le mot de passe est lu
@@ -119,3 +121,17 @@ tasks.matching { it.name == "assembleRelease" }.configureEach {
         }
     }
 }
+
+// REQUIRES_REVIEW: publication Google Play (SPEC F37). La clé du compte de service vit dans signing/
+// (ignoré par git, docs/RELEASING.md). Rien ne publie sans une commande lancée à la demande de Naomi.
+val playServiceAccount = rootProject.file("signing/play-service-account.json")
+
+play {
+    if (playServiceAccount.isFile) serviceAccountCredentials.set(playServiceAccount)
+    // Toujours la piste de test interne par défaut: la production se fait par promotion explicite.
+    track.set("internal")
+    defaultToAppBundles.set(true)
+    // Les nouvelles versions arrivent en brouillon dans la Play Console; Naomi les lance elle-même.
+    releaseStatus.set(com.github.triplet.gradle.androidpublisher.ReleaseStatus.DRAFT)
+}
+

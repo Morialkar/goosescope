@@ -1,0 +1,1 @@
+Point your camera and read the color name. Made for colorblind people. Offline.

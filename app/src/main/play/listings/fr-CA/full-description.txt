@@ -1,0 +1,23 @@
+Goosescope te dit la couleur de ce que vise ta caméra. Elle a été conçue pour les personnes daltoniennes : une pomme rouge, une feuille verte ou un chandail brun ne sont plus jamais une devinette.
+
+VISE ET LIS
+Place le cercle au milieu de l'écran sur un objet. Un des 11 noms de couleur simples s'affiche en grand, avec la nuance la plus proche : « Rouge — Écarlate », « Bleu — Bleu marine », « Orange — Pêche ». Le nom reste stable même si ta main bouge un peu.
+
+FIGE POUR EN SAVOIR PLUS
+Fige l'image pour voir la nuance exacte parmi 122, avec :
+• une description de ce que la couleur fait ressentir, pour quelqu'un qui ne l'a peut-être jamais vue (« chaude, comme le soleil de fin d'après-midi à travers un rideau ») ;
+• une comparaison avec la couleur visée (« cette teinte contient légèrement plus de rouge et paraît plus chaleureuse ») ;
+• des éléments de la nature qui partagent cette nuance.
+Touche n'importe où sur l'image figée pour vérifier un autre endroit, ou masque la fiche pour voir toute l'image.
+
+TOUJOURS À PORTÉE
+Ajoute la tuile Goosescope à tes réglages rapides : un appui ouvre la caméra, même sur l'écran verrouillé, sans déverrouiller le téléphone.
+
+PRIVÉE PAR CONCEPTION
+• Fonctionne entièrement hors ligne : l'app n'a pas la permission Internet.
+• Aucun compte, aucune publicité, aucun suivi.
+• Les images ne sont jamais enregistrées ni envoyées. La caméra est la seule permission.
+
+Elle indique aussi quand il fait trop sombre pour nommer une couleur, avec un bouton de lampe. Anglais et français, au choix dans l'app.
+
+Goosescope est gratuite et à code source ouvert (licence MIT).

@@ -46,3 +46,27 @@ gh release create v<versionName> /tmp/goosescope.apk --title "Goosescope <versio
 
 Le nom `goosescope.apk` est celui que la page de téléchargement attend
 (`/releases/latest/download/goosescope.apk`).
+
+## Google Play (SPEC révision 9)
+
+Outil: Gradle Play Publisher. La fiche est versionnée dans `app/src/main/play/` (titres,
+descriptions, notes de version en `en-US` et `fr-CA`, icône, bannière, captures 1440×2880).
+
+### Clé du compte de service (une seule fois, par Naomi)
+
+1. Google Cloud: créer un compte de service, puis une clé JSON pour ce compte.
+2. Play Console → Utilisateurs et autorisations: inviter l'adresse du compte de service, avec les
+   droits sur Goosescope (publier sur les pistes de test, gérer la fiche).
+3. Enregistrer la clé sous `signing/play-service-account.json` (dossier ignoré par git) et en garder
+   une copie dans Proton Drive, `Goosescope signing/`. Ne jamais l'afficher ni la coller ailleurs.
+
+### Commandes (seulement à la demande de Naomi, SPEC révision 9)
+
+- Mettre à jour la fiche: `./gradlew publishReleaseListing`
+- Envoyer un build sur la piste interne, en brouillon: `./gradlew publishReleaseBundle`
+  (incrémenter `versionCode` avant).
+- Promouvoir vers une autre piste: `./gradlew promoteReleaseArtifact --from-track internal --promote-track alpha`
+
+Restent dans la Play Console: classification du contenu, sécurité des données (aucune donnée
+recueillie ni partagée), catégorie, public cible (13 ans et plus), politique de confidentialité
+`https://goosescope.morialkar.com/privacy.html`.

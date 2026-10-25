@@ -1,0 +1,23 @@
+Goosescope tells you the color of whatever your camera points at. It was made for colorblind people, so a red apple, a green leaf or a brown sweater is never a guess again.
+
+POINT AND READ
+Aim the circle in the middle of the screen at an object. One of 11 simple color names appears in big letters, with the closest shade: "Red — Scarlet", "Blue — Navy", "Orange — Peach". The name stays steady even if your hand moves a little.
+
+FREEZE TO LEARN MORE
+Freeze the image to see the exact shade among 122, with:
+• a description of what the color feels like, for someone who may never have seen it ("warm, like late-afternoon sun through a curtain");
+• how the color you aimed at compares ("this shade has slightly more red and feels warmer");
+• things in nature that share this shade.
+Tap anywhere on the frozen image to check another spot, or hide the sheet to see the whole picture.
+
+QUICK TO REACH
+Add the Goosescope tile to your quick settings: one tap opens the camera, even on the lock screen, without unlocking your phone.
+
+PRIVATE BY DESIGN
+• Works fully offline: the app does not have the internet permission.
+• No account, no ads, no tracking.
+• Images are never saved or sent. The camera is the only permission.
+
+Also tells you when it is too dark to name a color, with a light button. English and French, switchable in the app.
+
+Goosescope is free and open source (MIT license).

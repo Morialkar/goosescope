@@ -1,0 +1,1 @@
+Première version sur Google Play : noms de couleur en direct, image figée avec la nuance exacte et sa description, tuile de réglages rapides qui fonctionne sur l'écran verrouillé. Anglais et français, entièrement hors ligne.

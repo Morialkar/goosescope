@@ -1,0 +1,1 @@
+Vise avec la caméra et lis le nom de la couleur. Pour daltoniens. Hors ligne.

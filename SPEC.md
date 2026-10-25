@@ -286,3 +286,20 @@ Cette section est en vigueur; elle prime sur NG4 et sur la ligne « Distribution
   aucune donnée recueillie, caméra traitée sur l'appareil, seule la langue est mémorisée, aucun
   réseau (permission absente sur Android, vérification `check-no-network.sh` à chaque build iOS).
 - Le site est servi sur `goosescope.morialkar.com` (domaine configuré par Naomi).
+
+## 17. Amendement — révision 9 (demandé par Naomi le 2026-10-24)
+
+- Modifie NG4: l'app Android peut être publiée sur Google Play, en commençant par les pistes de
+  test (interne, puis fermée). La distribution par GitHub Releases continue.
+- D11. Outil retenu par Naomi: Gradle Play Publisher (plugin de build, dépendance permise par cette
+  décision; il n'est jamais inclus dans l'app et n'utilise le réseau qu'au moment de publier).
+- F37. La fiche Play (titres, descriptions EN et FR, graphismes, notes de version, contact) est
+  versionnée dans `app/src/main/play/`, relue comme le reste du dépôt.
+- F38. Public cible déclaré: 13 ans et plus (choix de Naomi); politique de confidentialité:
+  https://goosescope.morialkar.com/privacy.html.
+- Contraintes: la clé du compte de service Google Play est un secret, rangée dans `signing/`
+  (ignoré par git), jamais affichée, sauvegardée dans le Proton Drive de Naomi. Toute action qui
+  publie (envoi de build, mise à jour de la fiche, promotion d'une piste) se fait seulement sur
+  demande explicite de Naomi, à chaque fois. `REQUIRES_REVIEW:` configuration de publication.
+- Restent à la main dans la Play Console: classification du contenu, sécurité des données,
+  catégorie et déclarations; le test fermé avec 12 testeurs pendant 14 jours si le compte l'exige.

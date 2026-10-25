@@ -1,0 +1,1 @@
+First version on Google Play: read color names live, freeze for the exact shade and its description, quick settings tile that works on the lock screen. English and French, fully offline.
