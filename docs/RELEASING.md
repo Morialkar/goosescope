@@ -60,6 +60,12 @@ descriptions, notes de version en `en-US` et `fr-CA`, icône, bannière, capture
 3. Enregistrer la clé sous `signing/play-service-account.json` (dossier ignoré par git) et en garder
    une copie dans Proton Drive, `Goosescope signing/`. Ne jamais l'afficher ni la coller ailleurs.
 
+### Avertissements Play attendus
+
+- « Symboles de débogage natifs manquants »: le code natif vient d'AndroidX (CameraX, Compose) et
+  ces bibliothèques sont livrées déjà sans symboles; il n'y a rien à fournir. Avertissement normal.
+- Le fichier de désobscurcissement R8 (`mapping.txt`) est joint automatiquement à chaque AAB.
+
 ### Signature Play (fait le 2026-10-24)
 
 Play App Signing utilise **notre** clé (`signing/goosescope-release.jks`), transmise à Google par

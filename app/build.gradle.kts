@@ -21,8 +21,8 @@ android {
         applicationId = "com.morialkar.goosescope"
         minSdk = 33
         targetSdk = 36
-        versionCode = 4
-        versionName = "0.4.0"
+        versionCode = 5
+        versionName = "0.4.1"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -49,6 +49,11 @@ android {
     buildTypes {
         release {
             signingConfig = if (releaseSigningReady) signingConfigs.getByName("release") else null
+            // R8: réduit et obscurcit le code, retire les ressources inutilisées. Le fichier de
+            // correspondance (mapping.txt) est envoyé à Play avec chaque build par Gradle Play Publisher.
+            isMinifyEnabled = true
+            isShrinkResources = true
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
 }
