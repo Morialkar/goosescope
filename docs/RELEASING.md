@@ -60,6 +60,13 @@ descriptions, notes de version en `en-US` et `fr-CA`, icône, bannière, capture
 3. Enregistrer la clé sous `signing/play-service-account.json` (dossier ignoré par git) et en garder
    une copie dans Proton Drive, `Goosescope signing/`. Ne jamais l'afficher ni la coller ailleurs.
 
+### Signature Play (fait le 2026-10-24)
+
+Play App Signing utilise **notre** clé (`signing/goosescope-release.jks`), transmise à Google par
+PEPK avant le premier build: l'app installée depuis Play et les APK GitHub ont la même signature
+(SHA-256 du certificat `1da2816b…2ddf`). Le ZIP chiffré `goosescope-key-for-play.zip` est gardé
+dans Proton Drive avec la clé.
+
 ### Commandes (seulement à la demande de Naomi, SPEC révision 9)
 
 - Mettre à jour la fiche: `./gradlew publishReleaseListing --rerun`
